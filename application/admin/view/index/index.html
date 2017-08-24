@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+
+</head>
+
+<body>
+    <div id="loading-mask">
+        <div class="animation">
+            <div></div>
+        </div>
+        <div class="logo"><img src="__ADMIN__/images/preloader_hires.png" alt="" /></div>
+    </div>
+    <div id="loader" class="gradient">
+        <div class="sphere"><img src="__ADMIN__/images/1x1.gif" alt="" /></div>
+    </div>
+    <div class="wrapper indexwrapper">
+        <div class="row index">
+            <div class="sidebar col-md-2 pageheight">
+                <div class="logo">
+                    <a href="index/index"><img src="__ADMIN__/images/logo.png" alt="logo"></a>
+                </div>
+                <ul class="menu">
+                    <li class="open">
+                        <a href="#">代理商管理</a>
+                        <div class="submenu pageheight">
+                            <ul>
+                                <li>
+                                    <a href="{:url('agent/lst')}">
+                                        <span class="title"><i class="icon-list"></i>代理商列表</span>
+                                        <p>账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。</p>
+                                    </a>
+                                </li>
+                                <li><a href="#">代理商列表</a></li>
+                                <li><a href="#">代理商列表</a></li>
+                                <li><a href="#">代理商列表</a></li>
+                                <li><a href="#">代理商列表</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">客户管理</a>
+                        <div class="submenu pageheight">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <span class="title"><i class="icon-list"></i>代理商列表二</span>
+                                        <p>账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。</p>
+                                    </a>
+                                </li>
+                                <li><a href="#">代理商列表</a></li>
+                                <li><a href="#">代理商列表</a></li>
+                                <li><a href="#">代理商列表</a></li>
+                                <li><a href="#">代理商列表</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">模板管理</a></li>
+                    <li><a href="#">官网设置</a></li>
+                    <li><a href="#">新闻动态</a></li>
+                    <li><a href="#">消息推送</a></li>
+                    <li><a href="#">退出登录</a></li>
+                </ul>
+            </div>
+            <div class="main col-md-8 pageheight">
+                <div class="fullpage">
+                    <div class="section">
+                        <div class="heading">
+                            <h2>代理商列表</h2>
+                            <p>账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。</p>
+                        </div>
+                        <div class="imgbox"><img src="__ADMIN__/images/list1-1.jpg" alt=""></div>
+                    </div>
+                    <div class="section">
+                        <div class="heading">
+                            <h2>代理商列表</h2>
+                            <p>账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。</p>
+                        </div>
+                        <div class="imgbox"><img src="__ADMIN__/images/list1-1.jpg" alt=""></div>
+                    </div>
+                    <div class="section">
+                        <div class="heading">
+                            <h2>代理商列表</h2>
+                            <p>账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。</p>
+                        </div>
+                        <div class="imgbox"><img src="__ADMIN__/images/list1-1.jpg" alt=""></div>
+                    </div>
+                    <div class="section">
+                        <div class="heading">
+                            <h2>代理商列表</h2>
+                            <p>账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。</p>
+                        </div>
+                        <div class="imgbox"><img src="__ADMIN__/images/list1-1.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--js文件-->
+    {include file='public/footer'/}
+    <script type='text/javascript' src='__ADMIN__/js/logo-plugins.js'></script>
+    <script type='text/javascript' src='__ADMIN__/js/loading.js'></script>
+    <script>
+    //二级栏目点击效果
+    $(function() {
+        $(".submenu li a").click(function() {
+            $("body").addClass("home");
+           
+            $(".home").css({
+                'background': "url(__ADMIN__/images/agentlist.jpg) 0 0 no-repeat",
+                "background-size": 'cover'
+            });
+            $("body").append("<div class='istransit'><img src='__ADMIN__/images/list1-1.jpg'></div>");
+            //url=$(this).attr('href');
+            var times = setTimeout(function() {
+                $(".indexwrapper").load("{:url('agent/lst')}", function(responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success") {
+                        $(".istransit").fadeOut(1000);
+                    }
+                });
+            }, 2500);
+            return false;
+        });
+        //图片点击，同样的效果
+        $(".section img").click(function() {
+            $("body").addClass("home");
+            $(".home").css({
+                'background': "url(__ADMIN__/images/agentlist.jpg) 0 0 no-repeat",
+                "background-size": 'cover'
+            });
+            $("body").append("<div class='istransit'><img src='__ADMIN__/images/list1-1.jpg'></div>");
+            var times = setTimeout(function() {
+                $(".indexwrapper").load("{:url('agent/lst')}", function(responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success") {
+                        $(".istransit").fadeOut(1000);
+                    }
+                });
+            }, 2500);
+            return false;
+        });
+    });
+    </script>
+    <script>
+    //首页的全屏滚动
+    $(function() {
+        $('.fullpage').fullpage({
+            'navigation': true,
+        });
+    });
+    //右侧的导航
+    $(function() {
+        $("#fp-nav li").each(function(i) {
+            $(this).append("<div class='fpnum'>" + (i + 1) + "0</div>");
+        });
+    });
+    </script>
+    <script>
+    //滚动条美化
+    $('.submenu').niceScroll({
+        cursorcolor: "#ccc", //#CC0071 光标颜色
+        cursoropacitymax: 1, //改变不透明度非常光标处于活动状态（scrollabar“可见”状态），范围从1到0
+        touchbehavior: false, //使光标拖动滚动像在台式电脑触摸设备
+        cursorwidth: "5px", //像素光标的宽度
+        cursorborder: "0", // 游标边框css定义
+        cursorborderradius: "5px", //以像素为光标边界半径
+        autohidemode: true //是否隐藏滚动条
+    });
+    $(".submenu").getNiceScroll().hide();
+    </script>
+</body>
+
+</html>

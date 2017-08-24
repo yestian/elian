@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    {include file='public/meta' /}
+</head>
+
+<body>
+    {include file='public/loading' /} {include file='public/navbar2'/}
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            {include file='public/msgmenu' /}
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="{:url('index/index')}">Home</a>
+                        </li>
+                        <li class="active">用户订单列表</li>
+                    </ul>
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="well with-header with-footer">
+                                <div class="header bg-palegreen">消息详情</div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="widget">
+                                            <div class="mail-container">
+                                                <div class="mail-body" style="margin-left:0">
+                                                    <div class="mail-info">
+                                                        <div class="mail-sender">
+                                                            <a href="#"><img src="__ADMIN__/images/divyia.jpg" class="img-circle" width="30"> <span>传酷科技</span> to <span>me</span></a>
+                                                        </div>
+                                                        <div class="mail-date">07:51 AM - 15 December</div>
+                                                    </div>
+                                                    <div class="mail-text">
+                                                        <p>作为一个行业的Web开发，web开发Web的商业化以来，一直是一个不断增长的行业。正在推这个行业的增长，尤其是企业希望出售产品和服务的网上客户。</p>
+                                                        <p>工具和平台，开发者可以在web开发中使用很多开源的系统，以帮助。一个通俗的例子，LAMP(Linux中，阿帕奇，MySQL，PHP的)协议栈都可以在线免费下载。这不断学习web开发的成本降到最低。一直到行业增长的另一个因素的崛起易于使用所见即所得的网页开发软件，最突出的Adobe Dreamweaver中，Webdev的，和微软的Expression Studio。使用这样的软件，几乎任何人都可以相对快速地了解开发一个非常基本的网页。超文本标记语言(标准通用标记语言下的一个应用)或编程语言的知识仍然需要使用该软件，但基本可以迅速的帮助下，帮助文件，技术书籍，网络教程，或面对面进行面对面的培训学习和实施。</p>
+                                                    </div>
+                                                    <div class="mail-reply">
+                                                        <button class="btn btn-default">回复</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row DTTTFooter">
+                                    <div class="col-sm-12">
+                                        <div class="dataTables_paginate paging_bootstrap text-right" id="simpledatatable_paginate">
+                                            <ul class="pagination">
+                                                <li class="prev disabled"><a href="#">Prev</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li class="next"><a href="#">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+        </div>
+    </div>
+    {include file='public/footer' /}
+    <script>
+    $(window).bind("load", function() {
+        InitiateEasyPieChart.init();
+        InitiateChartJS.init();
+    });
+    </script>
+</body>
+<!--  /Body -->
+
+</html>

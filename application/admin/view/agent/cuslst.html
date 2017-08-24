@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    {include file='public/meta' /}
+</head>
+
+<body>
+    {include file='public/loading' /} {include file='public/navbar2'/}
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            {include file='public/agentmenu' /}
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="{:url('index/index')}">Home</a>
+                        </li>
+                        <li class="active">代理商列表</li>
+                    </ul>
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row easy-pie-chart-preview">
+                        <div class="col-lg-6 col-sm-6 col-xs-12">
+                            <div class="well">
+                                <div class="header bg-yellow">代理商活跃表</div>
+                                <div data-toggle="easypiechart" class="easyPieChart" data-percent="73" data-barcolor="#ed4e2a" data-trackcolor="#fff1a8" data-linewidth="10" style="width: 110px; height: 110px; line-height: 110px;">73%
+                                    <canvas width="110" height="110"></canvas>
+                                </div>
+                                <div class="footer">每日有多少人登录后台</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-xs-12">
+                            <div class="well">
+                                <div class="header bg-yellow">代理商分布表</div>
+                                <div class="chartcontainer">
+                                    <canvas id="doughnut" height="110" width="110" style="width: 110px; height: 110px;"></canvas>
+                                </div>
+                                <div class="footer">代理商地域分布</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="well with-header with-footer">
+                                <div class="header bg-palegreen">
+                                    代理商列表
+                                </div>
+                                <table class="table table-hover table-striped table-bordered">
+                                    <thead class="bordered-blueberry">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>代理商姓名</th>
+                                            <th>客户姓名</th>
+                                            <th>开通日期</th>
+                                            <th>到期日期</th>
+                                            <th>网站类型</th>
+                                            <th>是否付费</th>
+                                            <th>网站状态</th>
+                                            <th>访问网站</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>123</td>
+                                            <td><a href="{:url('agent/detail')}">传酷科技</a></td> 
+                                            <td><a href="{:url('client/detail')}">筑人学院</a></td> 
+                                            <td>2017-3-3</td>
+                                            <td>2018-3-2</td>
+                                            <td>全能型</td>
+                                            <td>付费</td>
+                                            <td>正常使用</td>
+                                            <td><a href="#">网站链接</a></td>
+                                            <td><a href="javascript:void(0);" class="btn btn-danger btn-sm shiny">删除</a></td> 
+                                        </tr> <tr>
+                                            <td>123</td>
+                                            <td><a href="{:url('agent/detail')}">传酷科技</a></td> 
+                                            <td><a href="{:url('client/detail')}">筑人学院</a></td> 
+                                            <td>2017-3-3</td>
+                                            <td>2018-3-2</td>
+                                            <td>全能型</td>
+                                            <td>付费</td>
+                                            <td>正常使用</td>
+                                            <td><a href="#">网站链接</a></td>
+                                            <td><a href="javascript:void(0);" class="btn btn-danger btn-sm shiny">删除</a></td> 
+                                        </tr><tr>
+                                            <td>123</td>
+                                            <td><a href="{:url('agent/detail')}">传酷科技</a></td> 
+                                            <td><a href="{:url('client/detail')}">筑人学院</a></td> 
+                                            <td>2017-3-3</td>
+                                            <td>2018-3-2</td>
+                                            <td>全能型</td>
+                                            <td>付费</td>
+                                            <td>正常使用</td>
+                                            <td><a href="#">网站链接</a></td>
+                                            <td><a href="javascript:void(0);" class="btn btn-danger btn-sm shiny">删除</a></td> 
+                                        </tr>
+                                       
+                                       
+                                    </tbody>
+                                </table>
+                                <div class="row DTTTFooter">
+                                    <div class="col-sm-12">
+                                        <div class="dataTables_paginate paging_bootstrap text-right" id="simpledatatable_paginate">
+                                            <ul class="pagination">
+                                                <li class="prev disabled"><a href="#">Prev</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li class="next"><a href="#">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+        </div>
+    </div>
+    {include file='public/footer' /}
+    <script>
+    $(window).bind("load", function() {
+        InitiateEasyPieChart.init();
+        InitiateChartJS.init();
+    });
+    </script>
+</body>
+<!--  /Body -->
+
+</html>

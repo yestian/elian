@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    {include file='public/meta' /}
+</head>
+
+<body>
+    {include file='public/loading' /} {include file='public/navbar2'/}
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            {include file='public/agentmenu' /}
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="{:url('index/index')}">Home</a>
+                        </li>
+                        <li class="active">代理商列表</li>
+                    </ul>
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row easy-pie-chart-preview">
+                        <div class="col-lg-6 col-sm-6 col-xs-12">
+                            <div class="well">
+                                <div class="header bg-yellow">代理商月订单量</div>
+                                <div class="chartcontainer">
+                                    <canvas id="bar" height="200" width="650" style="width:650px;height:200px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-6 col-xs-12">
+                            <div class="well">
+                                <div class="header bg-red">代理商月成交总金额</div>
+                                <div class="chartcontainer">
+                                    <canvas id="bar2" height="200" width="650" style="width:650px;height:200px"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="well with-header with-footer">
+                                <div class="header bg-palegreen">
+                                    代理商列表
+                                </div>
+                                <table class="table table-hover table-striped table-bordered">
+                                    <thead class="bordered-blueberry">
+                                        <tr>
+                                            <th>流水号</th>
+                                            <th>代理商姓名</th>
+                                            <th>消费金额</th>
+                                            <th>账户余额</th>
+                                            <th>购买产品</th>
+                                            <th>订单状态</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>14234324</td>
+                                            <td><a href="detail.html">传酷网络</a></td>
+                                            <td>333.00</td>
+                                            <td>888.00</td>
+                                            <td>网站高级版</td>
+                                            <td>成功</td>
+                                        </tr><tr>
+                                            <td>14234324</td>
+                                            <td><a href="detail.html">传酷网络</a></td>
+                                            <td>333.00</td>
+                                            <td>888.00</td>
+                                            <td>网站高级版</td>
+                                            <td>成功</td>
+                                        </tr><tr>
+                                            <td>14234324</td>
+                                            <td><a href="detail.html">传酷网络</a></td>
+                                            <td>333.00</td>
+                                            <td>888.00</td>
+                                            <td>网站高级版</td>
+                                            <td>成功</td>
+                                        </tr>
+                                       
+                                       
+                                    </tbody>
+                                </table>
+                                <div class="row DTTTFooter">
+                                    <div class="col-sm-12">
+                                        <div class="dataTables_paginate paging_bootstrap text-right" id="simpledatatable_paginate">
+                                            <ul class="pagination">
+                                                <li class="prev disabled"><a href="#">Prev</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li class="next"><a href="#">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+        </div>
+    </div>
+    {include file='public/footer' /}
+    <script>
+    $(window).bind("load", function() {
+        InitiateEasyPieChart.init();
+        InitiateChartJS.init();
+    });
+    </script>
+</body>
+<!--  /Body -->
+
+</html>

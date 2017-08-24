@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    {include file='public/meta' /}
+</head>
+
+<body>
+    {include file='public/loading' /} {include file='public/navbar2'/}
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            {include file='public/catemenu' /}
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="{:url('index/index')}">Home</a>
+                        </li>
+                        <li class="active">用户订单列表</li>
+                    </ul>
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="well with-header with-footer">
+                                <div class="header bg-palegreen">新闻列表</div>
+                                <table class="table table-hover table-striped table-bordered">
+                                    <thead class="bordered-blueberry">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>文章标题</th>
+                                            <th>缩略图</th>
+                                            <th>所属栏目</th>
+                                            <th>推荐</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>自助建站平台成立了</td>
+                                            <td><img src="/assets/images/temp.jpg" alt="" height="30"></td>
+                                            <td>公司新闻</td>
+                                            <td>是</td>
+                                            <td><a href="{:url('edit')}" class="btn btn-primary btn-sm shiny">编辑</a><a href="javascript:void(0);" class="btn btn-danger btn-sm shiny">删除</a></td>
+                                        </tr> <tr>
+                                            <td>1</td>
+                                            <td>自助建站平台成立了</td>
+                                            <td><img src="/assets/images/temp.jpg" alt="" height="30"></td>
+                                            <td>公司新闻</td>
+                                            <td>是</td>
+                                            <td><a href="{:url('edit')}" class="btn btn-primary btn-sm shiny">编辑</a><a href="javascript:void(0);" class="btn btn-danger btn-sm shiny">删除</a></td>
+                                        </tr> <tr>
+                                            <td>1</td>
+                                            <td>自助建站平台成立了</td>
+                                            <td><img src="/assets/images/temp.jpg" alt="" height="30"></td>
+                                            <td>公司新闻</td>
+                                            <td>是</td>
+                                            <td><a href="{:url('edit')}" class="btn btn-primary btn-sm shiny">编辑</a><a href="javascript:void(0);" class="btn btn-danger btn-sm shiny">删除</a></td>
+                                        </tr> 
+                                       
+                                    </tbody>
+                                </table>
+                                <div class="row DTTTFooter">
+                                    <div class="col-sm-12">
+                                        <div class="dataTables_paginate paging_bootstrap text-right" id="simpledatatable_paginate">
+                                            <ul class="pagination">
+                                                <li class="prev disabled"><a href="#">Prev</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li class="next"><a href="#">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+        </div>
+    </div>
+    {include file='public/footer' /}
+    <script>
+    $(window).bind("load", function() {
+        InitiateEasyPieChart.init();
+        InitiateChartJS.init();
+    });
+    </script>
+</body>
+<!--  /Body -->
+
+</html>

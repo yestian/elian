@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    {include file='public/meta' /}
+</head>
+<!-- /Head -->
+<!-- Body -->
+
+<body class="index">
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            {include file='public/indexmenu'/}
+            <!-- Page Content -->
+            <div class="page-content">
+                {include file='public/navbar'/}
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="active">控制台</li>
+                    </ul>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Breadcrumb -->
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="well with-header with-footer articlepage">
+                                <div class="header bg-blue">代理商信息</div>
+                                <table class="table table-hover">
+                                    <thead class="bordered-darkorange">
+                                        <tr>
+                                            <th style="width:10%">字段</th>
+                                            <th>描述</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>代理商账号</td>
+                                            <td>demo</td>
+                                        </tr>
+                                        <tr>
+                                            <td>销售平台</td>
+                                            <td> <a href="http://demo.starwood.com" target="_blank">http://demo.starwood.com</a></td>
+                                        </tr>
+                                         <tr>
+                                            <td>绑定域名</td>
+                                            <td> <input type="text" style="width:220px;height:26px;margin-right:50px"> <button class="btn btn-default btn-sm">绑定</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>代理商名称</td>
+                                            <td>上海传酷网络科技有限公司</td>
+                                        </tr>
+                                        <tr>
+                                            <td>代理商级别</td>
+                                            <td>皇冠</td>
+                                        </tr>
+                                        <tr>
+                                            <td>联系人</td>
+                                            <td>田先生</td>
+                                        </tr>
+                                        <tr>
+                                            <td>联系电话</td>
+                                            <td>18217710701</td>
+                                        </tr>
+                                        <tr>
+                                            <td>座机</td>
+                                            <td>83231212</td>
+                                        </tr>
+                                        <tr>
+                                            <td>微信</td>
+                                            <td>yestian</td>
+                                        </tr>
+                                        <tr>
+                                            <td>QQ</td>
+                                            <td>69719701</td>
+                                        </tr>
+                                        <tr>
+                                            <td>地址</td>
+                                            <td>上海市徐汇区斜土路2601号嘉汇广场</td>
+                                        </tr>
+                                        <tr>
+                                            <td>客户数量</td>
+                                            <td>88</td>
+                                        </tr>
+                                        <tr>
+                                            <td>付费客户数量</td>
+                                            <td>55</td>
+                                        </tr>
+                                        <tr>
+                                            <td>注册时间</td>
+                                            <td>2017-1-1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>充值金额</td>
+                                            <td>9999.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>账户余额</td>
+                                            <td>0.00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>到期时间</td>
+                                            <td>2018-1-1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>上次登录时间</td>
+                                            <td>2017-1-5</td>
+                                        </tr>
+                                        <tr>
+                                            <td>代理商状态</td>
+                                            <td>正常</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+    </div>
+    {include file='public/footer'/}
+</body>
+<!--  /Body -->
+
+</html>

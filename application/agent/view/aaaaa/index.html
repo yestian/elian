@@ -1,0 +1,1066 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- Head -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    {include file='public/meta' /}
+</head>
+<!-- /Head -->
+<!-- Body -->
+
+<body class="index">
+    <!-- Loading Container -->
+    <div class="loading-container">
+        <div class="loading-progress">
+            <div class="rotator">
+                <div class="rotator">
+                    <div class="rotator colored">
+                        <div class="rotator">
+                            <div class="rotator colored">
+                                <div class="rotator colored"></div>
+                                <div class="rotator"></div>
+                            </div>
+                            <div class="rotator colored"></div>
+                        </div>
+                        <div class="rotator"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+    </div>
+    <!--  /Loading Container -->
+    <!-- Main Container -->
+    <div class="main-container container-fluid">
+        <!-- Page Container -->
+        <div class="page-container">
+            <!-- Page Sidebar -->
+            <div class="page-sidebar" id="sidebar">
+                <!-- /Page Sidebar Header -->
+                <div class="indexlogo">
+                    <img src="__ADMIN__/images/indexlogo.png" alt="">
+                </div>
+                <!-- Sidebar Menu -->
+                <ul class="nav sidebar-menu">
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <span class="menu-text"> 代理商管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                
+                                <a href="agencylist.html">
+                                    <span class="menu-text"> <i class="fa fa-list"></i>代理商列表</span>
+                                    <p>代理商基本信息展示，如：代理商等级，到期时间，客户数量</p>
+                                </a>
+                                
+                            </li>
+                            <li>
+                                <a href="agencyadd.html">
+                                    <span class="menu-text"> <i class="fa fa-edit"></i>代理商添加</span>
+                                    <p>代理商基本信息添加</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="agencyorderlist.html">
+                                    <span class="menu-text"> <i class="fa fa-list-ol"></i>代理商订单列表</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="agencypayrecord.html">
+                                    <span class="menu-text"> <i class="fa fa-money"></i>代理商消费记录</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="agencyfileadd.html">
+                                    <span class="menu-text"> <i class="fa fa-upload"></i>代理后台文档上传</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="agencyfilelist.html">
+                                    <span class="menu-text"> <i class="fa fa-list"></i>代理后台文档列表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="databoxes.html" class="menu-dropdown">
+                            <span class="menu-text"> 代理商模块 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="agencyleveladd.html">
+                                    <span class="menu-text">代理商级别添加</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="agencylevellist.html">
+                                    <span class="menu-text">代理商级别列表</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Widgets-->
+                    <li>
+                        <a href="databoxes.html" class="menu-dropdown">
+                            <span class="menu-text"> 客户管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="customerlist.html">
+                                    <span class="menu-text">客户列表</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="customeradd.html">
+                                    <span class="menu-text">客户添加</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="customerorderlist.html">
+                                    <span class="menu-text">客户订单列表</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="customerorderlist2.html">
+                                    <span class="menu-text">客户消费记录</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="databoxes.html" class="menu-dropdown">
+                            <span class="menu-text"> 模板管理 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="templist.html">
+                                    <span class="menu-text">模板列表</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tempcopy.html">
+                                    <span class="menu-text">复制客户网站</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="siteadd.html">
+                                    <span class="menu-text">开设网站</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="databoxes.html" class="menu-dropdown">
+                            <span class="menu-text"> 统计信息 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="tongjicaiwu.html">
+                                    <span class="menu-text">财务统计</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tongjikehu.html">
+                                    <span class="menu-text">客户统计</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--UI Elements-->
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <span class="menu-text"> 官网设置 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="siteset.html">
+                                    <span class="menu-text">全站设置</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    <span class="menu-text">联系方式</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="kefu.html">
+                                    <span class="menu-text">客服设置</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html">
+                                    <span class="menu-text">关于我们</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="items.html">
+                                    <span class="menu-text">服务条款</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="footinfo.html">
+                                    <span class="menu-text">底部信息</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="paytype.html">
+                                    <span class="menu-text">支付方式</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tongji.html">
+                                    <span class="menu-text">统计代码</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="plug.html">
+                                    <span class="menu-text">插件代码</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--Tables-->
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <span class="menu-text"> 新闻动态 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="newslist.html">
+                                    <span class="menu-text">新闻列表</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="addnews.html">
+                                    <span class="menu-text">添加新闻</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <span class="menu-text"> 消息推送 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="msglist.html">
+                                    <span class="menu-text">收到的消息</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sendmsg1.html">
+                                    <span class="menu-text">给代理商发消息</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sendmsg2.html">
+                                    <span class="menu-text">给客户后台发公告</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <span class="menu-text"> 管理员 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="adminlist.html">
+                                    <span class="menu-text">管理员列表</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="adminadd.html">
+                                    <span class="menu-text">管理员添加</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="menu-dropdown">
+                            <span class="menu-text"> 新闻源 </span>
+                            <i class="menu-expand"></i>
+                        </a>
+                        <ul class="submenu">
+  
+                            <li>
+                                <a href="pingtaiadd.html">
+                                    <span class="menu-text">新闻源平台添加</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sourceadd.html">
+                                    <span class="menu-text">新闻文章发布</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sourcelist.html">
+                                    <span class="menu-text">新闻订单列表</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="sourceold.html">
+                                    <span class="menu-text">已发布新闻</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- /Sidebar Menu -->
+            </div>
+            <!-- /Page Sidebar -->
+            <!-- Page Content -->
+            <div class="page-content">
+                    <!-- Navbar -->
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="navbar-container">
+                <div class="navbar-header pull-right">
+                    <div class="navbar-account">
+                        <ul class="account-area">
+                            <li>
+                                <a class="wave in dropdown-toggle" data-toggle="dropdown" title="Help" href="#">
+                                    <i class="icon fa fa-envelope"></i>
+                                    <span class="badge">3</span>
+                                </a>
+                                <!--Messages Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-messages">
+                                    <li>
+                                        <a href="#">
+                                            <img src="__ADMIN__/img/avatars/divyia.jpg" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    传酷科技
+                                                </span>
+                                                <span class="message-time">
+                                                    20分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    购买网站模板
+                                                </span>
+                                                <span class="message-body">
+                                                   XX主题模板
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="__ADMIN__/img/avatars/divyia.jpg" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    传酷科技
+                                                </span>
+                                                <span class="message-time">
+                                                    20分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    购买网站模板
+                                                </span>
+                                                <span class="message-body">
+                                                   XX主题模板
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <img src="__ADMIN__/img/avatars/divyia.jpg" class="message-avatar" alt="Divyia Austin">
+                                            <div class="message">
+                                                <span class="message-sender">
+                                                    传酷科技
+                                                </span>
+                                                <span class="message-time">
+                                                    20分钟前
+                                                </span>
+                                                <span class="message-subject">
+                                                    购买网站模板
+                                                </span>
+                                                <span class="message-body">
+                                                   XX主题模板
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/Messages Dropdown-->
+                            </li>
+                            <li>
+                                <a class="login-area dropdown-toggle" data-toggle="dropdown">
+                                    <div class="avatar" title="View your public profile">
+                                        <img src="__ADMIN__/img/avatars/adam-jansen.jpg">
+                                    </div>
+                                    <section>
+                                        <h2><span class="profile"><span>starwood</span></span></h2>
+                                    </section>
+                                </a>
+                                <!--Login Area Dropdown-->
+                                <ul class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
+                                    <li class="username"><a>starwood</a></li>
+                                    <li class="email"><a>starwood@163.com</a></li>
+                                    <!--Avatar Area-->
+                                    <li class="edit">
+                                        <a href="profile.html" class="pull-left">介绍</a>
+                                        <a href="#" class="pull-right">设置</a>
+                                    </li>
+                                    <!--Theme Selector Area-->
+                                    <!--/Theme Selector Area-->
+                                    <li class="dropdown-footer">
+                                        <a href="login.html">
+                                            注销
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!--/Login Area Dropdown-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /Account Area and Settings -->
+            </div>
+        </div>
+    </div>
+    <!-- /Navbar -->
+                <!-- Page Breadcrumb -->
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="active">控制台</li>
+                    </ul>
+                </div>
+                <!-- /Page Breadcrumb -->
+                <!-- Page Header -->
+                <div class="page-header position-relative">
+                    <div class="header-title">
+                        <h1>
+                            控制台
+                        </h1>
+                    </div>
+                    <!--Header Buttons-->
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                    <!--Header Buttons End-->
+                </div>
+                <!-- /Page Header -->
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="databox radius-bordered databox-shadowed databox-graded">
+                                        <div class="databox-left bg-themesecondary">
+                                            <div class="databox-piechart">
+                                                <div data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="50" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)"><span class="white font-90">50%</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="databox-right">
+                                            <span class="databox-number themesecondary">14</span>
+                                            <div class="databox-text darkgray">今日待处理的订单</div>
+                                            <div class="databox-stat themesecondary radius-bordered">
+                                                <i class="stat-icon icon-lg fa fa-tasks"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="databox radius-bordered databox-shadowed databox-graded">
+                                        <div class="databox-left bg-themethirdcolor">
+                                            <div class="databox-piechart">
+                                                <div data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="15" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.2)"><span class="white font-90">15%</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="databox-right">
+                                            <span class="databox-number themethirdcolor">10</span>
+                                            <div class="databox-text darkgray">今日待回复的留言</div>
+                                            <div class="databox-stat themethirdcolor radius-bordered">
+                                                <i class="stat-icon  icon-lg fa fa-envelope-o"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="databox radius-bordered databox-shadowed databox-graded">
+                                        <div class="databox-left bg-themeprimary">
+                                            <div class="databox-piechart">
+                                                <div id="users-pie" data-toggle="easypiechart" class="easyPieChart" data-barcolor="#fff" data-linecap="butt" data-percent="76" data-animate="500" data-linewidth="3" data-size="47" data-trackcolor="rgba(255,255,255,0.1)"><span class="white font-90">76%</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="databox-right">
+                                            <span class="databox-number themeprimary">98</span>
+                                            <div class="databox-text darkgray">新注册用户</div>
+                                            <div class="databox-state bg-themeprimary">
+                                                <i class="fa fa-check"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                                    <div class="databox radius-bordered databox-shadowed databox-graded">
+                                        <div class="databox-left no-padding bordered-left-2 bordered-palegreen">
+                                            <img src="__ADMIN__/img/avatars/John-Smith.jpg" style="width:65px; height:65px;">
+                                        </div>
+                                        <div class="databox-right padding-top-20">
+                                            <div class="databox-stat palegreen">
+                                                <i class="stat-icon icon-xlg fa fa-phone"></i>
+                                            </div>
+                                            <div class="databox-text darkgray">传酷科技</div>
+                                            <div class="databox-text darkgray">本月经销商冠军</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="widget">
+                                        <div class="widget-header bordered-bottom bordered-themesecondary">
+                                            <i class="widget-icon fa fa-tags themesecondary"></i>
+                                            <span class="widget-caption themesecondary">销售记录</span>
+                                        </div>
+                                        <!--Widget Header-->
+                                        <div class="widget-body">
+                                            <div class="widget-main no-padding">
+                                                <div class="tickets-container">
+                                                    <ul class="tickets-list">
+                                                        <li class="ticket-item">
+                                                            <div class="row">
+                                                                <div class="ticket-user col-lg-6 col-sm-12">
+                                                                    <img src="__ADMIN__/img/avatars/adam-jansen.jpg" class="user-avatar">
+                                                                    <span class="user-name">传酷科技</span>
+                                                                    <span class="user-at">--</span>
+                                                                    <span class="user-company">上海</span>
+                                                                </div>
+                                                                <div class="ticket-time  col-lg-4 col-sm-6 col-xs-12">
+                                                                    <div class="divider hidden-md hidden-sm hidden-xs"></div>
+                                                                    <i class="fa fa-clock-o"></i>
+                                                                    <span class="time">1 小时前</span>
+                                                                </div>
+                                                                <div class="ticket-type  col-lg-2 col-sm-6 col-xs-12">
+                                                                    <span class="divider hidden-xs"></span>
+                                                                    <span class="type">预付费</span>
+                                                                </div>
+                                                                <div class="ticket-state bg-palegreen">
+                                                                    <i class="fa fa-check"></i>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="ticket-item">
+                                                            <div class="row">
+                                                                <div class="ticket-user col-lg-6 col-sm-12">
+                                                                    <img src="__ADMIN__/img/avatars/divyia.jpg" class="user-avatar">
+                                                                    <span class="user-name">有赞</span>
+                                                                    <span class="user-at">--</span>
+                                                                    <span class="user-company">北京</span>
+                                                                </div>
+                                                                <div class="ticket-time  col-lg-4 col-sm-6 col-xs-12">
+                                                                    <div class="divider hidden-md hidden-sm hidden-xs"></div>
+                                                                    <i class="fa fa-clock-o"></i>
+                                                                    <span class="time">3 小时前</span>
+                                                                </div>
+                                                                <div class="ticket-type  col-lg-2 col-sm-6 col-xs-12">
+                                                                    <span class="divider hidden-xs"></span>
+                                                                    <span class="type">购买模板</span>
+                                                                </div>
+                                                                <div class="ticket-state bg-palegreen">
+                                                                    <i class="fa fa-check"></i>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li class="ticket-item">
+                                                            <div class="row">
+                                                                <div class="ticket-user col-lg-6 col-sm-12">
+                                                                    <img src="__ADMIN__/img/avatars/Matt-Cheuvront.jpg" class="user-avatar">
+                                                                    <span class="user-name">Nicolai Larson</span>
+                                                                    <span class="user-at">at</span>
+                                                                    <span class="user-company">USA</span>
+                                                                </div>
+                                                                <div class="ticket-time  col-lg-4 col-sm-6 col-xs-12">
+                                                                    <div class="divider hidden-md hidden-sm hidden-xs"></div>
+                                                                    <i class="fa fa-clock-o"></i>
+                                                                    <span class="time">18 Hours Ago</span>
+                                                                </div>
+                                                                <div class="ticket-type  col-lg-2 col-sm-6 col-xs-12">
+                                                                    <span class="divider hidden-xs"></span>
+                                                                    <span class="type">NEWS</span>
+                                                                </div>
+                                                                <div class="ticket-state bg-darkorange">
+                                                                    <i class="fa fa-times"></i>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="orders-container">
+                                <div class="orders-header">
+                                    <h6>最新订单</h6>
+                                </div>
+                                <ul class="orders-list">
+                                    <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
+                                                <div class="item-booker">传酷科技</div>
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>10 分钟前</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">&#65509;</span>
+                                                    <span class="price">400</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="item-more" href="">
+                                            <i></i>
+                                        </a>
+                                    </li>
+                                    <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
+                                                <div class="item-booker">传酷科技</div>
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>15 分钟前</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">&#65509;</span>
+                                                    <span class="price">400</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="item-more" href="">
+                                            <i></i>
+                                        </a>
+                                    </li>
+                                    <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
+                                                <div class="item-booker">传酷科技</div>
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>25 分钟前</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">&#65509;</span>
+                                                    <span class="price">400</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="item-more" href="">
+                                            <i></i>
+                                        </a>
+                                    </li>
+                                    <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
+                                                <div class="item-booker">传酷科技</div>
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>40 分钟前</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">&#65509;</span>
+                                                    <span class="price">400</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="item-more" href="">
+                                            <i></i>
+                                        </a>
+                                    </li>
+                                    <li class="order-item">
+                                        <div class="row">
+                                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 item-left">
+                                                <div class="item-booker">传酷科技</div>
+                                                <div class="item-time">
+                                                    <i class="fa fa-calendar"></i>
+                                                    <span>2 小时前</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 item-right">
+                                                <div class="item-price">
+                                                    <span class="currency">&#65509;</span>
+                                                    <span class="price">400</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="item-more" href="">
+                                            <i></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <div class="orders-footer">
+                                    <a class="show-all" href=""><i class="fa fa-angle-down"></i> 显示全部</a>
+                                    <div class="help">
+                                        <a href=""><i class="fa fa-question"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+            <!-- /Page Content -->
+        </div>
+        <!-- /Page Container -->
+        <!-- Main Container -->
+    </div>
+    <!--Basic Scripts-->
+    <script src="__ADMIN__/js/jquery-2.0.3.min.js"></script>
+    <script src="__ADMIN__/js/bootstrap.min.js"></script>
+    <!--Beyond Scripts-->
+    <script src="__ADMIN__/js/beyond.min.js"></script>
+    <!--Page Related Scripts-->
+    <!--Sparkline Charts Needed Scripts-->
+    <script src="__ADMIN__/js/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="__ADMIN__/js/charts/sparkline/sparkline-init.js"></script>
+    <!--Easy Pie Charts Needed Scripts-->
+    <script src="__ADMIN__/js/charts/easypiechart/jquery.easypiechart.js"></script>
+    <script src="__ADMIN__/js/charts/easypiechart/easypiechart-init.js"></script>
+    <!--Flot Charts Needed Scripts-->
+    <script src="__ADMIN__/js/charts/flot/jquery.flot.js"></script>
+    <script src="__ADMIN__/js/charts/flot/jquery.flot.resize.js"></script>
+    <script src="__ADMIN__/js/charts/flot/jquery.flot.pie.js"></script>
+    <script src="__ADMIN__/js/charts/flot/jquery.flot.tooltip.js"></script>
+    <script src="__ADMIN__/js/charts/flot/jquery.flot.orderBars.js"></script>
+    <script>
+    // If you want to draw your charts with Theme colors you must run initiating charts after that current skin is loaded
+    $(window).bind("load", function() {
+
+        /*Sets Themed Colors Based on Themes*/
+        themeprimary = getThemeColorFromCss('themeprimary');
+        themesecondary = getThemeColorFromCss('themesecondary');
+        themethirdcolor = getThemeColorFromCss('themethirdcolor');
+        themefourthcolor = getThemeColorFromCss('themefourthcolor');
+        themefifthcolor = getThemeColorFromCss('themefifthcolor');
+
+        //Sets The Hidden Chart Width
+        $('#dashboard-bandwidth-chart')
+            .data('width', $('.box-tabbs')
+                .width() - 20);
+
+        //-------------------------Visitor Sources Pie Chart----------------------------------------//
+        var data = [{
+            data: [
+                [1, 21]
+            ],
+            color: '#fb6e52'
+        }, {
+            data: [
+                [1, 12]
+            ],
+            color: '#e75b8d'
+        }, {
+            data: [
+                [1, 11]
+            ],
+            color: '#a0d468'
+        }, {
+            data: [
+                [1, 10]
+            ],
+            color: '#ffce55'
+        }, {
+            data: [
+                [1, 46]
+            ],
+            color: '#5db2ff'
+        }];
+        var placeholder = $("#dashboard-pie-chart-sources");
+        placeholder.unbind();
+
+        $.plot(placeholder, data, {
+            series: {
+                pie: {
+                    innerRadius: 0.45,
+                    show: true,
+                    stroke: {
+                        width: 4
+                    }
+                }
+            }
+        });
+
+        //------------------------------Visit Chart------------------------------------------------//
+        var data2 = [{
+            color: themesecondary,
+            label: "Direct Visits",
+            data: [
+                [3, 2],
+                [4, 5],
+                [5, 4],
+                [6, 11],
+                [7, 12],
+                [8, 11],
+                [9, 8],
+                [10, 14],
+                [11, 12],
+                [12, 16],
+                [13, 9],
+                [14, 10],
+                [15, 14],
+                [16, 15],
+                [17, 9]
+            ],
+
+            lines: {
+                show: true,
+                fill: true,
+                lineWidth: .1,
+                fillColor: {
+                    colors: [{
+                        opacity: 0
+                    }, {
+                        opacity: 0.4
+                    }]
+                }
+            },
+            points: {
+                show: false
+            },
+            shadowSize: 0
+        }, {
+            color: themeprimary,
+            label: "Referral Visits",
+            data: [
+                [3, 10],
+                [4, 13],
+                [5, 12],
+                [6, 16],
+                [7, 19],
+                [8, 19],
+                [9, 24],
+                [10, 19],
+                [11, 18],
+                [12, 21],
+                [13, 17],
+                [14, 14],
+                [15, 12],
+                [16, 14],
+                [17, 15]
+            ],
+            bars: {
+                order: 1,
+                show: true,
+                borderWidth: 0,
+                barWidth: 0.4,
+                lineWidth: .5,
+                fillColor: {
+                    colors: [{
+                        opacity: 0.4
+                    }, {
+                        opacity: 1
+                    }]
+                }
+            }
+        }, {
+            color: themethirdcolor,
+            label: "Search Engines",
+            data: [
+                [3, 14],
+                [4, 11],
+                [5, 10],
+                [6, 9],
+                [7, 5],
+                [8, 8],
+                [9, 5],
+                [10, 6],
+                [11, 4],
+                [12, 7],
+                [13, 4],
+                [14, 3],
+                [15, 4],
+                [16, 6],
+                [17, 4]
+            ],
+            lines: {
+                show: true,
+                fill: false,
+                fillColor: {
+                    colors: [{
+                        opacity: 0.3
+                    }, {
+                        opacity: 0
+                    }]
+                }
+            },
+            points: {
+                show: true
+            }
+        }];
+        var options = {
+            legend: {
+                show: false
+            },
+            xaxis: {
+                tickDecimals: 0,
+                color: '#f3f3f3'
+            },
+            yaxis: {
+                min: 0,
+                color: '#f3f3f3',
+                tickFormatter: function(val, axis) {
+                    return "";
+                },
+            },
+            grid: {
+                hoverable: true,
+                clickable: false,
+                borderWidth: 0,
+                aboveData: false,
+                color: '#fbfbfb'
+
+            },
+            tooltip: true,
+            tooltipOpts: {
+                defaultTheme: false,
+                content: " <b>%x May</b> , <b>%s</b> : <span>%y</span>",
+            }
+        };
+        var placeholder = $("#dashboard-chart-visits");
+        var plot = $.plot(placeholder, data2, options);
+
+        //------------------------------Real-Time Chart-------------------------------------------//
+        var data = [],
+            totalPoints = 300;
+
+        function getRandomData() {
+
+            if (data.length > 0)
+                data = data.slice(1);
+
+            // Do a random walk
+
+            while (data.length < totalPoints) {
+
+                var prev = data.length > 0 ? data[data.length - 1] : 50,
+                    y = prev + Math.random() * 10 - 5;
+
+                if (y < 0) {
+                    y = 0;
+                } else if (y > 100) {
+                    y = 100;
+                }
+
+                data.push(y);
+            }
+
+            // Zip the generated y values with the x values
+
+            var res = [];
+            for (var i = 0; i < data.length; ++i) {
+                res.push([i, data[i]]);
+            }
+
+            return res;
+        }
+        // Set up the control widget
+        var updateInterval = 100;
+        var plot = $.plot("#dashboard-chart-realtime", [getRandomData()], {
+            yaxis: {
+                color: '#f3f3f3',
+                min: 0,
+                max: 100,
+                tickFormatter: function(val, axis) {
+                    return "";
+                }
+            },
+            xaxis: {
+                color: '#f3f3f3',
+                min: 0,
+                max: 100,
+                tickFormatter: function(val, axis) {
+                    return "";
+                }
+            },
+            colors: [themeprimary],
+            series: {
+                lines: {
+                    lineWidth: 0,
+                    fill: true,
+                    fillColor: {
+                        colors: [{
+                            opacity: 0.5
+                        }, {
+                            opacity: 0
+                        }]
+                    },
+                    steps: false
+                },
+                shadowSize: 0
+            },
+            grid: {
+                hoverable: true,
+                clickable: false,
+                borderWidth: 0,
+                aboveData: false
+            }
+        });
+
+        function update() {
+
+            plot.setData([getRandomData()]);
+
+            plot.draw();
+            setTimeout(update, updateInterval);
+        }
+        update();
+
+
+        //-------------------------Initiates Easy Pie Chart instances in page--------------------//
+        InitiateEasyPieChart.init();
+
+        //-------------------------Initiates Sparkline Chart instances in page------------------//
+        InitiateSparklineCharts.init();
+    });
+    </script>
+</body>
+<!--  /Body -->
+
+</html>

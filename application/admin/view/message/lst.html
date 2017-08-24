@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dashboard</title>
+    {include file='public/meta' /}
+</head>
+
+<body>
+    {include file='public/loading' /} {include file='public/navbar2'/}
+    <div class="main-container container-fluid">
+        <div class="page-container">
+            {include file='public/msgmenu' /}
+            <div class="page-content">
+                <div class="page-breadcrumbs">
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="fa fa-home"></i>
+                            <a href="{:url('index/index')}">Home</a>
+                        </li>
+                        <li class="active">用户订单列表</li>
+                    </ul>
+                    <div class="header-buttons">
+                        <a class="sidebar-toggler" href="#">
+                            <i class="fa fa-arrows-h"></i>
+                        </a>
+                        <a class="refresh" id="refresh-toggler" href="">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <a class="fullscreen" id="fullscreen-toggler" href="#">
+                            <i class="glyphicon glyphicon-fullscreen"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Page Body -->
+                <div class="page-body">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-12">
+                            <div class="well with-header with-footer">
+                                <div class="header bg-palegreen">消息列表</div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-sm-12 col-xs-12">
+                                        <div class="widget">
+                                            <div class="mail-container">
+                                                <div class="mail-header text-right" style="margin-left:0;padding-top:5px;">
+                                                    <a href="{:url('message/add')}" class="btn btn-default btn-sm shiny">发送</a>
+                                                    <a href="javascript:void(0);" class="btn btn-primary btn-sm shiny">编辑</a>
+                                                    <a href="javascript:void(0);" class="btn btn-danger btn-sm shiny">删除</a>
+                                                </div>
+                                                <div class="mail-body" style="margin-left:0">
+                                                    <ul class="mail-list">
+                                                        <li class="list-item unread">
+                                                            <div class="item-check">
+                                                                <label>
+                                                                    <input type="checkbox"> <span class="text"></span></label>
+                                                            </div>
+                                                            <div class="item-star"><a href="#"><i class="fa fa-star-o"></i></a></div>
+                                                            <div class="item-sender"><a href="{:url('message/detail')}" class="col-name">传酷科技</a></div>
+                                                            <div class="item-subject"><span class="label label-palegreen">商务</span> <a href="{:url('message/detail')}">关于代理的常见问题有哪些？</a></div>
+                                                            <div class="item-options"><a href="{:url('message/detail')}"><i class="fa fa-paperclip"></i></a></div>
+                                                            <div class="item-time">Today, 13:52</div>
+                                                        </li>
+                                                        <li class="list-item unread">
+                                                            <div class="item-check">
+                                                                <label>
+                                                                    <input type="checkbox"> <span class="text"></span></label>
+                                                            </div>
+                                                            <div class="item-star"><a href="#"><i class="fa fa-star-o"></i></a></div>
+                                                            <div class="item-sender"><a href="{:url('message/detail')}" class="col-name">传酷科技</a></div>
+                                                            <div class="item-subject"><span class="label label-palegreen">商务</span> <a href="{:url('message/detail')}">关于代理的常见问题有哪些？</a></div>
+                                                            <div class="item-options"><a href="{:url('message/detail')}"><i class="fa fa-paperclip"></i></a></div>
+                                                            <div class="item-time">Today, 13:52</div>
+                                                        </li>
+                                                        <li class="list-item unread">
+                                                            <div class="item-check">
+                                                                <label>
+                                                                    <input type="checkbox"> <span class="text"></span></label>
+                                                            </div>
+                                                            <div class="item-star"><a href="#"><i class="fa fa-star-o"></i></a></div>
+                                                            <div class="item-sender"><a href="{:url('message/detail')}" class="col-name">传酷科技</a></div>
+                                                            <div class="item-subject"><span class="label label-palegreen">商务</span> <a href="{:url('message/detail')}">关于代理的常见问题有哪些？</a></div>
+                                                            <div class="item-options"><a href="{:url('message/detail')}"><i class="fa fa-paperclip"></i></a></div>
+                                                            <div class="item-time">Today, 13:52</div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row DTTTFooter">
+                                    <div class="col-sm-12">
+                                        <div class="dataTables_paginate paging_bootstrap text-right" id="simpledatatable_paginate">
+                                            <ul class="pagination">
+                                                <li class="prev disabled"><a href="#">Prev</a></li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li class="next"><a href="#">Next</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Page Body -->
+            </div>
+        </div>
+    </div>
+    {include file='public/footer' /}
+    <script>
+    $(window).bind("load", function() {
+        InitiateEasyPieChart.init();
+        InitiateChartJS.init();
+    });
+    </script>
+</body>
+<!--  /Body -->
+
+</html>

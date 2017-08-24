@@ -1,0 +1,261 @@
+<!-- Page Sidebar -->
+<div class="page-sidebar" id="sidebar">
+    <!-- /Page Sidebar Header -->
+    <div class="indexlogo">
+        <img src="__ADMIN__/images/indexlogo.png" alt="">
+    </div>
+    <!-- Sidebar Menu -->
+    <ul class="nav sidebar-menu">
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 账户管理 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('acount/detail')}">
+                        <span class="menu-text"> <i class="fa fa-list"></i>账户信息</span>
+                        <p>账户基本信息</p>
+                    </a>
+                </li><li>
+                    <a href="{:url('acount/files')}">
+                        <span class="menu-text"> <i class="fa fa-list"></i>代理资料</span>
+                        <p>账户基本信息</p>
+                    </a>
+                </li><li>
+                    <a href="{:url('acount/pay')}">
+                        <span class="menu-text"> <i class="fa fa-list"></i>款项充值</span>
+                        <p>账户基本信息</p>
+                    </a>
+                </li><li>
+                    <a href="{:url('acount/record')}">
+                        <span class="menu-text"> <i class="fa fa-list"></i>重置记录</span>
+                        <p>账户基本信息</p>
+                    </a>
+                </li><li>
+                    <a href="{:url('acount/edit')}">
+                        <span class="menu-text"> <i class="fa fa-list"></i>账号修改</span>
+                        <p>账户基本信息</p>
+                    </a>
+                </li>
+          
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 代理商管理 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('agent/lst')}">
+                        <span class="menu-text"> <i class="fa fa-list"></i>代理商列表</span>
+                        <p>代理商基本信息展示，如：代理商等级，到期时间，客户数量</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('agent/add')}">
+                        <span class="menu-text"> <i class="fa fa-edit"></i>代理商添加</span>
+                        <p>代理商基本信息添加</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('agent/orderlst')}">
+                        <span class="menu-text"> <i class="fa fa-list-ol"></i>代理商订单列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('agent/buyrecord')}">
+                        <span class="menu-text"> <i class="fa fa-money"></i>代理商消费记录</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('agent/upload')}">
+                        <span class="menu-text"> <i class="fa fa-upload"></i>代理后台文档上传</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="databoxes.html" class="menu-dropdown">
+                <span class="menu-text"> 客户管理 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('user/lst')}">
+                        <span class="menu-text">客户列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('user/add')}">
+                        <span class="menu-text">客户添加</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('user/orderlst')}">
+                        <span class="menu-text">客户订单列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('user/copy')}">
+                        <span class="menu-text">复制客户产品</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+       
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 官网设置 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('set/all')}">
+                        <span class="menu-text">全站设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/contact')}">
+                        <span class="menu-text">联系方式</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/kefu')}">
+                        <span class="menu-text">客服设置</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/about')}">
+                        <span class="menu-text">关于我们</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/items')}">
+                        <span class="menu-text">服务条款</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/footinfo')}">
+                        <span class="menu-text">底部信息</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/paytype')}">
+                        <span class="menu-text">支付方式</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/tongji')}">
+                        <span class="menu-text">统计代码</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('set/plug')}">
+                        <span class="menu-text">插件代码</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!--Tables-->
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 新闻动态 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('news/lst')}">
+                        <span class="menu-text">新闻列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('news/add')}">
+                        <span class="menu-text">添加新闻</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 消息推送 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('message/lst')}">
+                        <span class="menu-text">消息列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('message/add')}">
+                        <span class="menu-text">发送消息</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 管理员 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('manage/lst')}">
+                        <span class="menu-text">管理员列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('manage/add')}">
+                        <span class="menu-text">管理员添加</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 新闻源 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('source/lst')}">
+                        <span class="menu-text">发布列表</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('source/add')}">
+                        <span class="menu-text">添加新闻</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{:url('source/sourcelst')}">
+                        <span class="menu-text">新闻源平台</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="{:url('source/orderlst')}">
+                        <span class="menu-text">订单列表</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="menu-dropdown">
+                <span class="menu-text"> 系统设置 </span>
+                <i class="menu-expand"></i>
+            </a>
+            <ul class="submenu">
+                <li>
+                    <a href="{:url('conf/###')}">
+                        <span class="menu-text">备用</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- /Sidebar Menu -->
+</div>
+<!-- /Page Sidebar -->
