@@ -1,0 +1,124 @@
+<?php
+namespace app\admin\controller;
+use app\admin\model\AuthRule as AuthRuleModel;
+use app\admin\controller\Common;
+class AuthRule extends Common
+{
+
+    public function lst(){
+        $authRule=new AuthRuleModel();
+        //栏目排序功能
+        if(request()->isPost()){
+            $sorts=input('post.');
+            foreach ($sorts as $k => $v) {
+                $authRule->update(['id'=>$k,'sort'=>$v]);
+            }
+            $this->success('更新排序成功！',url('lst'));
+            return;
+        }
+        //排序展示，模型里面的authruletree方法
+        $authRuleRes=$authRule->authRuleTree();
+
+        $this->assign('authRuleRes',$authRuleRes);
+        return view();
+    }
+
+    public function add(){
+        if(request()->isPost()){
+            $data=input('post.');
+            //$plevel=db('auth_rule')->where('id',$data['pid'])->field('level')->find();
+            $plevel=db('auth_rule')->field('level')->find(input('pid'));
+            if($plevel){
+                $data['level']=$plevel['level']+1;
+            }else{
+               $data['level']=0; 
+            }
+
+
+            $add=db('auth_rule')->insert($data);
+            if($add){
+                $this->success('添加权限成功！',url('lst'));
+            }else{
+                $this->error('添加权限失败！');
+            }
+            return;
+        }
+        //栏目树
+        $authRule=new AuthRuleModel();
+        $authRuleRes=$authRule->authRuleTree();
+        $this->assign('authRuleRes',$authRuleRes);
+        return view();
+    }
+
+    public function edit(){
+        if(request()->isPost()){
+            $data=input('post.');
+            //$plevel=db('auth_rule')->where('id',$data['pid'])->field('level')->find();
+            $plevel=db('auth_rule')->field('level')->find(input('pid'));
+            //获取到上级权限后，当前的权限等级加1
+            //如果没有上级权限，那么当前权限为等级0，顶级权限
+            if($plevel){
+                $data['level']=$plevel['level']+1;
+            }else{
+               $data['level']=0; 
+            }
+            $save=db('auth_rule')->update($data);
+            if($save!==false){
+                $this->success('修改权限成功！',url('lst'));
+            }else{
+                $this->error('修改权限失败！');
+            }
+            return;
+        }
+        $authRule=new AuthRuleModel();
+        //权限树
+        $authRuleRes=$authRule->authRuleTree();
+        //当前id的信息
+        $authRules=$authRule->find(input('id'));
+        $this->assign(array(
+            'authRuleRes'=>$authRuleRes,
+            'authRules'=>$authRules,
+            ));
+        return view();
+    }
+
+
+    public function del(){
+        $authRule=new AuthRuleModel();
+        //方法参考栏目cate的多级删除
+        $authRule->getparentid(input('id'));
+        //所有子栏目id
+        $authRuleIds=$authRule->getchilrenid(input('id'));
+        $authRuleIds[]=input('id');
+        $del= AuthRuleModel::destroy($authRuleIds);
+        if($del){
+            $this->success('删除权限成功！',url('lst'));
+        }else{
+            $this->error('删除权限失败！');
+        }
+    }
+
+
+
+    
+    
+
+
+
+
+   
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+}
