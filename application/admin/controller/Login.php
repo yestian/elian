@@ -14,6 +14,8 @@ class Login extends Controller{
 			$admin=new Admin();
 			$loginnum=$admin->login($data);
 			if($loginnum==3){
+				
+				//session已在model里面保存，跳转到后台首页
 				$this->success('登录成功！','index/index');
 			}else{
 				$this->error('用户名或密码错误!');
