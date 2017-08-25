@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <title>后台</title>
     {include file='public/meta'/}
-
 </head>
 
 <body>
-    <div id="loading-mask">
+    <!--div id="loading-mask">
         <div class="animation">
             <div></div>
         </div>
@@ -17,7 +16,7 @@
     </div>
     <div id="loader" class="gradient">
         <div class="sphere"><img src="__ADMIN__/images/1x1.gif" alt="" /></div>
-    </div>
+    </div-->
     <div class="wrapper indexwrapper">
         <div class="row index">
             <div class="sidebar col-md-2 pageheight">
@@ -101,46 +100,42 @@
     </div>
     <!--js文件-->
     {include file='public/footer'/}
+    <!--页面加载效果-->
     <script type='text/javascript' src='__ADMIN__/js/logo-plugins.js'></script>
     <script type='text/javascript' src='__ADMIN__/js/loading.js'></script>
+    <!--页面加载效果 end-->
+
     <script>
     //二级栏目点击效果
     $(function() {
         $(".submenu li a").click(function() {
-            $("body").addClass("home");
-           
-            $(".home").css({
-                'background': "url(__ADMIN__/images/agentlist.jpg) 0 0 no-repeat",
-                "background-size": 'cover'
+            layer.open({
+                type: 2,
+                offset: [0, '27%'],
+                title: false,
+                closeBtn: 0,
+                skin: 'dpage',
+                area: ['auto', $(window).height()],
+                fixed: false,
+                maxmin: true,
+                content: $(this).attr('href')
             });
-            $("body").append("<div class='istransit'><img src='__ADMIN__/images/list1-1.jpg'></div>");
-            //url=$(this).attr('href');
-            var times = setTimeout(function() {
-                $(".indexwrapper").load("{:url('agent/lst')}", function(responseTxt, statusTxt, xhr) {
-                    if (statusTxt == "success") {
-                        $(".istransit").fadeOut(1000);
-                    }
-                });
-            }, 2500);
             return false;
         });
-        //图片点击，同样的效果
         $(".section img").click(function() {
-            $("body").addClass("home");
-            $(".home").css({
-                'background': "url(__ADMIN__/images/agentlist.jpg) 0 0 no-repeat",
-                "background-size": 'cover'
+            layer.open({
+                type: 2,
+                offset: [0, '27%'],
+                title: false,
+                closeBtn: 0,
+                skin: 'dpage',
+                area: ['auto', $(window).height()],
+                fixed: false,
+                maxmin: true,
+                content: "{:url('agent/lst')}"
             });
-            $("body").append("<div class='istransit'><img src='__ADMIN__/images/list1-1.jpg'></div>");
-            var times = setTimeout(function() {
-                $(".indexwrapper").load("{:url('agent/lst')}", function(responseTxt, statusTxt, xhr) {
-                    if (statusTxt == "success") {
-                        $(".istransit").fadeOut(1000);
-                    }
-                });
-            }, 2500);
-            return false;
         });
+        
     });
     </script>
     <script>
