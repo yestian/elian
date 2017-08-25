@@ -62,7 +62,7 @@ class Admin extends Model{
 		if($admin){
 			if($admin['password']==md5($data['password'])){
 				//写入登录信息
-				$logrecord = new Logrecord([
+				$logrecord = new LoginRecord([
 				    'uid'  =>  $admin['id'],
 				    'datetime' =>  time(),
 				    'ip'=>request()->ip()
