@@ -1,158 +1,143 @@
-﻿<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <title>Dashboard</title>
-    {include file='public/meta' /}
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
 </head>
 
 <body>
-    {include file='public/loading' /} {include file='public/navbar2'/}
-    <div class="main-container container-fluid">
-        <div class="page-container">
-            {include file='public/agentmenu' /}
-            <div class="page-content">
-                <div class="page-breadcrumbs">
-                    <ul class="breadcrumb">
-                        <li>
-                            <i class="fa fa-home"></i>
-                            <a href="{:url('index/index')}">Home</a>
-                        </li>
-                        <li class="active">代理商列表</li>
-                    </ul>
-                    <div class="header-buttons">
-                        <a class="sidebar-toggler" href="#">
-                            <i class="fa fa-arrows-h"></i>
-                        </a>
-                        <a class="refresh" id="refresh-toggler" href="">
-                            <i class="glyphicon glyphicon-refresh"></i>
-                        </a>
-                        <a class="fullscreen" id="fullscreen-toggler" href="#">
-                            <i class="glyphicon glyphicon-fullscreen"></i>
-                        </a>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='agent/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 添加代理商
                     </div>
-                </div>
-                <!-- Page Body -->
-                <div class="page-body">
-                    <div class="row">
-                        <div class="col-lg-12 col-sm-12 col-xs-12">
-                            <div class="widget">
-                                <div class="widget-header bordered-bottom bordered-blue"><span class="widget-caption">代理商添加</span></div>
-                                <div class="widget-body">
-                                    <div id="horizontal-form">
-                                        <form class="form-horizontal" role="form" action="" method="post">
-                                            <div class="form-group">
-                                                <label for="group_id" class="col-sm-2 control-label no-padding-right">代理商类型</label>
-                                                <div class="col-sm-6">
-                                                    <div class="radio" style="float:left;margin-right:10px">
-                                                        <label>
-                                                            <input checked="" name="type" value="1" type="radio"> <span class="text">白金</span></label>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">添加代理商</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <form action="" method='post'>
+                                        <table class="table table-striped table-hover">
+                                            <tr>
+                                                <th>字段</th>
+                                                <th width="40%">值</th>
+                                                <th>备注</th>
+                                            </tr>
+                                            <tr>
+                                                <td>代理商名称</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name="agentname">
+                                                </td>
+                                                <td class="text-muted">3-30个字符</td>
+                                            </tr>
+                                            <tr>
+                                                <td>代理级别</td>
+                                                <td>
+                                                    <select name="level" id="" class="form-control">
+                                                        <option value="0">请选择</option>
+                                                        <option value="4">合伙人</option>
+                                                        <option value="3">皇冠</option>
+                                                        <option value="2">钻石</option>
+                                                        <option value="1">普通</option>
+                                                    </select>
+                                                </td>
+                                                <td class="text-muted">选择代理商级别</td>
+                                            </tr>
+                                            <tr>
+                                                <td>联系人</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='username'>
+                                                </td>
+                                                <td class="text-muted">代理商联系人姓名</td>
+                                            </tr>
+                                            <tr>
+                                                <td>手机号码</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='phone'>
+                                                </td>
+                                                <td class="text-muted">联系手机号码</td>
+                                            </tr>
+                                            <tr>
+                                                <td>座机</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='tel'>
+                                                </td>
+                                                <td class="text-muted">如：00853-63000205</td>
+                                            </tr>
+                                            <tr>
+                                                <td>传真</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='fax'>
+                                                </td>
+                                                <td class="text-muted">如：00853-63000205</td>
+                                            </tr>
+                                            <tr>
+                                                <td>微信号</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='wechat'>
+                                                </td>
+                                                <td class="text-muted">5-30个字符</td>
+                                            </tr>
+                                            <tr>
+                                                <td>qq号码</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='qq'>
+                                                </td>
+                                                <td class="text-muted">数字格式</td>
+                                            </tr>
+                                            <tr>
+                                                <td>联系地址</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='address'>
+                                                </td>
+                                                <td class="text-muted">请填写详细的联系地址</td>
+                                            </tr>
+                                            <tr>
+                                                <td>上级代理商</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='upid'>
+                                                </td>
+                                                <td class="text-muted">如没有，请留空</td>
+                                            </tr>
+                                            <tr>
+                                                <td>代理状态</td>
+                                                <td>
+                                                    <div class="radio radio-info radio-inline">
+                                                        <input type="radio" id="inlineRadio1" value="option1" name="status" checked="">
+                                                        <label for="inlineRadio1"> 开启 </label>
                                                     </div>
-                                                    <div class="radio" style="float:left;margin-right:10px">
-                                                        <label>
-                                                            <input name="type" class="inverted" value="2" type="radio"> <span class="text">钻石</span></label>
+                                                    <div class="radio radio-inline">
+                                                        <input type="radio" id="inlineRadio2" value="option2" name="status">
+                                                        <label for="inlineRadio2"> 关闭 </label>
                                                     </div>
-                                                    <div class="radio" style="float:left;margin-right:10px">
-                                                        <label>
-                                                            <input name="type" class="inverted" value="3" type="radio"> <span class="text">黄金</span></label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">代理商账号</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                <p class="help-block col-sm-4 red">* 必填</p>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">密码</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                <p class="help-block col-sm-4 red">* 必填</p>
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">确认密码</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                <p class="help-block col-sm-4 red">* 必填</p>
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">代理商公司名称</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                <p class="help-block col-sm-4 red">* 必填</p>
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">联系人</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">手机</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">座机</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">QQ</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">wechat</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">其他聊天软件</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">公司地址</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div><div class="form-group">
-                                                <label for="username" class="col-sm-2 control-label no-padding-right">电子邮箱</label>
-                                                <div class="col-sm-3">
-                                                    <input class="form-control" placeholder="" name="catename" type="text">
-                                                </div>
-                                                
-                                            </div>
-                                           
-                                         
-                                            <div class="form-group">
-                                                <div class="col-sm-offset-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-default">保存信息</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <button class="btn btn-primary" type="submit">提交</button>
+                                                </td>
+                                                <td></td>
+                                            </tr>
+                                        </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- /Page Body -->
             </div>
         </div>
     </div>
-    {include file='public/footer' /}
 </body>
-<!--  /Body -->
 
 </html>

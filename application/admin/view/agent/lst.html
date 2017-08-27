@@ -11,60 +11,7 @@
     <div class="wrapper">
         <div class="innerpage pageheight">
             <div class="wrapper container-fluid pageheight">
-                <div class="sidebar2">
-                    <ul>
-                        <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
-                        <li><a href="#"><i class="fa fa-list"></i><span>代理商列表</span></a></li>
-                        <li><a href="#"><i class="fa fa-plus"></i><span>代理商添加</span></a></li>
-                        <li><a href="#"><i class="fa fa-cog"></i><span>官网设置</span></a></li>
-                        <li><a href="#"><i class="fa fa-list"></i><span>新闻动态</span></a></li>
-                    </ul>
-                    <div class="logout">
-                        <img src="__ADMIN__/images/user1.jpg" alt="用户头像">
-                        <a href="#"><span>退出登录</span></a>
-                    </div>
-                </div>
-                <div class="page-summary">
-                    <div class="userinfo">
-                        <img src="__ADMIN__/images/user1.jpg" alt="">
-                        <a href=""><span>jana<br>个人信息</span></a>
-                    </div>
-                    <div class="summary">
-                        <h2>SUMMARY</h2>
-                        <div class="summary-count">
-                            <dl>
-                                <dt>22</dt>
-                                <dd>代理数</dd>
-                            </dl>
-                            <dl>
-                                <dt>88</dt>
-                                <dd>用户数</dd>
-                            </dl>
-                        </div>
-                        <div class="summary-balance">
-                            <dl>
-                                <dt>8888.00</dt>
-                                <dd>账户余额</dd>
-                            </dl>
-                        </div>
-                        <div class="scount">
-                            <div class="heartgroup">
-                                <i class="fa fa-heart"></i>
-                                <i class="fa fa-heartbeat"></i>
-                                <i class="fa fa-heart"></i>
-                            </div>
-                            <dl>
-                                <dt>5555</dt>
-                                <dd>注册用户</dd>
-                            </dl>
-                        </div>
-                        <div class="percentage">
-                            <h2>代理平台销售比</h2>
-                            <h2>平台销售</h2>
-                            <h2>代理销售</h2>
-                        </div>
-                    </div>
-                </div>
+                {include file='agent/menu'/}
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>
@@ -82,38 +29,32 @@
                                             <th>id</th>
                                             <th>名称</th>
                                             <th>等级</th>
-                                            <th>充值总金额</th>
-                                            <th>账户余额</th>
-                                            <th>客户数量</th>
-                                            <th>加盟时间</th>
-                                            <th>到期时间</th>
+                                            <th>总充值</th>
+                                            <th>余额</th>
+                                            <th>代理数</th>
+                                            <th>用户数</th>
+                                            <th>到期</th>
                                             <th>代理状态</th>
                                             <th>操作</th>
                                         </tr>
+                                        {volist name='list' id='vo'}
                                         <tr>
-                                            <td>1</td>
-                                            <td><a href="#">传酷科技</a></td>
-                                            <td>皇冠</td>
-                                            <td>8000.00</td>
-                                            <td>128.00</td>
-                                            <td>188</td>
-                                            <td>2017-5-5</td>
-                                            <td>2018-5-5</td>
-                                            <td>正常使用</td>
+                                            <td>{$vo.id}</td>
+                                            <td><a href="{:url('detail',array('id'=>$vo['id']))}">{$vo.agentname}</a></td>
+                                            <td>{if condition="$vo['level'] eq 0"}无{elseif condition="$vo['level'] eq 1"}普通{elseif condition="$vo['level'] eq 2"}钻石{elseif condition="$vo['level'] eq 3"}皇冠{else/}合伙人{/if}</td>
+                                            <td>{$vo.allpay}</td>
+                                            <td>{$vo.allbuy}</td>
+                                            <td>1111</td>
+                                            <td>{$vo.signtime}</td>
+                                            <td>{$vo.endtime}</td>
+                                            <td>正常</td>
                                             <td><a href="#" class="btn btn-primary btn-sm">编辑</a><a href="#" class="btn btn-danger btn-sm">删除</a></td>
                                         </tr>
+                                        {/volist}
                                     </table>
                                 </div>
                                 <div class="fr">
-                                    <ul class="pagination">
-                                        <li><a href="#">&laquo;</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">&raquo;</a></li>
-                                    </ul>
+                                    {$list->render()}
                                 </div>
                             </div>
                         </div>
