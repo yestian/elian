@@ -15,16 +15,18 @@
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>
-                        <a href="#" class="homelink">首页</a> > 添加代理商
+                        <a href="#" class="homelink">首页</a> > 编辑代理商
                     </div>
                     <div class="body">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h2 class="panel-title">添加代理商</h2>
+                                <h2 class="panel-title">编辑代理商</h2>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <form action="" method='post' enctype="multipart/form-data" class="addagent">
+                                        <input type="hidden" name='id' value='{$getres.id}'>
+                                        <input type="hidden" name='username' value='{$getres.username}'>
                                         <table class="table table-striped table-hover">
                                             <tr>
                                                 <th>字段</th>
@@ -33,19 +35,19 @@
                                             <tr>
                                                 <td>登录用户名 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <input type="text" class="form-control" name="username" datatype="*4-12" errormsg="4-12个字符" placeholder="4-12个字符">
+                                                    {$getres.username}
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>登录密码 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <input type="text" class="form-control" name="password" datatype="*6-30" errormsg="6-30个字符" placeholder="6-30个字符">
+                                                    <input type="text" class="form-control" name="password" datatype="*6-30" errormsg="6-30个字符" value="{$getres.password}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>代理商机构名称 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <input type="text" class="form-control" name="agentname" datatype="*4-30" errormsg="4-30个字符" placeholder="4-30个字符">
+                                                    <input type="text" class="form-control" name="agentname" datatype="*4-30" errormsg="4-30个字符" value="{$getres.agentname}">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -53,79 +55,81 @@
                                                 <td>
                                                     <select name="level" id="" class="form-control" datatype="*">
                                                         <option value>请选择</option>
-                                                        <option value="4">合伙人</option>
-                                                        <option value="3">皇冠</option>
-                                                        <option value="2">钻石</option>
-                                                        <option value="1">普通</option>
-                                                        <option value="0">无</option>
+                                                        <option value="4" {if condition="$getres.level eq 4"}selected{/if}>合伙人</option>
+                                                        <option value="3" {if condition="$getres.level eq 3"}selected{/if}>皇冠</option>
+                                                        <option value="2" {if condition="$getres.level eq 2"}selected{/if}>钻石</option>
+                                                        <option value="1" {if condition="$getres.level eq 1"}selected{/if}>普通</option>
+                                                        <option value="0" {if condition="$getres.level eq 0"}selected{/if}>无</option>
                                                     </select>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>联系人</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='linkman' placeholder="代理商联系人姓名">
+                                                    <input type="text" class="form-control" name='linkman' value="{$getres.linkman}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>手机号码</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='phone' placeholder="联系手机号码">
+                                                    <input type="text" class="form-control" name='phone' value="{$getres.phone}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>座机</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='tel' placeholder="如：00853-63000205">
+                                                    <input type="text" class="form-control" name='tel' value="{$getres.tel}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>传真</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='fax' placeholder="如：00853-63000205">
+                                                    <input type="text" class="form-control" name='fax' value="{$getres.fax}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>微信号</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='wechat' placeholder="5-30个字符">
+                                                    <input type="text" class="form-control" name='wechat' value="{$getres.wechat}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>qq号码</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='qq' placeholder="请输入正确格式的qq号码">
+                                                    <input type="text" class="form-control" name='qq' value="{$getres.qq}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>联系地址</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='address' placeholder="请填写详细的联系地址">
+                                                    <input type="text" class="form-control" name='address' value="{$getres.address}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>上级代理商id</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='upid' placeholder="如没有，请留空">
+                                                    <input type="text" class="form-control" name='upid' value="{$getres.upid}">
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>用户头像</td>
                                                 <td>
-                                                    <input type="file" class="form-control" name='thumb'> <span class="text-muted">尺寸比例为1:1</span>
+                                                    <input type="file" class="form-control" name='thumb'>
+                                                    <img src="{$getres.thumb}" alt="" width="60" height='60'>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>代理状态</td>
                                                 <td>
                                                     <div class="radio radio-info radio-inline">
-                                                        <input type="radio" id="inlineRadio1" value="1" name="status" checked="">
+                                                        <input type="radio" id="inlineRadio1" value="1" name="status" {if condition="$getres.status eq 1"}checked{/if}>
                                                         <label for="inlineRadio1"> 开启 </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" id="inlineRadio2" value="0" name="status">
+                                                        <input type="radio" id="inlineRadio2" value="0" name="status" {if condition="$getres.status eq 0"}checked{/if}>
                                                         <label for="inlineRadio2"> 关闭 </label>
                                                     </div>
+                                                  
                                                 </td>
                                             </tr>
                                             <tr>

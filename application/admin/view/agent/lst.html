@@ -24,31 +24,31 @@
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-bordered table-hover">
+                                    <table class="table table-striped table-bordered table-hover text-center">
                                         <tr>
-                                            <th>id</th>
-                                            <th>名称</th>
-                                            <th>等级</th>
-                                            <th>总充值</th>
-                                            <th>余额</th>
-                                            <th>代理数</th>
-                                            <th>用户数</th>
-                                            <th>到期</th>
-                                            <th>代理状态</th>
+                                            <th><a href="{:url('lst',array('fld'=>'id','way'=>'desc'))}">id <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'username'))}">账号 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'agentname'))}">机构 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'level','way'=>'desc'))}">级别 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'allpay','way'=>'desc'))}">总充值 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'balance','way'=>'desc'))}">余额 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'upidsum','way'=>'desc'))}">下级代理 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'memsum','way'=>'desc'))}">会员 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'status','way'=>'desc'))}">状态 <i class="fa fa-caret-down"></i></a></th>
                                             <th>操作</th>
                                         </tr>
                                         {volist name='list' id='vo'}
                                         <tr>
                                             <td>{$vo.id}</td>
-                                            <td><a href="{:url('detail',array('id'=>$vo['id']))}">{$vo.agentname}</a></td>
+                                            <td>{$vo.username}</td>
+                                            <td>{$vo.agentname}</td>
                                             <td>{if condition="$vo['level'] eq 0"}无{elseif condition="$vo['level'] eq 1"}普通{elseif condition="$vo['level'] eq 2"}钻石{elseif condition="$vo['level'] eq 3"}皇冠{else/}合伙人{/if}</td>
-                                            <td>{$vo.allpay}</td>
-                                            <td>{$vo.allbuy}</td>
-                                            <td>1111</td>
-                                            <td>{$vo.signtime}</td>
-                                            <td>{$vo.endtime}</td>
-                                            <td>正常</td>
-                                            <td><a href="#" class="btn btn-primary btn-sm">编辑</a><a href="#" class="btn btn-danger btn-sm">删除</a></td>
+                                            <td>{if condition="$vo.allpay eq ''"}0{else/}{$vo.allpay}{/if}</td>
+                                            <td>{if condition="$vo.balance eq ''"}0{else/}{$vo.balance}{/if}</td>
+                                            <td>{$vo.upidsum}</td>
+                                            <td>{$vo.memsum}</td>
+                                            <td>{if condition="$vo['status'] eq 0"}关闭{else/}开启{/if}</td>
+                                            <td><a href="{:url('edit',array('id'=>$vo['id']))}" class="btn btn-primary btn-sm">编辑</a><a href="#" class="btn btn-warning btn-sm">充值</a><a href="{:url('detail',array('id'=>$vo['id']))}" class="btn btn-default btn-sm">浏览</a></td>
                                         </tr>
                                         {/volist}
                                     </table>
