@@ -125,8 +125,11 @@ class Admin extends Common{
 	//退出登录
 	//因为只有登录之后，才需要退出，所以这个方法写在管理员类里面，而不是登录注册类
 	public function logout(){
-
 		session(null);
 		$this->success('退出系统成功！','login/index');
+	}
+	//layui弹出后，退出登录，使用js刷新页面
+	public function logout2(){
+		session(null);
 	}
 }

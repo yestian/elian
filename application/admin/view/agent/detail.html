@@ -24,28 +24,97 @@
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
-                                    <table class="table table-striped table-hover">
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <caption class="text-center">代理信息</caption>
                                         <tr>
-                                            <th>字段</th>
+                                            <th width='20%'>字段</th>
                                             <th>值</th>
                                         </tr>
                                         <tr>
-                                            <td>登录用户名 <span class="text-danger">*</span></td>
+                                            <td>登录用户名</td>
                                             <td>
                                                 {$infos.username}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>代理商机构名称 <span class="text-danger">*</span></td>
+                                            <td>代理商机构名称</td>
                                             <td>
                                                 {$infos.agentname}
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>代理级别 <span class="text-danger">*</span></td>
+                                            <td>代理级别</td>
                                             <td>
                                                 {if condition="$infos.level eq 1"}普通{elseif condition="$infos.level eq 2"}钻石{elseif condition="$infos.level eq 3"}皇冠{elseif condition="$infos.level eq 4"}合伙人{else/}无{/if}
                                             </td>
+                                        </tr>
+                                        <tr>
+                                            <td>代理平台二级域名</td>
+                                            <td>
+                                                <a href="http://{$infos.username}.aselian.com" target="_blank">{$infos.username}.aselian.com</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>绑定的正式域名</td>
+                                            <td>
+                                                <a href="http://{$infos.domain}" target="_blank">{$infos.domain}</a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>注册时间</td>
+                                            <td>
+                                                {$infos.signdate|date="Y-m-d H:i:s",###}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>加盟时间</td>
+                                            <td>
+                                                {$infos.agentdate|date="Y-m-d H:i:s",###}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>总充值金额</td>
+                                            <td>
+                                                {$allpay.pays} {if condition="$allpay.pays neq 0"} <a href="#" class="btn btn-info btn-sm">明细</a>{/if}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>总消费金额</td>
+                                            <td>
+                                                {$allbuy.buys} {if condition="$allbuy.buys neq 0"} <a href="#" class="btn btn-info btn-sm">明细</a>{/if}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>上级代理商id</td>
+                                            <td>
+                                                {if condition="$infos.upid eq 0"}无{else/} {$infos.upid}{/if}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>下级代理商</td>
+                                            <td>{if condition="$subnum.upidsum eq 0"}暂无下级代理{else/}数量：{$subnum.upidsum}（{/if} {volist name='subagent' id='vo' key='index'}{if condition="$index neq 1"} | {/if}<a href="{:url('detail',['id'=>$vo['id']])}">{$vo.agentname}</a>{/volist}{if condition="$subnum.upidsum neq 0"}）{/if} {if condition="$subnum.upidsum gt 3"} <a href="{:url('sonlst',['upid'=>$infos['id'],'pid'=>$infos['id']])}" class="btn btn-info btn-sm">more</a>{/if}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>会员列表</td>
+                                            <td>{if condition="$mymem.sums eq 0"}暂无会员{else/}数量：{$mymem.sums}（{/if} {volist name='members' id='vo' key='index'}{if condition="$index neq 1"} | {/if}<a href="{:url('member/detail',['id'=>$vo['id']])}">{$vo.company}</a>{/volist}{if condition="$mymem.sums neq 0"}）{/if} {if condition="$mymem.sums gt 3"} <a href="{:url('member/lst',['aid'=>$infos['id']])}" class="btn btn-info btn-sm">more</a>{/if}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>代理状态</td>
+                                            <td>
+                                                {if condition="$infos.status eq 0"}
+                                                <button class="btn btn-danger btn-sm">关闭</button>{else/}
+                                                <button class="btn btn-success btn-sm">开启</button>{/if}
+                                            </td>
+                                        </tr>
+                                    </table>
+                                   
+                                    <table class="table table-striped table-hover table-bordered">
+                                        <caption class="text-center">联系信息</caption>
+                                        <tr>
+                                            <th width='20%'>字段</th>
+                                            <th>值</th>
                                         </tr>
                                         <tr>
                                             <td>联系人</td>
@@ -90,21 +159,9 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td>上级代理商id</td>
-                                            <td>
-                                                {if condition="$infos.upid eq 0"}无{else/} {$infos.upid}{/if}
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td>用户头像</td>
                                             <td>
                                                 <img src="{$infos.thumb}" alt="用户头像" width='100' height='100'>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>代理状态</td>
-                                            <td>
-                                                {if condition="$infos.status eq 0"}关闭{else/}开启{/if}
                                             </td>
                                         </tr>
                                         <tr>
