@@ -30,16 +30,36 @@ class Agent extends Model{
   		->field('aid,count(id) as today_logins')
   		->whereTime('logintime','today')
   		->buildSql();
+     
+      //代理商销售总额
+      $sum6=db('member_pay a')
+      ->field('b.aid,a.uid,sum(money) as agent_mem_paysum')
+      ->join('member b','a.uid=b.id','right')
+      ->where('aid','neq','0')
+      ->buildSql();
+
+
+       //平台销售总值
+      $sum7=db('member_pay a')
+      ->field('b.aid,a.uid,b.id,sum(money) as company_mem_paysum')
+      ->join('member b','a.uid=b.id','right')
+      ->where('aid','eq','0')
+      ->select();
 
 
 		$res=db('agent a')
-		->field('count(a.id) as agentsum,agentsum2,allpay,agent_member_sum,today_pay,today_logins')
+		->field('count(a.id) as agentsum,agentsum2,allpay,agent_member_sum,today_pay,today_logins,agent_mem_paysum')
 		->join($sum1.'b','a.id=b.aid','left')
 		->join($sum2.'c','a.id=c.aid','left')
 		->join($sum3.'d','a.id=d.aid','left')
 		->join($sum4.'e','a.id=e.aid','left')
 		->join($sum5.'f','a.id=f.aid','left')
+    ->join($sum6.'h','a.id=h.aid','left')
 		->select();
+    //求百分比
+    $res[0]['company_mem_per']=round($sum7[0]['company_mem_paysum']/($sum7[0]['company_mem_paysum']+$res[0]['agent_mem_paysum']),2)*100;
+    $res[0]['agent_mem_per']=100-$res[0]['company_mem_per'];
+
   		return $res[0];
   	}
 }

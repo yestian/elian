@@ -255,6 +255,55 @@ class Agent extends Common{
 			));
 		return view();
 	}
+
+	//代理商加盟文档
+	public function listfile(){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
+
+		//文件列表
+		$list=db('file')->paginate(10);
+		$this->assign('list',$list);
+
+		return view();
+	}
+
+	
+
+	//和file控制器的upload方法一样
+	public function upload(){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
+		//---------------------------------
+		if(request()->isPost()){
+			$data=input('post.');
+			$data['addtime']=time();
+			$file = request()->file('path');
+		    // 移动到框架应用根目录/public/uploads/ 目录下
+		    $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
+		    if($info){
+		    	$doc='/uploads'.'/'.$info->getSavename();
+		    	$ext=$info->getExtension();
+		    	$data['path']=$doc;
+		    	$data['filename']=input('filename').'.'.$ext;
+		    }else{
+		        $this->error($file->getError());
+		    }
+		    $res=db('file')->insert($data);
+		    if($res){
+		    	$this->success('上传成功！','listfile');
+		    }else{
+		    	$this->error('上传失败');
+		    }
+
+		}
+		return view();
+	}
+
+	
+
 }
 
 
