@@ -2,10 +2,30 @@
 namespace app\admin\controller;
 use app\admin\controller\Common;
 use app\admin\model\File as FileModel;
-
+use app\admin\model\Agent as AgentModel;
 class File extends Common{
+	//上传列表
+	public function lst($ctr='Request()->controller()'){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
+		if($ctr=='Agent'){
+			$list=db('file')->where('owner',1)->paginate(10);
+		}else{
+			$list=db('file')->paginate(10);	
+		}
+		$this->assign([
+			'list'=>$list,
+			'ctr'=>$ctr
+			]);
+		return view();
+	}
 	//上传
-	public function upload(){
+	public function upload($ctr='Request()->controller()'){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
+
 		if(request()->isPost()){
 			$data=input('post.');
 			$data['addtime']=time();
@@ -22,12 +42,19 @@ class File extends Common{
 		    }
 		    $res=db('file')->insert($data);
 		    if($res){
-		    	$this->success('上传成功！','listfile');
+		    	//如果控制器来自agent，成功后返回agent
+		    	if($ctr=='Agent'){
+		    		$this->redirect('lst', ['ctr' => $ctr]);
+		    	}else{
+		    		$this->success('上传成功！','lst');
+		    	}
+		    	
 		    }else{
 		    	$this->error('上传失败');
 		    }
 
 		}
+		$this->assign('ctr',$ctr);
 		return view();
 	}
 	//下载

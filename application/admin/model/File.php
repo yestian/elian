@@ -1,6 +1,6 @@
 <?php
 namespace app\admin\model;
 use think\Model;
-class Docs extends Model{
+class File extends Model{
 	
 }

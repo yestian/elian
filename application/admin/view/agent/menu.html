@@ -1,9 +1,12 @@
 <div class="sidebar2">
     <ul>
         <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
-        <li><a href="{:url('lst')}"><i class="fa fa-list"></i><span>代理商列表</span></a></li>
-        <li><a href="{:url('add')}"><i class="fa fa-plus"></i><span>代理商添加</span></a></li>
-        <li><a href="{:url('listfile')}"><i class="fa fa-file-word-o"></i><span>加盟文档</span></a></li>
+        <li><a href="{:url('agent/lst')}"><i class="fa fa-list"></i><span>代理商列表</span></a></li>
+        <li><a href="{:url('agent/add')}"><i class="fa fa-plus"></i><span>代理商添加</span></a></li>
+        <li><a href="{:url('file/lst',array('ctr'=>'Agent'))}"><i class="fa fa-file-word-o"></i><span>加盟文档</span></a></li>
+        <li><a href="{:url('agent_pay/lst')}"><i class="fa fa-money"></i><span>订单列表</span></a></li>
+        <li><a href="{:url('agent_buy/lst')}"><i class="fa fa-cny"></i><span>消费记录</span></a></li>
+        <li><a href="{:url('member/lst',array('ctr'=>'Agent'))}"><i class="fa fa-users"></i><span>会员列表</span></a></li>
         <li><a href="#"><i class="fa fa-cog"></i><span>官网设置</span></a></li>
         <li><a href="#"><i class="fa fa-list"></i><span>新闻动态</span></a></li>
         <li><a href="#"><i class="fa fa-list"></i><span>个人站点</span></a></li>
