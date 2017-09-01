@@ -57,8 +57,21 @@ class Agent extends Model{
     ->join($sum6.'h','a.id=h.aid','left')
 		->select();
     //求百分比
-    $res[0]['company_mem_per']=round($sum7[0]['company_mem_paysum']/($sum7[0]['company_mem_paysum']+$res[0]['agent_mem_paysum']),2)*100;
-    $res[0]['agent_mem_per']=100-$res[0]['company_mem_per'];
+    //初始化，平台会员0充值，代理商会员0充值
+    if($sum7[0]['company_mem_paysum']==0 && $res[0]['agent_mem_paysum']==0){
+      $res[0]['company_mem_per']=0;
+      $res[0]['agent_mem_per']=0;
+    }else if($sum7[0]['company_mem_paysum']==0){
+       $res[0]['company_mem_per']=0;
+       $res[0]['agent_mem_per']=100;
+    }else if($res[0]['agent_mem_paysum']==0){
+      $res[0]['company_mem_per']=100;
+       $res[0]['agent_mem_per']=0;
+    }else{
+        $res[0]['company_mem_per']=round($sum7[0]['company_mem_paysum']/($sum7[0]['company_mem_paysum']+$res[0]['agent_mem_paysum']),2)*100;
+        $res[0]['agent_mem_per']=100-$res[0]['company_mem_per'];
+
+    }
 
   		return $res[0];
   	}

@@ -75,13 +75,13 @@
                                         <tr>
                                             <td>总充值金额</td>
                                             <td>
-                                                {$allpay.pays} {if condition="$allpay.pays neq 0"} <a href="#" class="btn btn-info btn-sm">明细</a>{/if}
+                                                {$allpay.pays} {if condition="$allpay.pays neq 0"} <a href="{:url('agent_pay/lst',array('id'=>$infos['id']))}" class="btn btn-info btn-sm">明细</a>{/if}
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>总消费金额</td>
                                             <td>
-                                                {$allbuy.buys} {if condition="$allbuy.buys neq 0"} <a href="#" class="btn btn-info btn-sm">明细</a>{/if}
+                                                {$allbuy.buys} {if condition="$allbuy.buys neq 0"} <a href="{:url('agent_buy/lst',array('id'=>$infos['id']))}" class="btn btn-info btn-sm">明细</a>{/if}
                                             </td>
                                         </tr>
                                         <tr>
@@ -97,7 +97,7 @@
                                         </tr>
                                         <tr>
                                             <td>会员列表</td>
-                                            <td>{if condition="$mymem.sums eq 0"}暂无会员{else/}数量：{$mymem.sums}（{/if} {volist name='members' id='vo' key='index'}{if condition="$index neq 1"} | {/if}<a href="{:url('member/detail',['id'=>$vo['id']])}">{$vo.company}</a>{/volist}{if condition="$mymem.sums neq 0"}）{/if} {if condition="$mymem.sums gt 3"} <a href="{:url('member/lst',['aid'=>$infos['id']])}" class="btn btn-info btn-sm">more</a>{/if}
+                                            <td>{if condition="$mymem.sums eq 0"}暂无会员{else/}数量：{$mymem.sums}（{/if} {volist name='members' id='vo' key='index'}{if condition="$index neq 1"} | {/if}<a href="{:url('member/detail',['id'=>$vo['id']])}">{$vo.company}</a>{/volist}{if condition="$mymem.sums neq 0"}）{/if} {if condition="$mymem.sums gt 3"} <a href="{:url('member/sublst',['aid'=>$infos['id']])}" class="btn btn-info btn-sm">more</a>{/if}
                                             </td>
                                         </tr>
                                         <tr>

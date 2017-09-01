@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='agent/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 会员详情
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">会员详情</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <form action="" method='post' enctype="multipart/form-data" class="addagent">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <tr>
+                                                <th width='20%'>字段</th>
+                                                <th>值</th>
+                                            </tr>
+                                            <tr>
+                                                <td>登录用户名 <span class="text-danger">*</span></td>
+                                                <td>
+                                                    {$infos.username}
+                                                </td>
+                                            </tr>
+                        
+                                            <tr>
+                                                <td>公司名称 <span class="text-danger">*</span></td>
+                                                <td>
+                                                    {$infos.company}
+                                                </td>
+                                            </tr>
+                                             <tr>
+                                                <td>赠送的三级域名</td>
+                                                <td>
+                                                   <a href="http://{$infos.username}.user.aselian.com" target="_blank">{$infos.domain}.user.aselian.com</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>绑定域名</td>
+                                                <td>
+                                                   <a href="http://{$infos.domain}" target="_blank">{$infos.domain}</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>注册时间</td>
+                                                <td>{$infos.signdate|date="Y-m-d",###}</td>
+                                            </tr>
+                                             <tr>
+                                                <td>总充值金额</td>
+                                                <td>
+                                                    {$allpay.pays} {if condition="$allpay.pays neq 0"} <a href="{:url('member_pay/sublst',array('id'=>$infos['id']))}" class="btn btn-info btn-sm">明细</a>{/if}
+                                                </td>
+                                            </tr>
+                                         <tr>
+                                            <td>总消费金额</td>
+                                            <td>
+                                                {$allbuy.buys} {if condition="$allbuy.buys neq 0"} <a href="{:url('member_buy/sublst',array('id'=>$infos['id']))}" class="btn btn-info btn-sm">明细</a>{/if}
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                                <td>联系人</td>
+                                                <td>
+                                                    {$infos.linkman}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>手机号码</td>
+                                                <td>
+                                                     {$infos.phone}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>座机</td>
+                                                <td>
+                                                     {$infos.tel}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>传真</td>
+                                                <td>
+                                                     {$infos.fax}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>微信号</td>
+                                                <td>
+                                                     {$infos.wechat}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>qq号码</td>
+                                                <td>
+                                                     {$infos.qq}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>联系地址</td>
+                                                <td>
+                                                    {$infos.address}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>代理商id</td>
+                                                <td>
+                                                     {$infos.aid}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>用户头像</td>
+                                                <td>
+                                                    <img src=" {$infos.thumb}" alt="用户图像" width='60px' height='60px'>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>代理状态</td>
+                                                <td>
+                                                    {if condition="$infos.state eq 0"}
+                                                <button class="btn btn-danger btn-sm">关闭</button>{else/}
+                                                <button class="btn btn-success btn-sm">开启</button>{/if}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <a href="{:url('edit',array('id'=>$infos['id']))}"  class="btn btn-primary">编辑</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
