@@ -8,7 +8,6 @@ class Member extends Model{
 	return $this->hasOne('MemberInfo','uid');
 	}
 
-
 //会员列表
 	public function memlst($ctr='Request()->controller()'){
 

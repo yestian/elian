@@ -4,21 +4,22 @@ use app\admin\controller\Common;
 use app\admin\model\Member as MemberModel;
 use app\admin\model\Agent as AgentModel;
 class Member extends Common{
-	//上传列表
-	public function lst($ctr='Request()->controller()'){
+	//所有会员
+	public function lst(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
 		$this->assign('menu',$menu);
 
 
 		$listM=new MemberModel;
-		$list=$listM->memlst($ctr);
+		$list=$listM->memlst();
 		$this->assign([
-			'list'=>$list,
-			'ctr'=>$ctr
+			'list'=>$list
 			]);
 		return view();
 	}
+
+
 //代理商所属会员
 public function sublst($aid){
 		$menumodel=new AgentModel;

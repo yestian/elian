@@ -11,7 +11,10 @@
     <div class="wrapper">
         <div class="innerpage pageheight">
             <div class="wrapper container-fluid pageheight">
+                {if condition="$ctr eq 'Agent'"}
                 {include file='agent/menu'/}
+                {elseif condition="$ctr eq 'Member'"/}{include file='member/menu'/}
+                {else/}{include file='member/menu'/}{/if}
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>

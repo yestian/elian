@@ -11,8 +11,10 @@ class File extends Common{
 		$this->assign('menu',$menu);
 		if($ctr=='Agent'){
 			$list=db('file')->where('owner',1)->paginate(10);
+		}else if($ctr=='Member'){
+			$list=db('file')->where('owner',2)->paginate(10);	
 		}else{
-			$list=db('file')->paginate(10);	
+			$list=db('file')->paginate(10);
 		}
 		$this->assign([
 			'list'=>$list,

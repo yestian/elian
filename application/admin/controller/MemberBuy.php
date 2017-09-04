@@ -16,6 +16,8 @@ class MemberBuy extends Common{
 		$this->assign('list',$list);
 		return view('memberbuy/lst');
 	}
+
+	
 public function sublst($fld='id',$way='asc',$id){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
