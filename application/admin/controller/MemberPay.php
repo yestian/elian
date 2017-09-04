@@ -16,6 +16,19 @@ class MemberPay extends Common{
 		$this->assign('list',$list);
 		return view('memberpay/lst');
 	}
+	//财务模块
+	public function memberpay($fld='id',$way='asc'){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
+
+		$list=db('member_pay a')
+		->field('a.*,b.id as pid,b.company')
+		->join('member b','a.uid=b.id','left')
+		->order("$fld $way")->paginate(10);
+		$this->assign('list',$list);
+		return view('finance/memberpay');
+	}
 	public function sublst($fld='id',$way='asc',$id){
 			$menumodel=new AgentModel;
 			$menu=$menumodel->menu();

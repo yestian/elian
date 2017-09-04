@@ -1,0 +1,189 @@
+<div class="sidebar col-md-2 pageheight">
+    <div class="logo">
+        <a href="index/index"><img src="__ADMIN__/images/logo.png" alt="logo"></a>
+    </div>
+    <ul class="menu">
+        <li>
+            <a href="{:url('index/index')}">代理商管理</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('agent/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>代理商列表</span>
+                            <p>账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。账户信息主要是账户的基本信息展示，主要包括用户名，密码等的设置，修改。</p>
+                        </a>
+                    </li>
+                    <li><a href="{:url('agent/add')}"><span class="title"><i class="fa fa-user-plus"></i>代理商添加</span><p>描述文字...</p></a></li>
+                    <li><a href="{:url('file/lst',array('ctr'=>'Agent'))}"><span class="title"><i class="fa fa-file-word-o"></i>加盟文档</span><p>描述文字...</p></a></li>
+                    <li><a href="{:url('agent_pay/lst')}"><span class="title"><i class="fa fa-money"></i>订单列表</span><p>描述文字...</p></a></li>
+                    <li><a href="{:url('agent_buy/lst')}"><span class="title"><i class="fa fa-cny"></i>消费记录</span><p>描述文字...</p></a></li>
+                    <li><a href="{:url('member/lst',array('ctr'=>'Agent'))}"><span class="title"><i class="fa fa-user-o"></i>代理会员</span><p>描述文字...</p></a></li>
+                    <li><a href="#"><span class="title"><i class="fa fa-desktop"></i>代理个人站点</span><p>描述文字...</p></a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="open"><a href="{:url('index/index2')}">会员管理</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('member/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>会员列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member/add')}">
+                            <span class="title"><i class="fa fa-user-plus"></i>添加会员</span>
+                            <p>添加会员说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('file/lst')}">
+                            <span class="title"><i class="fa fa-file-word-o"></i>会员文档</span>
+                            <p>会员文档说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member_pay/lst')}">
+                            <span class="title"><i class="fa fa-money"></i>会员订单</span>
+                            <p>会员订单说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member_buy/lst')}">
+                            <span class="title"><i class="fa fa-cny"></i>会员消费记录</span>
+                            <p>会员消费记录说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member/sitelst')}">
+                            <span class="title"><i class="fa fa-desktop"></i>会员站点</span>
+                            <p>会员站点说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">模板管理</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('temp/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>模板列表</span>
+                            <p>模板列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('temp/copy')}">
+                            <span class="title"><i class="fa fa-users"></i>复制模板</span>
+                            <p>模板列表说明...</p>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="{:url('temp/add')}">
+                            <span class="title"><i class="fa fa-users"></i>上传模板</span>
+                            <p>模板列表说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">站点管理</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('site/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>站点列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('site/add')}">
+                            <span class="title"><i class="fa fa-users"></i>添加站点</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="{:url('index/index5')}">财务管理</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('agent_pay/agentpay')}">
+                            <span class="title"><i class="fa fa-users"></i>代理商订单</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('agent_buy/agentbuy')}">
+                            <span class="title"><i class="fa fa-users"></i>代理商消费</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member_pay/memberpay')}">
+                            <span class="title"><i class="fa fa-users"></i>会员订单</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member_buy/memberbuy')}">
+                            <span class="title"><i class="fa fa-users"></i>会员消费</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">新闻管理</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('member/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>新闻列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>添加新闻</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">官网设置</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('member/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>新闻列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('member/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>添加新闻</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="#">系统设置</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('member/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>系统配置</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="{:url('admin/logout')}">退出登录</a></li>
+    </ul>
+</div>

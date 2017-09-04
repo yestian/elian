@@ -154,9 +154,9 @@ public function sublst($aid){
 			$res=$member->mymember->save($data2);
 
 			if($res!==false){
-				$this->success('修改代理商成功！','lst');
+				$this->success('修改会员成功！','lst');
 			}else{
-				$this->error('修改代理商失败！');
+				$this->error('修改会员失败！');
 			}
 			return;
 		}
