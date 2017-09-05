@@ -3,7 +3,17 @@ namespace app\admin\model;
 use think\Model;
 
 class Agent extends Model{
-   	
+
+
+  //配置信息，为所有公共信息，刚好agent模块所有控制器都有继承
+  public function getconf(){
+    $res=db('conf')->select();
+    $conf=array();
+    foreach ($res as $k => $v) {
+      $conf[$v['enname']]=$v['value'];
+    }
+    return $conf;
+  }
 	//创建关联模型
 	//1.方法名为要关联的模型名
 	public function myagent(){

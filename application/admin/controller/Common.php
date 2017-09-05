@@ -7,6 +7,7 @@ class Common extends Controller{
 	//初始化函数，自动执行
 	//如果直接访问后台某个方法，先判断是否登录
 		public function _initialize(){
+			//判断登录
 			if(!session('username')||!session('id')){
 				$this->error('请先登录系统!','login/index');
 			}
@@ -28,5 +29,6 @@ class Common extends Controller{
 			}
 		}
 		
+
 
 }

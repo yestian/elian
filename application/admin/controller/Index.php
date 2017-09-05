@@ -1,10 +1,16 @@
 <?php
 namespace app\admin\controller;
 use app\admin\controller\Common;
+use app\admin\model\Agent as AgentModel;
 
 class Index extends Common{
 	
 	public function index(){
+		$res=new AgentModel;
+		$conf=$res->getconf();
+		$this->assign([
+			'conf'=>$conf
+			]);
 		return view();
 	}
 	public function index2(){

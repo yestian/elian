@@ -9,7 +9,11 @@ class AuthRule extends Common
     public function lst(){
         $menumodel=new AgentModel;
         $menu=$menumodel->menu();
-        $this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+        $this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
         $authRule=new AuthRuleModel();
         //栏目排序功能
         if(request()->isPost()){
@@ -30,7 +34,11 @@ class AuthRule extends Common
     public function add(){
         $menumodel=new AgentModel;
         $menu=$menumodel->menu();
-        $this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+        $this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
         if(request()->isPost()){
             $data=input('post.');
             //$plevel=db('auth_rule')->where('id',$data['pid'])->field('level')->find();
@@ -60,7 +68,11 @@ class AuthRule extends Common
     public function edit(){
         $menumodel=new AgentModel;
         $menu=$menumodel->menu();
-        $this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+        $this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
         if(request()->isPost()){
             $data=input('post.');
             //$plevel=db('auth_rule')->where('id',$data['pid'])->field('level')->find();

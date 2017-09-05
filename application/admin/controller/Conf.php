@@ -8,7 +8,11 @@ class Conf extends Common{
 	public function lst(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//排序
 		if(request()->isPost()){
 			$conf=new ConfModel;
@@ -29,7 +33,11 @@ class Conf extends Common{
 	public function add(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		if(request()->isPost()){
 			$data=input('post.');
 			//可选项，中文逗号的替换
@@ -60,7 +68,11 @@ class Conf extends Common{
 	public function edit(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		
 		if(request()->isPost()){
 			$data=input('post.');
@@ -100,7 +112,11 @@ class Conf extends Common{
 	public function conf(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//配置前端的value值
 		if(request()->isPost()){
 			$data=input('post.');

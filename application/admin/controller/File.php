@@ -8,7 +8,11 @@ class File extends Common{
 	public function lst($ctr='Request()->controller()'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		if($ctr=='Agent'){
 			$list=db('file')->where('owner',1)->paginate(10);
 		}else if($ctr=='Member'){
@@ -26,7 +30,11 @@ class File extends Common{
 	public function upload($ctr='Request()->controller()'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		if(request()->isPost()){
 			$data=input('post.');

@@ -8,7 +8,11 @@ class AuthGroup extends Common{
     public function lst(){
         $menumodel=new AgentModel;
         $menu=$menumodel->menu();
-        $this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+        $this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
         $authGroupRes=db('auth_group')->paginate(10);
         $this->assign('authGroupRes',$authGroupRes);
         return view();
@@ -17,7 +21,11 @@ class AuthGroup extends Common{
     public function add(){
         $menumodel=new AgentModel;
         $menu=$menumodel->menu();
-        $this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+        $this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
         //添加数据
         if(request()->isPost()){
            $data=input('post.');
@@ -45,7 +53,11 @@ class AuthGroup extends Common{
     public function edit(){
 $menumodel=new AgentModel;
         $menu=$menumodel->menu();
-        $this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+        $this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
         if(request()->isPost()){
             $data=input('post.');

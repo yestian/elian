@@ -10,7 +10,11 @@ class Agent extends Common{
 	public function lst($fld='id',$way='asc'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		
 		//先查询出关联表的统计数据，组成新表，以得到和主表的一对一关系
@@ -41,7 +45,11 @@ class Agent extends Common{
 	public function sonlst($fld='id',$way='asc',$pid=''){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//先查询出关联表的统计数据，组成新表，以得到和主表的一对一关系
 		//充值
 		$sub1=db('agent_pay')->field('aid,sum(money) as allpay')->group('aid')->buildSql();
@@ -74,7 +82,11 @@ class Agent extends Common{
 	public function add(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//查询menu公共信息
 
 
@@ -129,7 +141,11 @@ class Agent extends Common{
 	public function edit(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		// 查询原表
 		$agent=AgentModel::get(input('id'));
 		//查询关联表
@@ -219,7 +235,11 @@ class Agent extends Common{
 	public function detail(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//统计下级代理商数量
 		$subnum=db('agent')->field('count(id) as upidsum')->where('upid','eq',input('id'))->find();
 		//下级代理商列表

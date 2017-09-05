@@ -11,7 +11,11 @@ class Cate extends Common{
 	public function lst(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$cate=new CateModel();
 		//sort排序
@@ -31,7 +35,11 @@ class Cate extends Common{
 	public function add(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//实例化后就可以使用save方法
 		$cate=new CateModel();
 		if(request()->isPost()){
@@ -56,7 +64,11 @@ class Cate extends Common{
 	public function edit(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		$cate=new CateModel();
 		if(request()->isPost()){
 			$data=input('post.');

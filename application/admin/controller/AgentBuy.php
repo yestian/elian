@@ -7,7 +7,11 @@ class AgentBuy extends Common{
 	public function lst($fld='id',$way='asc'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$list=db('agent_buy a')
 		->field('a.*,b.id as pid,b.agentname')
@@ -20,7 +24,11 @@ class AgentBuy extends Common{
 	public function agentbuy($fld='id',$way='asc'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$list=db('agent_buy a')
 		->field('a.*,b.id as pid,b.agentname')

@@ -9,7 +9,11 @@ class Article extends Common{
 	public function lst(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//连表查询，使用栏目名称
 		$artres=db('article')->field('a.*,b.catename')->alias('a')->join('cate b','a.cateid=b.id')->paginate(10);
 		$this->assign('artres',$artres);
@@ -21,7 +25,11 @@ class Article extends Common{
 	public function add(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//获取栏目列表，文章要指定一个栏目
 		$cate=new CateModel();
 		$cateres=$cate->catetree();
@@ -53,7 +61,11 @@ class Article extends Common{
 public function edit(){
 	$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
         if(request()->isPost()){
             $data=input('post.');
             $validate=\think\Loader::validate('Article');//validate下的Article类

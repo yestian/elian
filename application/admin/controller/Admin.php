@@ -9,11 +9,17 @@ use app\admin\model\Agent as AgentModel;
 
 class Admin extends Common{
 
+
 	//管理员列表
 	public function lst(){
+
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//权限赋予
 		$auth=new Auth();
 		
@@ -34,7 +40,11 @@ class Admin extends Common{
 	public function add(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		if(request()->isPost()){
 			//实例化模型
 			$admin=new AdminModel();
@@ -67,7 +77,11 @@ class Admin extends Common{
 	public function edit($id){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//显示当前id信息
 		$admins=db('admin')->find($id);
 		//管理员修改

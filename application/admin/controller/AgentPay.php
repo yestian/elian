@@ -7,7 +7,11 @@ class AgentPay extends Common{
 	public function lst($fld='id',$way='asc'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$list=db('agent_pay a')
 		->field('a.*,b.id as pid,b.agentname')
@@ -20,7 +24,11 @@ class AgentPay extends Common{
 public function agentpay($fld='id',$way='asc'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$list=db('agent_pay a')
 		->field('a.*,b.id as pid,b.agentname')

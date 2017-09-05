@@ -7,7 +7,11 @@ class MemberBuy extends Common{
 	public function lst($fld='id',$way='asc'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$list=db('member_buy a')
 		->field('a.*,b.id as pid,b.company')
@@ -20,7 +24,11 @@ class MemberBuy extends Common{
 	public function memberbuy($fld='id',$way='asc'){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$list=db('member_buy a')
 		->field('a.*,b.id as pid,b.company')
@@ -33,7 +41,11 @@ class MemberBuy extends Common{
 public function sublst($fld='id',$way='asc',$id){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 		$list=db('member_buy a')
 		->field('a.*,b.id as pid,b.company')

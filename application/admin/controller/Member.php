@@ -8,7 +8,11 @@ class Member extends Common{
 	public function lst(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 
 		$listM=new MemberModel;
@@ -24,7 +28,11 @@ class Member extends Common{
 public function sublst($aid){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 
 
 		$listM=new MemberModel;
@@ -38,7 +46,11 @@ public function sublst($aid){
 	public function add(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//查询menu公共信息
 
 
@@ -90,7 +102,11 @@ public function sublst($aid){
 	public function edit(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//提交
 		if(request()->isPost()){
 			$data=input('post.');
@@ -190,7 +206,11 @@ public function sublst($aid){
 	public function detail(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
-		$this->assign('menu',$menu);
+		$conf=$menumodel->getconf();
+		$this->assign([
+			'menu'=>$menu,
+			'conf'=>$conf
+			]);
 		//统计总充值金额
 		$allpay=db('member_pay')->field('sum(money) as pays')->where('uid','eq',input('id'))->find();
 
