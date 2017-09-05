@@ -2,15 +2,22 @@
 namespace app\admin\controller;
 use app\admin\model\AuthGroup as AuthGroupModel;
 use app\admin\controller\Common;
+use app\admin\model\Agent as AgentModel;
 class AuthGroup extends Common{
    
     public function lst(){
+        $menumodel=new AgentModel;
+        $menu=$menumodel->menu();
+        $this->assign('menu',$menu);
         $authGroupRes=db('auth_group')->paginate(10);
         $this->assign('authGroupRes',$authGroupRes);
         return view();
     }
 
     public function add(){
+        $menumodel=new AgentModel;
+        $menu=$menumodel->menu();
+        $this->assign('menu',$menu);
         //添加数据
         if(request()->isPost()){
            $data=input('post.');
@@ -36,7 +43,9 @@ class AuthGroup extends Common{
     }
     
     public function edit(){
-
+$menumodel=new AgentModel;
+        $menu=$menumodel->menu();
+        $this->assign('menu',$menu);
 
         if(request()->isPost()){
             $data=input('post.');

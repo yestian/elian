@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='conf/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 配置后台列表
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">配置后台列表 <a href="{:url('add')}" class="btn btn-info btn-xs">添加</a></h2>
+                            </div>
+                            <div class="panel-body">
+                                <form action="" method="post">
+                                    <table class="table table-bordered table-hover">
+                                        <thead class="">
+                                            <tr>
+                                                <th class="text-center" width="10%">ID</th>
+                                                <th class="text-center" width="10%">排序</th>
+                                                <th class="text-center">英文名称</th>
+                                                <th class="text-center">中文名称</th>
+                                                <th class="text-center">配置类型</th>
+                                                <th class="text-center" width="20%">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {volist name="confres" id="conf"}
+                                            <tr>
+                                                <td align="center">{$conf.id}</td>
+                                                <td align="center">
+                                                    <input name="{$conf.id}" type="text" style="width:50px; text-align:center;" value="{$conf.sort}" class="form-control">
+                                                </td>
+                                                <td align="center">{$conf.enname}</td>
+                                                <td align="center">{$conf.cnname}</td>
+                                                <td align="center">
+                                                    {if condition="$conf['type'] eq 1"} 单行文本 {elseif condition="$conf['type'] eq 2"} 多行文本 {elseif condition="$conf['type'] eq 3"} 单选按钮 {elseif condition="$conf['type'] eq 4"} 复选框 {elseif condition="$conf['type'] eq 5"} 下拉菜单 {else} 未知类型 {/if}
+                                                </td>
+                                                <td align="center">
+                                                    <a href="{:url('edit',array('id'=>$conf['id']))}" class="btn btn-primary btn-sm shiny">
+                                                        <i class="fa fa-edit"></i> 编辑
+                                                    </a>
+                                                    <a href="{:url('del',array('id'=>$conf['id']))}" onClick="warning('确实要删除吗', '#')" class="btn btn-danger btn-sm shiny">
+                                                        <i class="fa fa-trash-o"></i> 删除
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            {/volist}
+                                        </tbody>
+                                    </table>
+                                    <div>
+                                        <input class="btn btn-primary btn-sm shiny" style="margin-left:10%; margin-top:10px;" type="submit" value="排序">
+                                    </div>
+                                </form>
+                                <div style="padding-top:10px;">
+                                    {$confres->render()}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

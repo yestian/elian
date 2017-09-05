@@ -61,14 +61,6 @@ class Admin extends Model{
 		$admin=Admin::getByUsername($data['username']);
 		if($admin){
 			if($admin['password']==md5($data['password'])){
-				//写入登录信息
-				$logrecord = new LoginRecord([
-				    'uid'  =>  $admin['id'],
-				    'datetime' =>  time(),
-				    'ip'=>request()->ip()
-				]);
-				$logrecord->save();
-				//存储用户信息
 				session('id',$admin['id']);
 				session('username',$admin['username']);
 

@@ -1,0 +1,67 @@
+<div class="sidebar2">
+    <ul>
+        <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
+        <li><a href="{:url('conf/conf')}"><i class="fa fa-cog"></i><span>配置前台</span></a></li>
+        <li><a href="{:url('conf/lst')}"><i class="fa fa-cogs"></i><span>配置后台列表</span></a></li>
+        <li><a href="{:url('conf/add')}"><i class="fa fa-plus"></i><span>添加配置后台</span></a></li>
+    </ul>
+    <div class="logout">
+        <img src="__ADMIN__/images/logo-eg.jpg" alt="用户头像">
+        <a class="logoutfunc" href="{:url('admin/logout2')}"><span>退出登录</span></a>
+    </div>
+</div>
+<div class="page-summary">
+    <div class="userinfo">
+        <img src="__ADMIN__/images/logo-eg.jpg" alt="">
+        <a class="logoutfunc" href="{:url('admin/logout2')}"><span>{$Request.session.username}<small>退出登录</small></span></a>
+    </div>
+    <div class="summary">
+        <h2>SUMMARY</h2>
+        <div class="summary-count">
+            <dl>
+                <dt>{$menu.agentsum}</dt>
+                <dd>代理数</dd>
+            </dl>
+            <dl>
+                <dt>{$menu.agentsum2}</dt>
+                <dd>付费数</dd>
+            </dl>
+        </div>
+        <div class="summary-count">
+            <dl>
+                <dt>{$menu.allpay}</dt>
+                <dd>代理总充值</dd>
+            </dl>
+            <dl>
+                <dt>{if condition="$menu.today_pay eq 0"}0{else/}{$menu.today_pay}{/if}</dt>
+                <dd>今日充值</dd>
+            </dl>
+        </div>
+        <div class="summary-balance">
+            <dl>
+                <dt>{if condition="$menu.agent_member_sum eq 0"}0{else/}{$menu.agent_member_sum}{/if}</dt>
+                <dd>代理总会员数</dd>
+            </dl>
+        </div>
+        <div class="scount">
+            <div class="heartgroup">
+                <i class="fa fa-heart"></i>
+                <i class="fa fa-heartbeat"></i>
+                <i class="fa fa-heart"></i>
+            </div>
+            <dl>
+                <dt>{if condition="$menu.today_logins eq 0"}0{else/}{$menu.today_logins}{/if}</dt>
+                <dd>代理今日登陆</dd>
+            </dl>
+        </div>
+        <div class="percentage">
+            <h2>代理平台销售比</h2>
+            <h2>平台销售<div class="layui-progress">
+  <div class="layui-progress-bar layui-bg-green" lay-percent="{$menu.company_mem_per}%"></div>
+</div></h2>
+            <h2>代理销售<div class="layui-progress">
+  <div class="layui-progress-bar layui-bg-orange" lay-percent="{$menu.agent_mem_per}%"></div>
+</div></h2>
+        </div>
+    </div>
+</div>

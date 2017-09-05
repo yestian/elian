@@ -2,10 +2,14 @@
 namespace app\admin\controller;
 use app\admin\model\AuthRule as AuthRuleModel;
 use app\admin\controller\Common;
+use app\admin\model\Agent as AgentModel;
 class AuthRule extends Common
 {
 
     public function lst(){
+        $menumodel=new AgentModel;
+        $menu=$menumodel->menu();
+        $this->assign('menu',$menu);
         $authRule=new AuthRuleModel();
         //栏目排序功能
         if(request()->isPost()){
@@ -24,6 +28,9 @@ class AuthRule extends Common
     }
 
     public function add(){
+        $menumodel=new AgentModel;
+        $menu=$menumodel->menu();
+        $this->assign('menu',$menu);
         if(request()->isPost()){
             $data=input('post.');
             //$plevel=db('auth_rule')->where('id',$data['pid'])->field('level')->find();
@@ -51,6 +58,9 @@ class AuthRule extends Common
     }
 
     public function edit(){
+        $menumodel=new AgentModel;
+        $menu=$menumodel->menu();
+        $this->assign('menu',$menu);
         if(request()->isPost()){
             $data=input('post.');
             //$plevel=db('auth_rule')->where('id',$data['pid'])->field('level')->find();

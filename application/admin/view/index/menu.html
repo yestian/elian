@@ -136,18 +136,30 @@
                 </ul>
             </div>
         </li>
-        <li><a href="#">新闻管理</a>
+        <li><a href="{:url('cate/index6')}">新闻管理</a>
             <div class="submenu pageheight">
                 <ul>
                     <li>
-                        <a href="{:url('member/lst')}">
-                            <span class="title"><i class="fa fa-users"></i>新闻列表</span>
+                        <a href="{:url('cate/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>栏目管理</span>
                             <p>会员列表说明...</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{:url('member/lst')}">
-                            <span class="title"><i class="fa fa-users"></i>添加新闻</span>
+                        <a href="{:url('cate/add')}">
+                            <span class="title"><i class="fa fa-users"></i>添加栏目</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('article/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>文章列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('article/add')}">
+                            <span class="title"><i class="fa fa-users"></i>添加文章</span>
                             <p>会员列表说明...</p>
                         </a>
                     </li>
@@ -172,12 +184,48 @@
                 </ul>
             </div>
         </li>
+         <li><a href="#">管理员</a>
+            <div class="submenu pageheight">
+                <ul>
+                    <li>
+                        <a href="{:url('admin/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>管理列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="{:url('autu_group/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>用户组列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="{:url('auth_rule/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>权限列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
         <li><a href="#">系统设置</a>
             <div class="submenu pageheight">
                 <ul>
                     <li>
-                        <a href="{:url('member/lst')}">
-                            <span class="title"><i class="fa fa-users"></i>系统配置</span>
+                        <a href="{:url('conf/conf')}">
+                            <span class="title"><i class="fa fa-users"></i>配置前台列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('conf/lst')}">
+                            <span class="title"><i class="fa fa-users"></i>配置后台列表</span>
+                            <p>会员列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{:url('conf/add')}">
+                            <span class="title"><i class="fa fa-users"></i>添加配置后台</span>
                             <p>会员列表说明...</p>
                         </a>
                     </li>

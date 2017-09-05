@@ -5,26 +5,19 @@ use app\admin\controller\Common;
 //使用数据模型，进行数据库操作
 //数据模型类和控制器类名字相同，因此要起个别名
 use app\admin\model\Admin as AdminModel;
+use app\admin\model\Agent as AgentModel;
 
 class Admin extends Common{
 
 	//管理员列表
 	public function lst(){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
 		//权限赋予
 		$auth=new Auth();
 		
 		$admin=new AdminModel();
-		//查询多条数据用select()，单条数据用find()
-		//只要某个字段 where('id',1);where(array('id'=>2,'password'=>1));
-		//$adminres=db('admin')->select();
-		//$adminres=$admin->select();
-
-		//如果不实例化，也可以用静态方法来实现
-		//静态方法 get(['id'=>1])和find相同,all得出二维码数组，默认取一条
-		//AdminModel::where('id',1)->value('score');
-		//where('status',1)->column('username');获取一列数据
-		//根据字段名查询
-		//根据数据表字段查询一条记录 ::getByPassword('1')
 
 		$adminres=$admin->getadmin();
 		foreach ($adminres as $k => $v) {
@@ -39,6 +32,9 @@ class Admin extends Common{
 
 
 	public function add(){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
 		if(request()->isPost()){
 			//实例化模型
 			$admin=new AdminModel();
@@ -69,6 +65,9 @@ class Admin extends Common{
 
 
 	public function edit($id){
+		$menumodel=new AgentModel;
+		$menu=$menumodel->menu();
+		$this->assign('menu',$menu);
 		//显示当前id信息
 		$admins=db('admin')->find($id);
 		//管理员修改
@@ -125,11 +124,13 @@ class Admin extends Common{
 	//退出登录
 	//因为只有登录之后，才需要退出，所以这个方法写在管理员类里面，而不是登录注册类
 	public function logout(){
+
 		session(null);
 		$this->success('退出系统成功！','login/index');
 	}
-	//layui弹出后，退出登录，使用js刷新页面
+
 	public function logout2(){
+		//通过js跳转
 		session(null);
 	}
 }
