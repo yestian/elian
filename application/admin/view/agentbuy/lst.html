@@ -36,7 +36,7 @@
                                         </tr>
                                        {volist name='list' id='vo'}
                                         <tr>
-                                            <td></td>
+                                            <td>{$vo.id}</td>
                                             <td>{$vo.agentname}</td>
                                             <td>{$vo.expense}</td>
                                             <td>{if condition="$vo.purpose eq 0"}模板{elseif condition="$vo.purpose eq 1"}新闻{elseif condition="$vo.purpose eq 2"}客服系统{else/}其他{/if}</td>

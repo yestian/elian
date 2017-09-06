@@ -42,7 +42,7 @@
                                             <td>{$vo.id}</td>
                                             <td>{$vo.username}</td>
                                             <td>{$vo.agentname}</td>
-                                            <td>{if condition="$vo['level'] eq 0"}无{elseif condition="$vo['level'] eq 1"}普通{elseif condition="$vo['level'] eq 2"}钻石{elseif condition="$vo['level'] eq 3"}皇冠{else/}合伙人{/if}</td>
+                                            <td>{if condition="$vo['level'] eq 1"}银牌{elseif condition="$vo['level'] eq 2"}金牌{elseif condition="$vo['level'] eq 3"}钻石{else/}无{/if}</td>
                                             <td>{if condition="$vo.allpay eq ''"}0{else/}{$vo.allpay}{/if}</td>
                                             <td>{if condition="$vo.balance eq ''"}0{else/}{$vo.balance}{/if}</td>
                                             <td>{$vo.upidsum}</td>
