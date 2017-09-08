@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='site/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 添加代理商
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">添加代理商</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <form action="" method='post' enctype="multipart/form-data" class="addagent">
+                                        <input type="hidden" name="id" value='{$res.id}'>
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <tr>
+                                                <th>字段</th>
+                                                <th>值</th>
+                                            </tr>
+                                            <tr>
+                                                <td>{if condition="$res.uid neq 0"}会员ID{else/}代理商ID{/if}</td>
+                                                <td>{if condition="$res.uid neq 0"}<input type="text" name="uid" value="{$res.uid}" disabled class="form-control">{else/}
+                                                    <input type="text" name="aid" value="{$res.aid}" disabled class="form-control">{/if}
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>站点类型 <span class="text-danger">*</span></td>
+                                                <td>
+                                                    <select name="type" id="" class="form-control" datatype="*">
+                                                        <option value>请选择</option>
+                                                        <option value="3" {if condition="$res.type eq 3"}selected{/if}>商城版</option>
+                                                        <option value="2" {if condition="$res.type eq 2"}selected{/if}>专业版</option>
+                                                        <option value="1" {if condition="$res.type eq 1"}selected{/if}>标准版</option>
+                                                        <option value="0" {if condition="$res.type eq 0"}selected{/if}>无</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>开通年限 <span class="text-danger">*</span></td>
+                                                <td>
+                                                    <select name="years" id="" class="form-control" datatype="*">
+                                                        <option value>请选择</option>
+                                                        <option value="1" {if condition="$res.years eq 1"}selected{/if}>1年</option>
+                                                        <option value="2" {if condition="$res.years eq 2"}selected{/if}>2年</option>
+                                                        <option value="5" {if condition="$res.years eq 5"}selected{/if}>5年</option>
+                                                        <option value="10" {if condition="$res.years eq 10"}selected{/if}>10年</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <button class="btn btn-primary" type="submit">提交</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(function() {
+        $("#uid").click(function() {
+            $("#typeid").attr('name', 'uid');
+        });
+        $("#aid").click(function() {
+            $("#typeid").attr('name', 'aid');
+        });
+    });
+    </script>
+</body>
+
+</html>

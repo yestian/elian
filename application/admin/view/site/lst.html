@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='site/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 站点列表
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">站点列表 <a href="{:url('add')}" class="btn btn-info btn-xs">添加</a></h2>
+                            </div>
+                            <div class="panel-body">
+                                <form action="" method="post">
+                                    <table class="table table-bordered table-hover catelist">
+                                        <thead class="">
+                                            <tr>
+                                                <th class="text-center"><a href="{:url('lst',array('fld'=>'id','way'=>'desc'))}">编号 <i class="fa fa-caret-down"></i></a></th>
+                                                <th class="text-center"><a href="{:url('lst',array('fld'=>'id','way'=>'desc'))}">会员ID <i class="fa fa-caret-down"></i></a></th>
+                                                <th class="text-center"><a href="{:url('lst',array('fld'=>'id','way'=>'desc'))}">代理ID <i class="fa fa-caret-down"></i></a></th>
+                                                <th class="text-center"><a href="{:url('lst',array('fld'=>'id','way'=>'desc'))}">类型 <i class="fa fa-caret-down"></i></a></th>
+                                                <th class="text-center"><a href="{:url('lst',array('fld'=>'id','way'=>'desc'))}">年限 <i class="fa fa-caret-down"></i></a></th>
+                                                <th class="text-center">域名</th>
+                                                <th>开通时间</th>
+                                                <th class="text-center" width="20%">操作</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {volist name="list" id="vo"}
+                                            <tr class="text-center">
+                                                <td>{$vo.id}</td>
+                                                <td>{if condition="$vo.uid neq 0"}{$vo.uid}{/if}</td>
+                                                <td>{if condition="$vo.aid neq 0"}{$vo.aid}{/if}</td>
+                                                <td>{if condition="$vo.type eq 1"}标准版{elseif condition="$vo.type eq 2"}专业版{elseif condition="$vo.type eq 3"}商城版{else/}无{/if}</td>
+                                                <td>{$vo.years}</td>
+                                                <td> <a href="http://{$vo.username}.site.aselian.com" target="_blank">链接</a></td>
+                                                <td>{$vo.paytime|date="Y-m-d",###}</td>
+                                                <td align="center">
+                                                    <a href="{:url('edit',array('id'=>$vo['id']))}" class="btn btn-primary btn-sm shiny">
+                                                        <i class="fa fa-edit"></i> 编辑
+                                                    </a>
+                                                    <a href="{:url('del',array('id'=>$vo['id']))}" class="btn btn-danger btn-sm shiny">
+                                                        <i class="fa fa-trash-o"></i> 删除
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            {/volist}
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <div class="fr">
+                                    {$list->render()}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+$(function() {
+    $(".cateup").click(function() {
+        $('.catelist tbody tr').each(function() {
+            if ($(this).attr('class') != 'level0') {
+                $(this).slideToggle();
+            }
+        })
+
+    });
+
+
+});
+</script>
+</body>
+
+</html>

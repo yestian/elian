@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='site/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 添加代理商
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">添加代理商</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <form action="" method='post' enctype="multipart/form-data" class="addagent">
+                                        <table class="table table-striped table-hover table-bordered">
+                                            <tr>
+                                                <th>字段</th>
+                                                <th>值</th>
+                                            </tr>
+                                            <tr>
+                                                <td>会员ID <span class="text-danger">*</span></td>
+                                                <td>
+                                                    <label for="" class="radio-inline">
+                                                        <input type="radio" id="uid" checked>会员</label>
+                                                    <label for="" class="radio-inline">
+                                                        <input type="radio" id="aid">代理商</label>
+                                                    <input type="text" class="form-control" name="uid" placeholder="填写会员或代理商ID" id="typeid" datatype="*">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>站点类型 <span class="text-danger">*</span></td>
+                                                <td>
+                                                    <select name="type" id="" class="form-control" datatype="*">
+                                                        <option value>请选择</option>
+                                                        <option value="3">商城版</option>
+                                                        <option value="2">专业版</option>
+                                                        <option value="1">标准版</option>
+                                                        <option value="0">无</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>开通年限 <span class="text-danger">*</span></td>
+                                                <td>
+                                                    <select name="years" id="" class="form-control" datatype="*">
+                                                        <option value>请选择</option>
+                                                        <option value="1">1年</option>
+                                                        <option value="2">2年</option>
+                                                        <option value="5">5年</option>
+                                                        <option value="10">10年</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <button class="btn btn-primary" type="submit">提交</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    $(function() {
+        $("#uid").click(function() {
+            $("#typeid").attr('name', 'uid');
+        });
+        $("#aid").click(function() {
+            $("#typeid").attr('name', 'aid');
+        });
+    });
+    </script>
+</body>
+
+</html>
