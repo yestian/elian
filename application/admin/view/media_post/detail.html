@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+    <script src="__ADMIN__/ueditor/ueditor.config.js"></script>
+    <script src="__ADMIN__/ueditor/ueditor.all.min.js"></script>
+    <script src="__ADMIN__/ueditor/lang/zh-cn/zh-cn.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='media/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 稿件内容
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">稿件内容</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="well text-center">{$res.title}</div>
+                                <textarea name="content" id="content" cols="30" rows="10">{$res.content}</textarea>
+                            </div>
+                        </div>
+                        {if condition="$res['file'] neq ''"}
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                上传的稿件
+                            </div>
+                            <div class="panel-body">
+                                <a href="{$res.file}" class="btn btn-primary btn-sm"> <i class="fa fa-download"></i> 点击下载</a> {$res.file}
+                            </div>
+                        </div>
+                        {/if}
+                        <div class="button-group">
+                            <a class="btn btn-primary btn-sm" href="{:url('media_post/lst')}">返回</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    UE.getEditor('content', {
+        initialFrameWidth: 860,
+        initialFrameHeight: 400,
+    });
+    </script>
+</body>
+
+</html>

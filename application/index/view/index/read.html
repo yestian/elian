@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{$res.title} - __WEBNAME__</title>
+    {include file='public/meta'/}
+</head>
+
+<body class="blog">
+    <div class="wrapper">
+        {include file='public/header' /}
+        <div class="submenu">
+            <a href="{:url('/blog')}">所有</a> {volist name='cate' id='vo'}
+            <a href="{:url('/blog')}/{$vo.id}">{$vo.catename}</a> {/volist}
+        </div>
+        <div class="main">
+            <div class="banner">
+                <h2>不想错过每一个精彩？</h2>
+                <p>让我们知道您的邮箱，我们将最新的设计，案例研究与您分享。</p>
+                <div class="subscribe">SUBSCRIBE</div>
+            </div>
+            <div class="search wrapper3">
+                <form action="#" class="form">
+                    <input type="text" class="form-control" placeholder="请搜索...">
+                </form>
+            </div>
+            <article class="wrapper3">
+                <h1 class="text-center"> <small>{$res.title}</small></h1>
+                <div class="pubdate text-center">{$res.pubdate|date="Y-m-d H:i:s",###}</div>
+                <div class="content">
+                    {$res.content}
+                </div>
+            </article>
+        </div>
+        {include file='public/footer'/}
+</body>
+<html>

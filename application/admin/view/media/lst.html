@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='media/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 媒体列表
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">媒体列表 <a href="{:url('add')}" class="btn btn-info btn-xs">添加</a></h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-bordered table-hover text-center">
+                                        <tr>
+                                            <th><a href="{:url('lst',array('fld'=>'title'))}">媒体名称 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'entrance'))}">入口类型 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'zid'))}">地区 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'prize','way'=>'desc'))}">价格 <i class="fa fa-caret-down"></i></a></th>
+                                            <th><a href="{:url('lst',array('fld'=>'source'))}">新闻源 <i class="fa fa-caret-down"></i></a></th>
+                                           
+                                            <th><a href="{:url('lst',array('fld'=>'status'))}">状态 <i class="fa fa-caret-down"></i></a></th>
+                                             <th>备注</th>
+                                            <th width='130px' class="text-center">操作</th>
+                                        </tr>
+                                        {volist name='list' id='vo'}
+                                        <tr>
+                                            <td><a href="{$vo.url}" target='_blank'>{$vo.title}</a></td> 
+                                            <td>{if condition="$vo['entrance'] eq 1"}首页{elseif condition="$vo['entrance'] eq 2"}频道{elseif condition="$vo['entrance'] eq 3"}栏目{else/}没有入口{/if}</td>
+                                            <td>{$vo.zonename}</td>
+                                            <td>{$vo.prize}</td>
+                                            <td>{if condition="$vo['source'] eq 1"}百度新闻源{elseif condition="$vo['source'] eq 2"}百度网页{elseif condition="$vo['source'] eq 3"}百度最新相关{else/}不限{/if}</td>
+                                            
+                                            <td>{if condition="$vo['status'] eq 0"}下线{else/}正常{/if}</td>
+                                            <td>{$vo.remark}</td>
+                                            <td><a href="{:url('edit',array('id'=>$vo['id']))}" class="btn btn-primary btn-sm">编辑</a>
+                                                <a href="{:url('del',array('id'=>$vo['id']))}" class="btn btn-danger btn-sm">删除</a>
+                                            </td>
+                                        </tr>
+                                        {/volist}
+                                    </table>
+                                </div>
+                                <div class="fr">
+                                    {$list->render()}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

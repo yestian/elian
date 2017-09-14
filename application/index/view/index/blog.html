@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{if condition="$subcate['catename'] neq ''"}{$subcate.catename}{else/}博客{/if} - __WEBNAME__</title>
+    {include file='public/meta'/}
+</head>
+
+<body class="blog">
+    <div class="wrapper">
+        {include file='public/header' /}
+        <div class="submenu">
+            <a href="{:url('/blog')}">所有</a> {volist name='cate' id='vo'}
+            <a href="{:url('/blog')}/{$vo.id}">{$vo.catename}</a> {/volist}
+        </div>
+        <div class="main">
+            <div class="banner">
+                <h2>不想错过每一个精彩？</h2>
+                <p>让我们知道您的邮箱，我们将最新的设计，案例研究与您分享。</p>
+                <div class="subscribe">SUBSCRIBE</div>
+            </div>
+            <div class="search wrapper3">
+                <form action="#" class="form">
+                    <input type="text" class="form-control" placeholder="请搜索...">
+                </form>
+            </div>
+            <div class="bloglist wrapper3">
+                <ul class="row">
+                    {volist name='list' id='vo'}
+                    <li class="col-md-4 col-xs-12">
+                        <a href="{:url('/read')}/{$vo.id}.html"><img src="{$vo.thumb}" alt="{$vo.title}"></a>
+                        <a class="typename" href="{:url('/blog')}/{$vo.cid}">{$vo.catename}</a>
+                        <a class="title" href="{:url('/read')}/{$vo.id}.html">{$vo.title}</a>
+                        <p>{$vo.desc|mb_substr=0,60,'utf-8'}...</p>
+                    </li>
+                    {/volist}
+                </ul>
+                <!-- <div class="loadmore"><a href="#">LOAD MORE</a></div> -->
+            </div>
+            <div class="wrapper3 text-center">{$list->render()}</div>
+        </div>
+        {include file='public/footer'/}
+        <script>
+        var swiper = new Swiper('.swiper1', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 2,
+            paginationClickable: true,
+            spaceBetween: 0,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+        });
+        </script>
+        <script>
+        var swiper = new Swiper('.swiper2', {
+            pagination: '.swiper-pagination',
+            slidesPerView: 3,
+            paginationClickable: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30
+        });
+        </script>
+</body>
+<html>
