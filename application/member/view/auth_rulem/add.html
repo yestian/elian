@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='member_admin/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 增加权限
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">增加权限</h2>
+                            </div>
+                            <div class="panel-body">
+                                <form class="form-horizontal" role="form" action="" method="post">
+                                    <div class="form-group">
+                                        <label for="username" class="col-sm-2 control-label no-padding-right">上级权限</label>
+                                        <div class="col-sm-6">
+                                            <select name="pid" class="form-control">
+                                                <option value="0">顶级权限</option>
+                                                {volist name="authRuleRes" id="authRule"}
+                                                <option value="{$authRule.id}">
+                                                    <?php if($authRule['level']!=0){echo '|';} echo str_repeat('—', $authRule['level']*3)?>{$authRule.title}</option>
+                                                {/volist}
+                                            </select>
+                                        </div>
+                                        <p class="help-block col-sm-4 red">* 必填</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="col-sm-2 control-label no-padding-right">权限名称</label>
+                                        <div class="col-sm-6">
+                                            <input class="form-control" placeholder="" name="title" required="" type="text">
+                                        </div>
+                                        <p class="help-block col-sm-4 red">* 必填</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="username" class="col-sm-2 control-label no-padding-right">控/方</label>
+                                        <div class="col-sm-6">
+                                            <input class="form-control" placeholder="" name="name" required="" type="text">
+                                        </div>
+                                        <p class="help-block col-sm-4 red">* 必填</p>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">保存信息</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

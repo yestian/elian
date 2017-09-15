@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='finance/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 在线充值
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">在线充值</h2>
+                            </div>
+                            <div class="panel-body">
+                                <form action="" method='post' class="addagent">
+                                    <table class="table table-hovered table-striped table-bordered">
+                                        <tr>
+                                            <th width='180px'>字段</th>
+                                            <th>值</th>
+                                        </tr>
+                                        <tr>
+                                            <td>充值方式</td>
+                                            <td>
+                                                <div class="radio radio-info radio-inline">
+                                                    <input type="radio" id="inlineRadio1" value="1" name="payway" checked>
+                                                    <label for="inlineRadio1"> 支付宝 </label>
+                                                </div>
+                                                <div class="radio radio-inline">
+                                                    <input type="radio" id="inlineRadio2" value="2" name="payway">
+                                                    <label for="inlineRadio2"> 微信 </label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>充值金额 <span class="text-danger">*</span></td>
+                                                <td>
+                                                    <input type="text" class="form-control" name="money" datatype="*1-12" errormsg="格式为数字" placeholder="数字格式">
+                                                <span class="Validform_checktip"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td><button class="btn btn-danger btn-sm">下一步</button></td>
+                                            </tr>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
