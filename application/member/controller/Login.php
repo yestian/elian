@@ -1,6 +1,6 @@
 <?php
-namespace app\admin\controller;
-use app\admin\model\Admin;
+namespace app\member\controller;
+use app\member\model\MemberAdmin;
 use think\Controller;
 class Login extends Controller{
 	public function index(){
@@ -11,7 +11,7 @@ class Login extends Controller{
 			//登录验证码
 			$this->check(input('code'));
 			$data=input('post.');
-			$admin=new Admin();
+			$admin=new MemberAdmin();
 			$loginnum=$admin->login($data);
 			if($loginnum==3){
 				

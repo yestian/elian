@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\www\tp\elian\public/../application/member\view\finance\orderlst.html";i:1505492262;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505492262;s:67:"D:\www\tp\elian\public/../application/member\view\finance\menu.html";i:1505492262;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\www\tp\elian\public/../application/admin\view\member\lst.html";i:1505570259;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:65:"D:\www\tp\elian\public/../application/admin\view\member\menu.html";i:1504509244;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -6,22 +6,22 @@
     <meta charset="UTF-8">
     <title>后台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<link href="__MEMBER__/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="__MEMBER__/css/jquery.fullPage.css">
-<link href="__MEMBER__/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="__MEMBER__/layui/css/layui.css">
-<link rel="stylesheet" href="__MEMBER__/css/beauty-bootstrap.css">
-<link rel="stylesheet" href="__MEMBER__/css/starwood.css">
-<script src="__MEMBER__/js/jquery.min.js?ver1.9.1"></script>
-<script src="__MEMBER__/js/jquery.nicescroll.js"></script>
-<script src="__MEMBER__/js/jquery.fullPage.min.js"></script>
-<script src="__MEMBER__/js/bootstrap.min.js"></script>
-<script src="__MEMBER__/layui/layui.js"></script>
-<script src="__MEMBER__/js/Validform_v5.3.2_ncr_min.js"></script>
-<script src="__MEMBER__/js/app.js"></script>
+<link href="__ADMIN__/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="__ADMIN__/css/jquery.fullPage.css">
+<link href="__ADMIN__/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="__ADMIN__/layui/css/layui.css">
+<link rel="stylesheet" href="__ADMIN__/css/beauty-bootstrap.css">
+<link rel="stylesheet" href="__ADMIN__/css/starwood.css">
+<script src="__ADMIN__/js/jquery.min.js?ver1.9.1"></script>
+<script src="__ADMIN__/js/jquery.nicescroll.js"></script>
+<script src="__ADMIN__/js/jquery.fullPage.min.js"></script>
+<script src="__ADMIN__/js/bootstrap.min.js"></script>
+<script src="__ADMIN__/layui/layui.js"></script>
+<script src="__ADMIN__/js/Validform_v5.3.2_ncr_min.js"></script>
+<script src="__ADMIN__/js/app.js"></script>
 <!--[if lt IE 9]>
- <script src="__MEMBER__/js/html5shiv.js"></script>
- <script src="__MEMBER__/js/respond.min.js"></script>
+ <script src="__ADMIN__/js/html5shiv.js"></script>
+ <script src="__ADMIN__/js/respond.min.js"></script>
 <![endif]-->
 
 </head>
@@ -33,19 +33,21 @@
                 <div class="sidebar2">
     <ul>
         <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
-        <li><a href="<?php echo url('member_pay/pay'); ?>"><i class="fa fa-money"></i><span>在线充值</span></a></li>
-        <li><a href="<?php echo url('member_pay/orderlst'); ?>"><i class="fa fa-list"></i><span>订单列表</span></a></li>
-        <li><a href="<?php echo url('member_buy/buylst'); ?>"><i class="fa fa-file-text-o"></i><span>消费记录</span></a></li>
-        <li><a href="<?php echo url('member_pay/paylst'); ?>"><i class="fa fa-file-text-o"></i><span>充值记录</span></a></li>
+        <li><a href="<?php echo url('member/lst'); ?>"><i class="fa fa-users"></i><span>会员列表</span></a></li>
+        <li><a href="<?php echo url('member/add'); ?>"><i class="fa fa-user-plus"></i><span>会员添加</span></a></li>
+        <li><a href="<?php echo url('file/lst',array('ctr'=>'Member')); ?>"><i class="fa fa-file-word-o"></i><span>会员文档</span></a></li>
+        <li><a href="<?php echo url('member_pay/lst'); ?>"><i class="fa fa-money"></i><span>订单列表</span></a></li>
+        <li><a href="<?php echo url('member_buy/lst'); ?>"><i class="fa fa-cny"></i><span>消费记录</span></a></li>
+        <li><a href="#"><i class="fa fa-desktop"></i><span>会员站点</span></a></li>
     </ul>
     <div class="logout">
-        <img src="__MEMBER__/images/logo-eg.jpg" alt="用户头像">
-        <a class="logoutfunc" href="<?php echo url('MEMBER/logout2'); ?>"><span>退出登录</span></a>
+        <img src="__ADMIN__/images/logo-eg.jpg" alt="用户头像">
+        <a class="logoutfunc" href="<?php echo url('admin/logout2'); ?>"><span>退出登录</span></a>
     </div>
 </div>
 <div class="page-summary">
     <div class="userinfo">
-        <img src="__MEMBER__/images/logo-eg.jpg" alt="">
+        <img src="__ADMIN__/images/logo-eg.jpg" alt="">
         <a class="logoutfunc" href="<?php echo url('admin/logout2'); ?>"><span><?php echo \think\Request::instance()->session('username'); ?><small>退出登录</small></span></a>
     </div>
     <div class="summary">
@@ -102,32 +104,34 @@
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>
-                        <a href="#" class="homelink">首页</a> > 充值记录
+                        <a href="#" class="homelink">首页</a> > 会员列表
                     </div>
                     <div class="body">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h2 class="panel-title">充值记录</h2>
+                                <h2 class="panel-title">会员列表 <a href="<?php echo url('add'); ?>" class="btn btn-info btn-xs">添加</a></h2>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <table class="table table-striped table-bordered table-hover text-center">
                                         <tr>
-                                            <th width='100px'>订单号</th>
-                                            <th>充值金额</th>
-                                            <th>充值方式</th>
+                                            <th><a href="<?php echo url('lst',array('fld'=>'id','way'=>'desc')); ?>">会员ID <i class="fa fa-caret-down"></i></a></th>
+                                            <th>总充值</th>
+                                            <th>总消费</th>
+                                            <td>网站类型</td>
+                                            <th>代理id</th>
                                             <th>状态</th>
-                                            <th>充值时间</th>
-                                            <th>操作</th>
+                                            <th width='225px'>操作</th>
                                         </tr>
                                         <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
                                         <tr>
                                             <td><?php echo $vo['id']; ?></td>
-                                            <td><?php echo $vo['money']; ?></td>
-                                            <td><?php if($vo['payway'] == 1): ?>支付宝<?php elseif($vo['payway'] == 2): ?>微信<?php else: ?>官方代充<?php endif; ?></td>
-                                            <td><?php if($vo['step'] == 1): ?>待支付<?php else: ?>成功<?php endif; ?></td>
-                                            <td><?php echo date("Y-m-d H:i:s",$vo['time']); ?></td>
-                                            <td><?php if($vo['step'] == 1): ?><a href="#" class="btn btn-warning btn-sm">支付</a><?php endif; ?></td>
+                                            <td><?php echo $vo['allpay']; ?></td>
+                                            <td><?php echo $vo['allbuy']; ?></td>
+                                            <td></td>
+                                            <td><?php echo $vo['aid']; ?></td>
+                                            <td><?php if($vo['state'] == 0): ?>关闭<?php else: ?>开启<?php endif; ?></td>
+                                            <td><a href="<?php echo url('edit',array('id'=>$vo['id'])); ?>" class="btn btn-primary btn-sm">编辑</a><a href="#" class="btn btn-warning btn-sm">充值</a><a href="<?php echo url('detail',array('id'=>$vo['id'])); ?>" class="btn btn-default btn-sm">浏览</a><a href="<?php echo url('del',array('id'=>$vo['id'])); ?>" class="btn btn-danger btn-sm">删除</a></td>
                                         </tr>
                                         <?php endforeach; endif; else: echo "" ;endif; ?>
                                     </table>

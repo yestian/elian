@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\www\tp\elian\public/../application/member\view\auth_groupm\lst.html";i:1505458761;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505446123;s:72:"D:\www\tp\elian\public/../application/member\view\member_admin\menu.html";i:1505459690;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\www\tp\elian\public/../application/member\view\auth_groupm\lst.html";i:1505614850;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505492262;s:72:"D:\www\tp\elian\public/../application/member\view\member_admin\menu.html";i:1505492262;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -133,7 +133,7 @@
                                                     <a href="<?php echo url('edit',array('id'=>$authGroup['id'])); ?>" class="btn btn-primary btn-sm shiny">
                                                         <i class="fa fa-edit"></i> 编辑
                                                     </a>
-                                                    <a href="#" onClick="warning('确实要删除吗', '<?php echo url('del',array('id'=>$authGroup['id'])); ?>')" class="btn btn-danger btn-sm shiny">
+                                                    <a href="<?php echo url('del',array('id'=>$authGroup['id'])); ?>" class="btn btn-danger btn-sm shiny">
                                                         <i class="fa fa-trash-o"></i> 删除
                                                     </a>
                                                 </td>

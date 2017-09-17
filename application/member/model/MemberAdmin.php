@@ -58,7 +58,7 @@ class MemberAdmin extends Model{
 
 	public function login($data){
 		//用户名验证
-		$admin=Admin::getByUsername($data['username']);
+		$admin=MemberAdmin::getByUsername($data['username']);
 		if($admin){
 			if($admin['password']==md5($data['password'])){
 				session('id',$admin['id']);

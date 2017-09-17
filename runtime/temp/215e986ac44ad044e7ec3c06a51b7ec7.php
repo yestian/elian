@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:72:"D:\www\tp\elian\public/../application/member\view\member_admin\edit.html";i:1505492262;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505492262;s:72:"D:\www\tp\elian\public/../application/member\view\member_admin\menu.html";i:1505492262;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\www\tp\elian\public/../application/admin\view\admin\edit.html";i:1504623373;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:64:"D:\www\tp\elian\public/../application/admin\view\admin\menu.html";i:1504623373;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -6,22 +6,22 @@
     <meta charset="UTF-8">
     <title>后台</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<link href="__MEMBER__/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet" href="__MEMBER__/css/jquery.fullPage.css">
-<link href="__MEMBER__/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="__MEMBER__/layui/css/layui.css">
-<link rel="stylesheet" href="__MEMBER__/css/beauty-bootstrap.css">
-<link rel="stylesheet" href="__MEMBER__/css/starwood.css">
-<script src="__MEMBER__/js/jquery.min.js?ver1.9.1"></script>
-<script src="__MEMBER__/js/jquery.nicescroll.js"></script>
-<script src="__MEMBER__/js/jquery.fullPage.min.js"></script>
-<script src="__MEMBER__/js/bootstrap.min.js"></script>
-<script src="__MEMBER__/layui/layui.js"></script>
-<script src="__MEMBER__/js/Validform_v5.3.2_ncr_min.js"></script>
-<script src="__MEMBER__/js/app.js"></script>
+<link href="__ADMIN__/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="__ADMIN__/css/jquery.fullPage.css">
+<link href="__ADMIN__/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="__ADMIN__/layui/css/layui.css">
+<link rel="stylesheet" href="__ADMIN__/css/beauty-bootstrap.css">
+<link rel="stylesheet" href="__ADMIN__/css/starwood.css">
+<script src="__ADMIN__/js/jquery.min.js?ver1.9.1"></script>
+<script src="__ADMIN__/js/jquery.nicescroll.js"></script>
+<script src="__ADMIN__/js/jquery.fullPage.min.js"></script>
+<script src="__ADMIN__/js/bootstrap.min.js"></script>
+<script src="__ADMIN__/layui/layui.js"></script>
+<script src="__ADMIN__/js/Validform_v5.3.2_ncr_min.js"></script>
+<script src="__ADMIN__/js/app.js"></script>
 <!--[if lt IE 9]>
- <script src="__MEMBER__/js/html5shiv.js"></script>
- <script src="__MEMBER__/js/respond.min.js"></script>
+ <script src="__ADMIN__/js/html5shiv.js"></script>
+ <script src="__ADMIN__/js/respond.min.js"></script>
 <![endif]-->
 
 </head>
@@ -33,18 +33,18 @@
                 <div class="sidebar2">
     <ul>
         <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
-        <li><a href="<?php echo url('member_admin/lst'); ?>"><i class="fa fa-users"></i><span>管理员列表</span></a></li>
-        <li><a href="<?php echo url('auth_groupm/lst'); ?>"><i class="fa fa-user"></i><span>用户组列表</span></a></li>
-        <li><a href="<?php echo url('auth_rulem/lst'); ?>"><i class="fa fa-sort-amount-asc"></i><span>权限列表</span></a></li>
+        <li><a href="<?php echo url('admin/lst'); ?>"><i class="fa fa-users"></i><span>管理员列表</span></a></li>
+        <li><a href="<?php echo url('auth_group/lst'); ?>"><i class="fa fa-user"></i><span>用户组列表</span></a></li>
+        <li><a href="<?php echo url('auth_rule/lst'); ?>"><i class="fa fa-sort-amount-asc"></i><span>权限列表</span></a></li>
     </ul>
     <div class="logout">
-        <img src="__MEMBER__/images/logo-eg.jpg" alt="用户头像">
-        <a class="logoutfunc" href="<?php echo url('MEMBER/logout2'); ?>"><span>退出登录</span></a>
+        <img src="__ADMIN__/images/logo-eg.jpg" alt="用户头像">
+        <a class="logoutfunc" href="<?php echo url('admin/logout2'); ?>"><span>退出登录</span></a>
     </div>
 </div>
 <div class="page-summary">
     <div class="userinfo">
-        <img src="__MEMBER__/images/logo-eg.jpg" alt="">
+        <img src="__ADMIN__/images/logo-eg.jpg" alt="">
         <a class="logoutfunc" href="<?php echo url('admin/logout2'); ?>"><span><?php echo \think\Request::instance()->session('username'); ?><small>退出登录</small></span></a>
     </div>
     <div class="summary">

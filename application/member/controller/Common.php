@@ -11,7 +11,7 @@ class Common extends Controller{
 			if(!session('username')||!session('id')){
 				$this->error('请先登录系统!','login/index');
 			}
-			$auth=new Authm();
+			$auth=new Auth();
 			$request=Request::instance();
 			$con=$request->controller();
 			$action=$request->action();

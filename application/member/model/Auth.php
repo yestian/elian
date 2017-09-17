@@ -70,14 +70,14 @@ use think\Db;
   ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
  */
 
-class Authm {
+class Auth {
     //默认配置
     protected $config = array(
         'auth_on'           => true,                      // 认证开关
         'auth_type'         => 2,                         // 认证方式，1为实时认证；2为登录认证。
-        'auth_group'        => 'auth_group',        // 用户组数据表名
-        'auth_group_access' => 'auth_group_access', // 用户-用户组关系表
-        'auth_rule'         => 'auth_rule',         // 权限规则表
+        'auth_group'        => 'auth_groupm',        // 用户组数据表名
+        'auth_group_access' => 'auth_group_accessm', // 用户-用户组关系表
+        'auth_rule'         => 'auth_rulem',         // 权限规则表
         'auth_user'         => 'auth_member'             // 用户信息表
     );
     
@@ -146,7 +146,7 @@ class Authm {
         if (isset($groups[$uid])) {
             return $groups[$uid];
         }
-        $user_groups = Db::view($this->config['auth_group_accessm'], 'uid,group_id')->view($this->config['auth_group'], 'title,rules', "{$this->config['auth_group_access']}.group_id={$this->config['auth_group']}.id")
+        $user_groups = Db::view($this->config['auth_group_access'], 'uid,group_id')->view($this->config['auth_group'], 'title,rules', "{$this->config['auth_group_access']}.group_id={$this->config['auth_group']}.id")
                         ->where(['uid' => $uid, 'status' => 1])->select();
         $groups[$uid] = $user_groups ? $user_groups : [];
         return $groups[$uid];
@@ -182,7 +182,7 @@ class Authm {
             'status' => 1,
         ];
         //读取用户组所有权限规则
-        $rules = Db::name($this->config['auth_rulem'])->where($map)->field('condition,name')->select();
+        $rules = Db::name($this->config['auth_rule'])->where($map)->field('condition,name')->select();
         //循环规则，判断结果。
         $authList = [];   //
         foreach ($rules as $rule) {

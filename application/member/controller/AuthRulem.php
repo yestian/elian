@@ -1,6 +1,6 @@
 <?php
 namespace app\member\controller;
-use app\member\model\AuthRulem as AuthRulemModel;
+use app\member\model\AuthRulem as AuthRuleModel;
 use app\member\controller\Common;
 use app\member\model\Member as MemberModel;
 class AuthRulem extends Common
@@ -14,7 +14,7 @@ class AuthRulem extends Common
 			'menu'=>$menu,
 			'conf'=>$conf
 			]);
-        $authRule=new AuthRulemModel();
+        $authRule=new AuthRuleModel();
         //栏目排序功能
         if(request()->isPost()){
             $sorts=input('post.');
@@ -59,7 +59,7 @@ class AuthRulem extends Common
             return;
         }
         //栏目树
-        $authRule=new AuthRulemModel();
+        $authRule=new AuthRuleModel();
         $authRuleRes=$authRule->authRuleTree();
         $this->assign('authRuleRes',$authRuleRes);
         return view();
@@ -92,7 +92,7 @@ class AuthRulem extends Common
             }
             return;
         }
-        $authRule=new AuthRulemModel();
+        $authRule=new AuthRuleModel();
         //权限树
         $authRuleRes=$authRule->authRuleTree();
         //当前id的信息
@@ -106,13 +106,13 @@ class AuthRulem extends Common
 
 
     public function del(){
-        $authRule=new AuthRulemModel();
+        $authRule=new AuthRuleModel();
         //方法参考栏目cate的多级删除
         $authRule->getparentid(input('id'));
         //所有子栏目id
         $authRuleIds=$authRule->getchilrenid(input('id'));
         $authRuleIds[]=input('id');
-        $del= AuthRulemModel::destroy($authRuleIds);
+        $del= AuthRuleModel::destroy($authRuleIds);
         if($del){
             $this->success('删除权限成功！',url('lst'));
         }else{

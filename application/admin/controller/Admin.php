@@ -1,9 +1,6 @@
 <?php
 namespace app\admin\controller;
-//继承公共类
 use app\admin\controller\Common;
-//使用数据模型，进行数据库操作
-//数据模型类和控制器类名字相同，因此要起个别名
 use app\admin\model\Admin as AdminModel;
 use app\admin\model\Agent as AgentModel;
 
@@ -22,9 +19,7 @@ class Admin extends Common{
 			]);
 		//权限赋予
 		$auth=new Auth();
-		
 		$admin=new AdminModel();
-
 		$adminres=$admin->getadmin();
 		foreach ($adminres as $k => $v) {
 			$_groupTitle=$auth->getGroups($v['id']);

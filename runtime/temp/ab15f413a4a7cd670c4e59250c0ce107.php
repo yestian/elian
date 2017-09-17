@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\www\tp\elian\public/../application/member\view\member_admin\add.html";i:1505457346;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505446123;s:72:"D:\www\tp\elian\public/../application/member\view\member_admin\menu.html";i:1505451371;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:71:"D:\www\tp\elian\public/../application/member\view\member_admin\add.html";i:1505492262;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505492262;s:72:"D:\www\tp\elian\public/../application/member\view\member_admin\menu.html";i:1505492262;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -33,9 +33,9 @@
                 <div class="sidebar2">
     <ul>
         <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
-        <li><a href="<?php echo url('admin/lst'); ?>"><i class="fa fa-users"></i><span>管理员列表</span></a></li>
-        <li><a href="<?php echo url('auth_group/lst'); ?>"><i class="fa fa-user"></i><span>用户组列表</span></a></li>
-        <li><a href="<?php echo url('auth_rule/lst'); ?>"><i class="fa fa-sort-amount-asc"></i><span>权限列表</span></a></li>
+        <li><a href="<?php echo url('member_admin/lst'); ?>"><i class="fa fa-users"></i><span>管理员列表</span></a></li>
+        <li><a href="<?php echo url('auth_groupm/lst'); ?>"><i class="fa fa-user"></i><span>用户组列表</span></a></li>
+        <li><a href="<?php echo url('auth_rulem/lst'); ?>"><i class="fa fa-sort-amount-asc"></i><span>权限列表</span></a></li>
     </ul>
     <div class="logout">
         <img src="__MEMBER__/images/logo-eg.jpg" alt="用户头像">

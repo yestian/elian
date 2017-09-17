@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\www\tp\elian\public/../application/admin\view\index\index.html";i:1504713501;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:64:"D:\www\tp\elian\public/../application/admin\view\index\menu.html";i:1505402706;s:67:"D:\www\tp\elian\public/../application/admin\view\public\footer.html";i:1503588162;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\www\tp\elian\public/../application/admin\view\index\index.html";i:1504713501;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:64:"D:\www\tp\elian\public/../application/admin\view\index\menu.html";i:1505492262;s:67:"D:\www\tp\elian\public/../application/admin\view\public\footer.html";i:1503588162;}*/ ?>
 <!doctype html>
 <html lang="en">
 

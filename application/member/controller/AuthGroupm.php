@@ -1,6 +1,6 @@
 <?php
 namespace app\member\controller;
-use app\member\model\AuthGroupm as AuthGroupmModel;
+use app\member\model\AuthGroupm as AuthGroupModel;
 use app\member\controller\Common;
 use app\member\model\Member as MemberModel;
 class AuthGroupm extends Common{
@@ -13,7 +13,7 @@ class AuthGroupm extends Common{
 			'menu'=>$menu,
 			'conf'=>$conf
 			]);
-        $authGroupRes=db('auth_group')->paginate(10);
+        $authGroupRes=db('auth_groupm')->paginate(10);
         $this->assign('authGroupRes',$authGroupRes);
         return view();
     }
@@ -34,7 +34,7 @@ class AuthGroupm extends Common{
             $data['rules']=implode(',', $data['rules']);
            }
 
-           $add=db('auth_group')->insert($data);
+           $add=db('auth_groupm')->insert($data);
            if($add){
             $this->success("添加用户组成功！",'lst');
            }else{
@@ -69,7 +69,7 @@ $menumodel=new MemberModel;
             if(!isset($data['status'])){
                 $data['status']=0;
             }
-            $save=db('auth_group')->update($data);
+            $save=db('auth_groupm')->update($data);
             if($save!==false){
                 $this->success('修改用户组成功！','lst');
             }else{
@@ -78,11 +78,11 @@ $menumodel=new MemberModel;
             return;
         }
          //获取权限列表
-        $authrule=new \app\admin\model\AuthRule();
+        $authrule=new \app\member\model\AuthRulem();
         $authRuleRes=$authrule->authRuleTree();
 
         //信息查询
-        $authgroups=db('auth_group')->find(input('id'));
+        $authgroups=db('auth_groupm')->find(input('id'));
         $this->assign([
             'authgroups'=>$authgroups,
             'authRuleRes'=> $authRuleRes
@@ -95,7 +95,7 @@ $menumodel=new MemberModel;
 
     public function del(){
         //$del=AuthGroupModel::destroy(input('id'));
-        $del=db('auth_group')->delete(input('id'));
+        $del=db('auth_groupm')->delete(input('id'));
         if($del){
             $this->success('删除用户组成功！','lst');
         }else{

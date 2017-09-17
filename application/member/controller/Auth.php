@@ -30,11 +30,11 @@ use think\Db;
 //数据库
 /*
   -- ----------------------------
-  -- ck_auth_rulem，规则表，
+  -- ck_auth_rule，规则表，
   -- id:主键，name：规则唯一标识, title：规则中文名称 status 状态：为1正常，为0禁用，condition：规则表达式，为空表示存在就验证，不为空表示按照条件验证
   -- ----------------------------
-  DROP TABLE IF EXISTS `ck_auth_rulem`;
-  CREATE TABLE `ck_auth_rulem` (
+  DROP TABLE IF EXISTS `ck_auth_rule`;
+  CREATE TABLE `ck_auth_rule` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `name` char(80) NOT NULL DEFAULT '',
   `title` char(20) NOT NULL DEFAULT '',
@@ -45,11 +45,11 @@ use think\Db;
   UNIQUE KEY `name` (`name`)
   ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
   -- ----------------------------
-  -- ck_auth_groupm 用户组表，
+  -- ck_auth_group 用户组表，
   -- id：主键， title:用户组中文名称， rules：用户组拥有的规则id， 多个规则","隔开，status 状态：为1正常，为0禁用
   -- ----------------------------
-  DROP TABLE IF EXISTS `ck_auth_groupm`;
-  CREATE TABLE `ck_auth_groupm` (
+  DROP TABLE IF EXISTS `ck_auth_group`;
+  CREATE TABLE `ck_auth_group` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `title` char(100) NOT NULL DEFAULT '',
   `status` tinyint(1) NOT NULL DEFAULT '1',
@@ -57,11 +57,11 @@ use think\Db;
   PRIMARY KEY (`id`)
   ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
   -- ----------------------------
-  -- ck_auth_group_accessm 用户组明细表
+  -- ck_auth_group_access 用户组明细表
   -- uid:用户id，group_id：用户组id
   -- ----------------------------
-  DROP TABLE IF EXISTS `ck_auth_group_accessm`;
-  CREATE TABLE `ck_auth_group_accessm` (
+  DROP TABLE IF EXISTS `ck_auth_group_access`;
+  CREATE TABLE `ck_auth_group_access` (
   `uid` mediumint(8) unsigned NOT NULL,
   `group_id` mediumint(8) unsigned NOT NULL,
   UNIQUE KEY `uid_group_id` (`uid`,`group_id`),
@@ -70,14 +70,14 @@ use think\Db;
   ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
  */
 
-class Authm {
+class Auth {
     //默认配置
     protected $config = array(
         'auth_on'           => true,                      // 认证开关
         'auth_type'         => 2,                         // 认证方式，1为实时认证；2为登录认证。
-        'auth_group'        => 'auth_group',        // 用户组数据表名
-        'auth_group_access' => 'auth_group_access', // 用户-用户组关系表
-        'auth_rule'         => 'auth_rule',         // 权限规则表
+        'auth_group'        => 'auth_groupm',        // 用户组数据表名
+        'auth_group_access' => 'auth_group_accessm', // 用户-用户组关系表
+        'auth_rule'         => 'auth_rulem',         // 权限规则表
         'auth_user'         => 'auth_member'             // 用户信息表
     );
     

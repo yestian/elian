@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\www\tp\elian\public/../application/member\view\member_cate\lst.html";i:1505463160;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505446123;s:71:"D:\www\tp\elian\public/../application/member\view\member_cate\menu.html";i:1505464030;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:70:"D:\www\tp\elian\public/../application/member\view\member_cate\lst.html";i:1505492262;s:66:"D:\www\tp\elian\public/../application/member\view\public\meta.html";i:1505492262;s:71:"D:\www\tp\elian\public/../application/member\view\member_cate\menu.html";i:1505492262;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -33,8 +33,8 @@
                 <div class="sidebar2">
     <ul>
         <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
-        <li><a href="<?php echo url('member_cate/lst'); ?>"><i class="fa fa-list"></i><span>模板列表</span></a></li>
-        <li><a href="<?php echo url('member_cate/lst'); ?>"><i class="fa fa-list"></i><span>选择模板</span></a></li>
+        <li><a href="<?php echo url('member_cate/lst'); ?>"><i class="fa fa-th-large"></i><span>模板列表</span></a></li>
+        <li><a href="<?php echo url('member_cate/siteedit'); ?>"><i class="fa fa-magic"></i><span>编辑站点</span></a></li>
         <li><a href="<?php echo url('member_cate/lst'); ?>"><i class="fa fa-list"></i><span>栏目列表</span></a></li>
         <li><a href="<?php echo url('member_cate/add'); ?>"><i class="fa fa-plus-square"></i><span>添加栏目</span></a></li>
         <li><a href="<?php echo url('member_article/lst'); ?>"><i class="fa fa-file-text"></i><span>文章列表</span></a></li>

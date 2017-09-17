@@ -1,9 +1,6 @@
 <?php
 namespace app\member\controller;
-//继承公共类
 use app\member\controller\Common;
-//使用数据模型，进行数据库操作
-//数据模型类和控制器类名字相同，因此要起个别名
 use app\member\model\MemberAdmin as MemberAdminModel;
 use app\member\model\Member as MemberModel;
 
@@ -12,7 +9,6 @@ class MemberAdmin extends Common{
 
 	//管理员列表
 	public function lst(){
-
 		$menumodel=new MemberModel;
 		$menu=$menumodel->menu();
 		$conf=$menumodel->getconf();
@@ -21,10 +17,8 @@ class MemberAdmin extends Common{
 			'conf'=>$conf
 			]);
 		//权限赋予
-		$auth=new Authm();
-		
+		$auth=new Auth();
 		$admin=new MemberAdminModel();
-
 		$adminres=$admin->getadmin();
 		foreach ($adminres as $k => $v) {
 			$_groupTitle=$auth->getGroups($v['id']);
@@ -47,13 +41,17 @@ class MemberAdmin extends Common{
 			]);
 		if(request()->isPost()){
 			//实例化模型
+			//添加管理员，不可以为admin，因为member表中已经有默认的了
+			if(input('username')=='admin'){
+				$this->error('用户名admin已经存在');
+			}
 			$admin=new MemberAdminModel();
 			//数据接收
 			$data=input('post.');
-			/*$validate=\think\Loader::validate('Admin');//validate下的Admin类
+			$validate=\think\Loader::validate('MemberAdmin');//validate下的Admin类
 			if(!$validate->check($data)){
 				$this->error($validate->getError());
-			}*/
+			}
 			//模型方法提交数据
 			$res=$admin->addAdmin($data);
 			//助手函数，如果添加多条数据insertAll()

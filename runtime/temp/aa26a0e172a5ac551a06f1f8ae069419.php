@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\www\tp\elian\public/../application/admin\view\member\add.html";i:1504509244;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:65:"D:\www\tp\elian\public/../application/admin\view\member\menu.html";i:1504509244;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"D:\www\tp\elian\public/../application/admin\view\member\add.html";i:1505571652;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:65:"D:\www\tp\elian\public/../application/admin\view\member\menu.html";i:1504509244;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -122,7 +122,7 @@
                                             <tr>
                                                 <td>登录用户名 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <input type="text" class="form-control" name="username" datatype="*4-12" errormsg="4-12个字符" placeholder="4-12个字符">
+                                                    <input type="text" class="form-control" name="username" value="admin" disabled>
                                                 </td>
                                             </tr>
                                             <tr>
