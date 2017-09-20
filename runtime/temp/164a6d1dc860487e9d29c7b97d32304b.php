@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"D:\www\tp\elian\public/../application/admin\view\temp\tplset.html";i:1505898219;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505885536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"D:\www\tp\elian\public/../application/admin\view\temp\tplset.html";i:1505923365;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505885536;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -174,9 +174,9 @@
                                             </tr>
                                            
                                             <tr>
-                                                <td>模板缩略图 <span class="text-danger">*</span></td>
+                                                <td>模板缩略图</td>
                                                 <td>
-                                                    <input type="file" class="form-control" name='thumb' datatype="*"> <span class="text-muted">尺寸比例为1:1</span><img src="<?php echo $res['thumb']; ?>" width='80' height='80' alt="">
+                                                    <input type="file" class="form-control" name='thumb'> <span class="text-muted">尺寸比例为1:1</span><img src="<?php echo $res['thumb']; ?>" width='80' height='80' alt="">
                                                 </td>
                                             </tr>
                                             <tr>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"D:\www\tp\elian\public/../application/admin\view\temp\setall.html";i:1505899662;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505885536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"D:\www\tp\elian\public/../application/admin\view\temp\setall.html";i:1505925664;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505885536;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -144,12 +144,24 @@
                                     </div>
                                     <div class="col-md-4">
                                         <div class="panel panel-default">
-                                            <div class="panel-heading"><span>第二部：logo设置</span>
+                                            <div class="panel-heading"><span>第二步：logo设置</span>
                                             </div>
                                             <div class="panel-body">
                                                 <p>logo图片，logo文字，样式...</p>
                                                 <div class="text-right">
-                                                    <a href="<?php echo url('temp/addlogo',array('id'=>$res['id'])); ?>" class="btn btn-default btn-sm">添加</a><a href="<?php echo url('temp/tplset',array('id'=>$res['id'])); ?>" class="btn btn-primary btn-primary btn-sm">编辑</a>
+                                                    <a href="<?php echo url('temp/addlogo',array('id'=>$res['id'])); ?>" class="btn btn-default btn-sm <?php if($isset_logo != 0): ?>btn-success disabled"><i class='fa fa-check'></i> 添加<?php else: ?>">添加<?php endif; ?></a><a href="<?php echo url('temp/editlogo',array('id'=>$res['id'])); ?>" class="btn btn-primary btn-primary btn-sm">编辑</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <div class="col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><span>第三步：导航设置</span>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>导航菜单样式...</p>
+                                                <div class="text-right">
+                                                    <a href="<?php echo url('temp/addlogo',array('id'=>$res['id'])); ?>" class="btn btn-default btn-sm <?php if($isset_logo != 0): ?>btn-success disabled"><i class='fa fa-check'></i> 添加<?php else: ?>">添加<?php endif; ?></a><a href="<?php echo url('temp/editlogo',array('id'=>$res['id'])); ?>" class="btn btn-primary btn-primary btn-sm">编辑</a>
                                                 </div>
                                             </div>
                                         </div>

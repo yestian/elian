@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"D:\www\tp\elian\public/../application/admin\view\temp\add.html";i:1505885547;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505885536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\www\tp\elian\public/../application/admin\view\temp\editlogo.html";i:1505924587;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505885536;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -24,6 +24,9 @@
  <script src="__ADMIN__/js/respond.min.js"></script>
 <![endif]-->
 
+    <script src="__ADMIN__/ueditor/ueditor.config.js"></script>
+    <script src="__ADMIN__/ueditor/ueditor.all.min.js"></script>
+    <script src="__ADMIN__/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body>
@@ -122,72 +125,63 @@
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>
-                        <a href="#" class="homelink">首页</a> > 添加模板
+                        <a href="#" class="homelink">首页</a> > 编辑logo
                     </div>
-                    <div class="body">
+                    <div class="body" id="app">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h2 class="panel-title">添加模板</h2>
+                                <h2 class="panel-title">编辑logo</h2>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <form action="" method='post' enctype="multipart/form-data" class="addagent">
+                                        <input type="hidden" name='id' value="<?php echo $res['id']; ?>">
                                         <table class="table table-striped table-hover">
                                             <tr>
                                                 <th>字段</th>
                                                 <th>值</th>
                                             </tr>
                                             <tr>
-                                                <td>模板名称 <span class="text-danger">*</span></td>
+                                                <td>模板名称</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name="tempname" datatype="*4-12" errormsg="4-12个字符" placeholder="4-12个字符">
+                                                    <input type="text" value="<?php echo $temp['tempname']; ?>" disabled class="form-control">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>模板颜色 <span class="text-danger">*</span></td>
+                                                <td>logo文字名称 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <select name="color_id" id="" datatype="*" class="form-control">
-                                                        <option value>请选择</option>
-                                                        <?php if(is_array($color) || $color instanceof \think\Collection || $color instanceof \think\Paginator): $i = 0; $__LIST__ = $color;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                                                        <option value="<?php echo $vo['id']; ?>"><?php echo $vo['color']; ?></option>
-                                                        <?php endforeach; endif; else: echo "" ;endif; ?>
-                                                    </select>
+                                                    <input type="text" class="form-control" name="logo_word" datatype="*" value="<?php echo $res['logo_word']; ?>">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>模板行业 <span class="text-danger">*</span></td>
+                                                <td>logo链接</td>
                                                 <td>
-                                                    <select name="industry_id" id="" datatype="*" class="form-control">
-                                                        <option value>请选择</option>
-                                                        <?php if(is_array($industry) || $industry instanceof \think\Collection || $industry instanceof \think\Paginator): $i = 0; $__LIST__ = $industry;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
-                                                        <option value="<?php echo $vo['id']; ?>"><?php echo $vo['industry']; ?></option>
-                                                        <?php endforeach; endif; else: echo "" ;endif; ?>
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                             <tr>
-                                                <td>售价</td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="prize" placeholder="数字格式，默认免费">
-                                                </td>
-                                            </tr>
-                                           
-                                            <tr>
-                                                <td>模板缩略图 <span class="text-danger">*</span></td>
-                                                <td>
-                                                    <input type="file" class="form-control" name='thumb' datatype="*"> <span class="text-muted">尺寸比例为1:1</span>
+                                                    <input type="text" class="form-control" name="logo_link" value="<?php echo $res['logo_link']; ?>">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>模板状态</td>
+                                                <td>logo图片</td>
+                                                <td>
+                                                    <input type="file" class="form-control" name='logo_img'>
+                                                    <img src="<?php echo $res['logo_img']; ?>" width='80' height='80' alt="">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>logo图片alt标签</td>
+                                                <td>
+                                                    <input type="text" class="form-control" name='logo_img_alt' value="<?php echo $res['logo_img_alt']; ?>">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>logo图片是否显示</td>
                                                 <td>
                                                     <div class="radio radio-info radio-inline">
-                                                        <input type="radio" id="inlineRadio1" value="1" name="status" checked="">
-                                                        <label for="inlineRadio1"> 开启 </label>
+                                                        <input type="radio" id="inlineRadio1" value="1" name="logo_img_display" <?php if($res['logo_img_display'] == 1): ?>checked<?php endif; ?>>
+                                                        <label for="inlineRadio1"> 显示 </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" id="inlineRadio2" value="0" name="status">
-                                                        <label for="inlineRadio2"> 关闭 </label>
+                                                        <input type="radio" id="inlineRadio2" value="0" name="logo_img_display" <?php if($res['logo_img_display'] == 0): ?>checked<?php endif; ?>>
+                                                        <label for="inlineRadio2"> 隐藏 </label>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -207,6 +201,28 @@
             </div>
         </div>
     </div>
+   <!--  <div class="con" id="con">
+       <button data-name="selectAll">全选</button>
+       <button data-name="delete">删除</button>
+       <button data-name="undo">撤销</button>
+       <button data-name="print">打印</button>
+       <button data-name="bold">加粗</button>
+       <button data-name="italic">斜线</button>
+       <button data-name="underline">下划线</button>
+       <button data-name="fontsize" data-value="16px">大号字体</button>
+       <button data-name="forecolor" data-value="red">红色文本</button>
+       <button data-name="backcolor" data-value="gray">灰色背景</button>
+       <button data-name="removeFormat">清空格式</button>
+   </div> -->
+    <script>
+    var aCon = document.getElementById('con').getElementsByTagName('button');
+    for (var i = 0; i < aCon.length; i++) {
+        aCon[i].onclick = function() {
+            document.execCommand(this.dataset.name, false, this.dataset.value);
+        }
+    }
+    </script>
+
 </body>
 
 </html>
