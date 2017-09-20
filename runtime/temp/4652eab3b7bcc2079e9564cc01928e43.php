@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\www\tp\elian\public/../application/admin\view\index\index.html";i:1504713501;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:64:"D:\www\tp\elian\public/../application/admin\view\index\menu.html";i:1505492262;s:67:"D:\www\tp\elian\public/../application/admin\view\public\footer.html";i:1503588162;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\www\tp\elian\public/../application/admin\view\index\index.html";i:1504713501;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:64:"D:\www\tp\elian\public/../application/admin\view\index\menu.html";i:1505884277;s:67:"D:\www\tp\elian\public/../application/admin\view\public\footer.html";i:1503588162;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -114,14 +114,26 @@
                         </a>
                     </li>
                     <li>
+                        <a href="<?php echo url('temp/add'); ?>">
+                            <span class="title"><i class="fa fa-users"></i>添加模板</span>
+                            <p>模板列表说明...</p>
+                        </a>
+                    </li>
+                    <li>
                         <a href="<?php echo url('temp/copy'); ?>">
                             <span class="title"><i class="fa fa-users"></i>复制模板</span>
                             <p>模板列表说明...</p>
                         </a>
                     </li>
                      <li>
-                        <a href="<?php echo url('temp/add'); ?>">
-                            <span class="title"><i class="fa fa-users"></i>上传模板</span>
+                        <a href="<?php echo url('temp/tplset'); ?>">
+                            <span class="title"><i class="fa fa-users"></i>模板设置</span>
+                            <p>模板列表说明...</p>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="<?php echo url('temp/set'); ?>">
+                            <span class="title"><i class="fa fa-users"></i>模块设置</span>
                             <p>模板列表说明...</p>
                         </a>
                     </li>

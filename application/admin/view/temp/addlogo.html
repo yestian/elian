@@ -15,12 +15,12 @@
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>
-                        <a href="#" class="homelink">首页</a> > 添加模板
+                        <a href="#" class="homelink">首页</a> > 添加logo
                     </div>
                     <div class="body">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h2 class="panel-title">添加模板</h2>
+                                <h2 class="panel-title">添加logo</h2>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
@@ -31,40 +31,11 @@
                                                 <th>值</th>
                                             </tr>
                                             <tr>
-                                                <td>模板名称 <span class="text-danger">*</span></td>
+                                                <td>logo文字名称 <span class="text-danger">*</span></td>
                                                 <td>
                                                     <input type="text" class="form-control" name="tempname" datatype="*4-12" errormsg="4-12个字符" placeholder="4-12个字符">
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>模板颜色 <span class="text-danger">*</span></td>
-                                                <td>
-                                                    <select name="color_id" id="" datatype="*" class="form-control">
-                                                        <option value>请选择</option>
-                                                        {volist name='color' id="vo"}
-                                                        <option value="{$vo.id}">{$vo.color}</option>
-                                                        {/volist}
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>模板行业 <span class="text-danger">*</span></td>
-                                                <td>
-                                                    <select name="industry_id" id="" datatype="*" class="form-control">
-                                                        <option value>请选择</option>
-                                                        {volist name='industry' id="vo"}
-                                                        <option value="{$vo.id}">{$vo.industry}</option>
-                                                        {/volist}
-                                                    </select>
-                                                </td>
-                                            </tr>
-                                             <tr>
-                                                <td>售价</td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="prize" placeholder="数字格式，默认免费">
-                                                </td>
-                                            </tr>
-                                           
                                             <tr>
                                                 <td>模板缩略图 <span class="text-danger">*</span></td>
                                                 <td>

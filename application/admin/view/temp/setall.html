@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="innerpage pageheight">
+            <div class="wrapper container-fluid pageheight">
+                {include file='temp/menu'/}
+                <div class="page-content">
+                    <div class="bread">
+                        <i class="icon-home"></i>
+                        <a href="#" class="homelink">首页</a> > 模板设置
+                    </div>
+                    <div class="body">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h2 class="panel-title">模板设置</h2>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row settemp">
+                                    <div class="col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><span>第一步：模板分类</span></div>
+                                            <div class="panel-body">
+                                                <p>模板名称、模板分类、模板价格等...</p>
+                                                <div class="text-right">
+                                                    <a href="{:url('temp/tplset',array('id'=>$res['id']))}" class="btn btn-primary btn-sm">编辑</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading"><span>第二部：logo设置</span>
+                                            </div>
+                                            <div class="panel-body">
+                                                <p>logo图片，logo文字，样式...</p>
+                                                <div class="text-right">
+                                                    <a href="{:url('temp/addlogo',array('id'=>$res['id']))}" class="btn btn-default btn-sm">添加</a><a href="{:url('temp/tplset',array('id'=>$res['id']))}" class="btn btn-primary btn-primary btn-sm">编辑</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
