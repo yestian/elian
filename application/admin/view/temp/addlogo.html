@@ -5,9 +5,12 @@
     <meta charset="UTF-8">
     <title>后台</title>
     {include file='public/meta'/}
-    <script src="__ADMIN__/ueditor/ueditor.config.js"></script>
-    <script src="__ADMIN__/ueditor/ueditor.all.min.js"></script>
-    <script src="__ADMIN__/ueditor/lang/zh-cn/zh-cn.js"></script>
+    <link rel="stylesheet" href="__ADMIN__/umeditor/themes/default/css/umeditor.css">
+    <link rel="stylesheet" href="__ADMIN__/css/um-base.css">
+    <script src="__ADMIN__/umeditor/third-party/template.min.js"></script>
+    <script src="__ADMIN__/umeditor/umeditor.config.js"></script>
+    <script src="__ADMIN__/umeditor/umeditor.js"></script>
+    <script src="__ADMIN__/umeditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body>
@@ -45,6 +48,12 @@
                                                 <td>
                                                     <input type="text" class="form-control" name="logo_word" datatype="*" placeholder="文本格式">
                                                 </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <button class="btn btn-warning btn-sm stylebtn" type="button" disabled>设置样式</button>
+                                                </td>
+                                                <td id="style" class="um-text">logo文字参考效果</td>
                                             </tr>
                                             <tr>
                                                 <td>logo链接</td>
@@ -93,28 +102,34 @@
             </div>
         </div>
     </div>
-   <!--  <div class="con" id="con">
-       <button data-name="selectAll">全选</button>
-       <button data-name="delete">删除</button>
-       <button data-name="undo">撤销</button>
-       <button data-name="print">打印</button>
-       <button data-name="bold">加粗</button>
-       <button data-name="italic">斜线</button>
-       <button data-name="underline">下划线</button>
-       <button data-name="fontsize" data-value="16px">大号字体</button>
-       <button data-name="forecolor" data-value="red">红色文本</button>
-       <button data-name="backcolor" data-value="gray">灰色背景</button>
-       <button data-name="removeFormat">清空格式</button>
-   </div> -->
     <script>
-    var aCon = document.getElementById('con').getElementsByTagName('button');
-    for (var i = 0; i < aCon.length; i++) {
-        aCon[i].onclick = function() {
-            document.execCommand(this.dataset.name, false, this.dataset.value);
-        }
-    }
-    </script>
+    $(function() {
+        //输入框的内容，同步到下面的调整样式中
+        $("input[name='logo_word']").keyup(function() {
+            $(".stylebtn").attr('disabled', false);
+            $("#style").text($(this).val());
+        });
+        //实例化Um
+        $(".stylebtn").click(function() {
+            $(this).attr('disabled', true);
+            var um = UM.getEditor('style', {
+                toolbar: ['forecolor', 'bold', 'italic', 'underline', 'backcolor', 'fontfamily', 'fontsize', 'justifyleft', 'justifycenter', 'justifyright']
 
+            });
+        });
+
+
+        //提交处理
+        $(":submit").click(function() {
+            if ($("div").is(".edui-container")) {
+                UM.getEditor('style').destroy();
+                //修改ue生成的表单的name
+                $("#style").attr('name', 'font_style').hide();
+            }
+
+        });
+    });
+    </script>
 </body>
 
 </html>

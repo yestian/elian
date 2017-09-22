@@ -8,7 +8,7 @@ use app\admin\model\Agent as AgentModel;
 class Temp extends Common{
 	//代理商列表,通过参数来决定排序方式
 	//fld排序方式，默认按id排序，默认排序方式asc，默认顶级id为0
-	public function lst(){
+	public function templst(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
 		$conf=$menumodel->getconf();
@@ -35,7 +35,7 @@ class Temp extends Common{
 		return view();
 	}
 
-	public function add(){
+	public function addtemp(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
 		$conf=$menumodel->getconf();
@@ -49,7 +49,7 @@ class Temp extends Common{
 			$add=new TempModel;
 			$res=$add->save($data);
 			if($res){
-				$this->success("模板添加成功！",'lst');
+				$this->success("模板添加成功！",'templst');
 			}else{
 				$this->error("模板添加失败！");
 			}
@@ -62,7 +62,7 @@ class Temp extends Common{
 		return view();
 	}
 	//模板设置
-	public function tplset(){
+	public function edittemp(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
 		$conf=$menumodel->getconf();
@@ -92,7 +92,7 @@ class Temp extends Common{
             }
             $save=db('temp')->where('id',input('id'))->update($data);
             if($save!==false){
-            	$this->success('更新成功！','lst');
+            	$this->success('更新成功！','templst');
             }else{
             	$this->error('更新失败！');
             }
@@ -108,7 +108,7 @@ class Temp extends Common{
 		return view();
 	}
 
-	public function setall(){
+	public function editpanel(){
 		$menumodel=new AgentModel;
 		$menu=$menumodel->menu();
 		$conf=$menumodel->getconf();
@@ -132,86 +132,7 @@ class Temp extends Common{
 		return view();
 	}
 
-	//logo设置,addlogo,editlogo
-	public function addlogo(){
-		$menumodel=new AgentModel;
-		$menu=$menumodel->menu();
-		$conf=$menumodel->getconf();
-		$this->assign([
-			'menu'=>$menu,
-			'conf'=>$conf
-			]);
-		$temp=db('temp')->find(input('id'));
-		if(request()->isPost()){
-			$data=input('post.');
-		
-			if($_FILES['logo_img']['tmp_name']){
-				$file=request()->file('logo_img');
-				$info=$file->move(ROOT_PATH.'public'.DS.'uploads');
-				if($info){
-					$logo_img=DS.'uploads/'.$info->getSavename();
-					$data['logo_img']=$logo_img;
-				}
-			}
-			$logoadd=db('temp_logo')->insert($data);
-			if($logoadd){
-				$this->success('logo添加成功！','lst');
-			}else{
-				$this->error('logo添加失败！');
-			}
-		}
-		$this->assign([
-			'temp'=>$temp
-			]);
-		return view();
-	}
-
-	public function editlogo(){
-		$menumodel=new AgentModel;
-		$menu=$menumodel->menu();
-		$conf=$menumodel->getconf();
-		$this->assign([
-			'menu'=>$menu,
-			'conf'=>$conf
-		]);
-		if(request()->isPost()){
-			$data=input('post.');
-			if($_FILES['logo_img']['tmp_name']){
-          	//删除旧图片
-          		$pic=db('temp_logo')->find(input('id'));
-          		$logo_imgpath=$_SERVER['DOCUMENT_ROOT'].$pic['logo_img'];
-                if(file_exists($logo_imgpath)){
-                	@unlink($logo_imgpath);
-                }
-                //上传新图片
-                $file = request()->file('logo_img');
-                $info = $file->move(ROOT_PATH . 'public' . DS . 'uploads');
-                //存入变量
-                if($info){
-                    // $logo_img=ROOT_PATH . 'public' . DS . 'uploads'.'/'.$info->getExtension();
-                    $logo_img=DS.'uploads'.'/'.$info->getSavename();
-                    $data['logo_img']=$logo_img;
-                }
-
-            }
-
-
-		$save=db('temp_logo')->where('id',$data['id'])->update($data);
-		if($save!==false){
-			$this->success('更新成！','lst');
-		}else{
-			$this->error('更新失败！');
-		}
-
-	}
-		$res=db('temp_logo')->where('tpl_id',input('id'))->find();
-		$temp=db('temp')->find(input('id'));
-		$this->assign([
-			'res'=>$res,
-			'temp'=>$temp
-			]);
-		return view();
-	}
+	
 
 }
 

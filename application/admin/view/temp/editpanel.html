@@ -30,7 +30,7 @@
                                             <div class="panel-body">
                                                 <p>模板名称、模板分类、模板价格等...</p>
                                                 <div class="text-right">
-                                                    <a href="{:url('temp/tplset',array('id'=>$res['id']))}" class="btn btn-primary btn-sm">编辑</a>
+                                                    <a href="{:url('temp/edittemp',array('id'=>$res['id']))}" class="btn btn-primary btn-sm">编辑</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -42,23 +42,28 @@
                                             <div class="panel-body">
                                                 <p>logo图片，logo文字，样式...</p>
                                                 <div class="text-right">
-                                                    <a href="{:url('temp/addlogo',array('id'=>$res['id']))}" class="btn btn-default btn-sm {if condition='$isset_logo neq 0'}btn-success disabled"><i class='fa fa-check'></i> 添加{else/}">添加{/if}</a><a href="{:url('temp/editlogo',array('id'=>$res['id']))}" class="btn btn-primary btn-primary btn-sm">编辑</a>
+                                                    {if condition='$isset_logo neq 0'}<a href="{:url('temp_logo/editlogo',array('id'=>$res['id']))}" class="btn btn-primary btn-primary btn-sm">编辑</a>{else/}
+                                                    <a href="{:url('temp_logo/addlogo',array('id'=>$res['id']))}" class="btn btn-default btn-sm">添加</a>{/if}
+                                                    
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                      <div class="col-md-4">
                                         <div class="panel panel-default">
-                                            <div class="panel-heading"><span>第三步：导航设置</span>
+                                            <div class="panel-heading"><span>第三步：导航菜单设置</span>
                                             </div>
                                             <div class="panel-body">
-                                                <p>导航菜单样式...</p>
+                                                <p>导航菜单样式，风格...</p>
                                                 <div class="text-right">
-                                                    <a href="{:url('temp/addlogo',array('id'=>$res['id']))}" class="btn btn-default btn-sm {if condition='$isset_logo neq 0'}btn-success disabled"><i class='fa fa-check'></i> 添加{else/}">添加{/if}</a><a href="{:url('temp/editlogo',array('id'=>$res['id']))}" class="btn btn-primary btn-primary btn-sm">编辑</a>
+                                                    {if condition='$isset_logo neq 0'}<a href="{:url('temp_logo/editlogo',array('id'=>$res['id']))}" class="btn btn-primary btn-primary btn-sm">编辑</a>{else/}
+                                                    <a href="{:url('temp_logo/addlogo',array('id'=>$res['id']))}" class="btn btn-default btn-sm">添加</a>{/if}
+                                                    
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                   
                                 </div>
                             </div>
                         </div>

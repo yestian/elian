@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"D:\www\tp\elian\public/../application/admin\view\temp\setall.html";i:1505926576;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505926576;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\www\tp\elian\public/../application/admin\view\temp\templst.html";i:1506042510;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505996654;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -34,12 +34,12 @@
     <ul>
         <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
         <li>
-            <a href="<?php echo url('temp/lst'); ?>">
+            <a href="<?php echo url('temp/templst'); ?>">
                             <i class="fa fa-users"></i><span>模板列表</span>
                         </a>
         </li>
         <li>
-            <a href="<?php echo url('temp/add'); ?>">
+            <a href="<?php echo url('temp/addtemp'); ?>">
                             <i class="fa fa-users"></i><span>添加模板</span>
                         </a>
         </li>
@@ -122,50 +122,34 @@
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>
-                        <a href="#" class="homelink">首页</a> > 模板设置
+                        <a href="#" class="homelink">首页</a> > 模板列表
                     </div>
                     <div class="body">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h2 class="panel-title">模板设置</h2>
+                                <h2 class="panel-title">模板列表 <a href="<?php echo url('add'); ?>" class="btn btn-info btn-xs">添加</a></h2>
                             </div>
                             <div class="panel-body">
-                                <div class="row settemp">
-                                    <div class="col-md-4">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading"><span>第一步：模板分类</span></div>
-                                            <div class="panel-body">
-                                                <p>模板名称、模板分类、模板价格等...</p>
-                                                <div class="text-right">
-                                                    <a href="<?php echo url('temp/tplset',array('id'=>$res['id'])); ?>" class="btn btn-primary btn-sm">编辑</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="row" style="margin-bottom:15px">
+                                    <div class="col-md-12">行业：<a href="<?php echo url('lst'); ?>">不限 </a>　<?php if(is_array($industry) || $industry instanceof \think\Collection || $industry instanceof \think\Paginator): $i = 0; $__LIST__ = $industry;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?> <a href="<?php echo url('lst',array('industry_id'=>$vo['id'])); ?>"><?php echo $vo['industry']; ?> </a> 　<?php endforeach; endif; else: echo "" ;endif; ?></div>
+                                </div>
+                                <div class="row">
+                                    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                    <div class="col-md-3" style="margin-bottom:15px">
+                                        <dl>
+                                            <dt><img src="<?php echo $vo['thumb']; ?>" alt="" class="img-rounded tplimg"></dt>
+                                            <dd class="text-center" style="margin-bottom:5px;">
+                                                <a href="<?php echo url('tpl/index',array('id'=>$vo['id'])); ?>" class="btn btn-primary btn-xs">浏览</a>
+                                                <a href="<?php echo url('temp/edit',array('id'=>$vo['id'])); ?>" class="btn btn-warning btn-xs">编辑</a>
+                                                <a href="<?php echo url('temp/editpanel',array('id'=>$vo['id'])); ?>" class="btn btn-default btn-xs">设置</a>
+                                            </dd>
+                                            <dd class="text-center"><?php echo $vo['tempname']; ?></dd>
+                                        </dl>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading"><span>第二步：logo设置</span>
-                                            </div>
-                                            <div class="panel-body">
-                                                <p>logo图片，logo文字，样式...</p>
-                                                <div class="text-right">
-                                                    <a href="<?php echo url('temp/addlogo',array('id'=>$res['id'])); ?>" class="btn btn-default btn-sm <?php if($isset_logo != 0): ?>btn-success disabled"><i class='fa fa-check'></i> 添加<?php else: ?>">添加<?php endif; ?></a><a href="<?php echo url('temp/editlogo',array('id'=>$res['id'])); ?>" class="btn btn-primary btn-primary btn-sm">编辑</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                     <div class="col-md-4">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading"><span>第三步：导航设置</span>
-                                            </div>
-                                            <div class="panel-body">
-                                                <p>导航菜单样式...</p>
-                                                <div class="text-right">
-                                                    <a href="<?php echo url('temp/addlogo',array('id'=>$res['id'])); ?>" class="btn btn-default btn-sm <?php if($isset_logo != 0): ?>btn-success disabled"><i class='fa fa-check'></i> 添加<?php else: ?>">添加<?php endif; ?></a><a href="<?php echo url('temp/editlogo',array('id'=>$res['id'])); ?>" class="btn btn-primary btn-primary btn-sm">编辑</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                                </div>
+                                <div class="fr">
+                                    <?php echo $list->render(); ?>
                                 </div>
                             </div>
                         </div>

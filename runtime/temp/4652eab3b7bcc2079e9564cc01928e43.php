@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\www\tp\elian\public/../application/admin\view\index\index.html";i:1504713501;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:64:"D:\www\tp\elian\public/../application/admin\view\index\menu.html";i:1505884277;s:67:"D:\www\tp\elian\public/../application/admin\view\public\footer.html";i:1503588162;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:65:"D:\www\tp\elian\public/../application/admin\view\index\index.html";i:1504713501;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:64:"D:\www\tp\elian\public/../application/admin\view\index\menu.html";i:1505997438;s:67:"D:\www\tp\elian\public/../application/admin\view\public\footer.html";i:1503588162;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -108,13 +108,13 @@
             <div class="submenu pageheight">
                 <ul>
                     <li>
-                        <a href="<?php echo url('temp/lst'); ?>">
+                        <a href="<?php echo url('temp/templst'); ?>">
                             <span class="title"><i class="fa fa-users"></i>模板列表</span>
                             <p>模板列表说明...</p>
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo url('temp/add'); ?>">
+                        <a href="<?php echo url('temp/addtemp'); ?>">
                             <span class="title"><i class="fa fa-users"></i>添加模板</span>
                             <p>模板列表说明...</p>
                         </a>

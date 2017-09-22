@@ -32,9 +32,9 @@
                                         <dl>
                                             <dt><img src="{$vo.thumb}" alt="" class="img-rounded tplimg"></dt>
                                             <dd class="text-center" style="margin-bottom:5px;">
-                                                <a href="{:url('temp/view',array('id'=>$vo['id']))}" class="btn btn-primary btn-xs">浏览</a>
+                                                <a href="{:url('tpl/index',array('id'=>$vo['id']))}" class="btn btn-primary btn-xs">浏览</a>
                                                 <a href="{:url('temp/edit',array('id'=>$vo['id']))}" class="btn btn-warning btn-xs">编辑</a>
-                                                <a href="{:url('temp/setall',array('id'=>$vo['id']))}" class="btn btn-default btn-xs">设置</a>
+                                                <a href="{:url('temp/editpanel',array('id'=>$vo['id']))}" class="btn btn-default btn-xs">设置</a>
                                             </dd>
                                             <dd class="text-center">{$vo.tempname}</dd>
                                         </dl>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>后台</title>
+    {include file='public/meta'/}
+</head>
+
+<body>
+	<div class="box" style="width:600px;margin:0 auto;padding-top:300px;">
+   <h1>模板站展示</h1>
+   <p>展示只需要正常的代码即可，去除所有编辑时期产生的代码，从数据库中调用，拼接而成</p>
+   <br/>根据模板id，显示对应的内容，默认展示id=1的内容
+   <br/>浏览页面，无需权限，只有新建模块，或者不继承common
+		<br/>展示内容是所有人都可以看的，因此路由必须重新配置，看起来像是根目录的如：
+		<br/>tpl-1/index
+		<br/>tpl-1/cateid-3
+		<br/>tpl-1/article-12.html
+		</div>
+</body>
+
+</html>

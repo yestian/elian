@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:66:"D:\www\tp\elian\public/../application/admin\view\temp\addlogo.html";i:1506008804;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505996654;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\www\tp\elian\public/../application/admin\view\temp\edittemp.html";i:1506014424;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505996654;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -24,12 +24,6 @@
  <script src="__ADMIN__/js/respond.min.js"></script>
 <![endif]-->
 
-    <link rel="stylesheet" href="__ADMIN__/umeditor/themes/default/css/umeditor.css">
-    <link rel="stylesheet" href="__ADMIN__/css/um-base.css">
-    <script src="__ADMIN__/umeditor/third-party/template.min.js"></script>
-    <script src="__ADMIN__/umeditor/umeditor.config.js"></script>
-    <script src="__ADMIN__/umeditor/umeditor.js"></script>
-    <script src="__ADMIN__/umeditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body>
@@ -128,68 +122,73 @@
                 <div class="page-content">
                     <div class="bread">
                         <i class="icon-home"></i>
-                        <a href="#" class="homelink">首页</a> > 添加logo
+                        <a href="#" class="homelink">首页</a> > 编辑模板
                     </div>
-                    <div class="body" id="app">
+                    <div class="body">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
-                                <h2 class="panel-title">添加logo</h2>
+                                <h2 class="panel-title">编辑模板</h2>
                             </div>
                             <div class="panel-body">
                                 <div class="table-responsive">
                                     <form action="" method='post' enctype="multipart/form-data" class="addagent">
-                                        <input type="hidden" name='tpl_id' value="<?php echo $temp['id']; ?>">
+                                        <input type="hidden" name="id" value="<?php echo $res['id']; ?>">
                                         <table class="table table-striped table-hover">
                                             <tr>
                                                 <th>字段</th>
                                                 <th>值</th>
                                             </tr>
                                             <tr>
-                                                <td>模板名称</td>
+                                                <td>模板名称 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <input type="text" value="<?php echo $temp['tempname']; ?>" disabled class="form-control">
+                                                    <input type="text" class="form-control" name="tempname" datatype="*4-12" errormsg="4-12个字符" value="<?php echo $res['tempname']; ?>">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>logo文字名称 <span class="text-danger">*</span></td>
+                                                <td>模板颜色 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <input type="text" class="form-control" name="logo_word" datatype="*" placeholder="文本格式">
+                                                    <select name="color_id" id="" datatype="*" class="form-control">
+                                                        <option value>请选择</option>
+                                                        <?php if(is_array($color) || $color instanceof \think\Collection || $color instanceof \think\Paginator): $i = 0; $__LIST__ = $color;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                                        <option value="<?php echo $vo['id']; ?>" <?php if($vo['id'] == $res['color_id']): ?>selected<?php endif; ?>><?php echo $vo['color']; ?></option>
+                                                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                                                    </select>
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td>模板行业 <span class="text-danger">*</span></td>
                                                 <td>
-                                                    <button class="btn btn-warning btn-sm stylebtn" type="button" disabled>设置样式</button>
-                                                </td>
-                                                <td id="style" class="um-text">logo文字参考效果</td>
-                                            </tr>
-                                            <tr>
-                                                <td>logo链接</td>
-                                                <td>
-                                                    <input type="text" class="form-control" name="logo_link" placeholder="填写网址">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>logo图片</td>
-                                                <td>
-                                                    <input type="file" class="form-control" name='logo_img'>
+                                                    <select name="industry_id" id="" datatype="*" class="form-control">
+                                                        <option value>请选择</option>
+                                                        <?php if(is_array($industry) || $industry instanceof \think\Collection || $industry instanceof \think\Paginator): $i = 0; $__LIST__ = $industry;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?>
+                                                        <option value="<?php echo $vo['id']; ?>" <?php if($vo['id'] == $res['industry_id']): ?>selected<?php endif; ?>><?php echo $vo['industry']; ?></option>
+                                                        <?php endforeach; endif; else: echo "" ;endif; ?>
+                                                    </select>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>logo图片alt标签</td>
+                                             <tr>
+                                                <td>售价</td>
                                                 <td>
-                                                    <input type="text" class="form-control" name='logo_img_alt' placeholder="文字描述内容">
+                                                    <input type="text" class="form-control" name="prize" value="<?php echo $res['prize']; ?>">
+                                                </td>
+                                            </tr>
+                                           
+                                            <tr>
+                                                <td>模板缩略图</td>
+                                                <td>
+                                                    <input type="file" class="form-control" name='thumb'> <span class="text-muted">尺寸比例为1:1</span><img src="<?php echo $res['thumb']; ?>" width='80' height='80' alt="">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>logo图片是否显示</td>
+                                                <td>模板状态</td>
                                                 <td>
                                                     <div class="radio radio-info radio-inline">
-                                                        <input type="radio" id="inlineRadio1" value="1" name="logo_img_display" checked>
-                                                        <label for="inlineRadio1"> 显示 </label>
+                                                        <input type="radio" id="inlineRadio1" value="1" name="status" <?php if($res['status'] == 1): ?>checked<?php endif; ?>>
+                                                        <label for="inlineRadio1"> 开启 </label>
                                                     </div>
                                                     <div class="radio radio-inline">
-                                                        <input type="radio" id="inlineRadio2" value="0" name="logo_img_display">
-                                                        <label for="inlineRadio2"> 隐藏 </label>
+                                                        <input type="radio" id="inlineRadio2" value="0" name="status" <?php if($res['status'] == 0): ?>checked<?php endif; ?>> 
+                                                        <label for="inlineRadio2"> 关闭 </label>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -197,6 +196,7 @@
                                                 <td></td>
                                                 <td>
                                                     <button class="btn btn-primary" type="submit">提交</button>
+                                                     <a href="<?php echo url('temp/editpanel',array('id'=>$res['id'])); ?>" class="btn btn-warning btn-sm">返回编辑列表</a>
                                                 </td>
                                             </tr>
                                         </table>
@@ -209,34 +209,6 @@
             </div>
         </div>
     </div>
-    <script>
-    $(function() {
-        //输入框的内容，同步到下面的调整样式中
-        $("input[name='logo_word']").keyup(function() {
-            $(".stylebtn").attr('disabled', false);
-            $("#style").text($(this).val());
-        });
-        //实例化Um
-        $(".stylebtn").click(function() {
-            $(this).attr('disabled', true);
-            var um = UM.getEditor('style', {
-                toolbar: ['forecolor', 'bold', 'italic', 'underline', 'backcolor', 'fontfamily', 'fontsize', 'justifyleft', 'justifycenter', 'justifyright']
-
-            });
-        });
-
-
-        //提交处理
-        $(":submit").click(function() {
-            if ($("div").is(".edui-container")) {
-                UM.getEditor('style').destroy();
-                //修改ue生成的表单的name
-                $("#style").attr('name', 'font_style').hide();
-            }
-
-        });
-    });
-    </script>
 </body>
 
 </html>

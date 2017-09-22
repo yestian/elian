@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\www\tp\elian\public/../application/admin\view\temp\editlogo.html";i:1505924587;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505885536;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:67:"D:\www\tp\elian\public/../application/admin\view\temp\editlogo.html";i:1505926576;s:65:"D:\www\tp\elian\public/../application/admin\view\public\meta.html";i:1504623373;s:63:"D:\www\tp\elian\public/../application/admin\view\temp\menu.html";i:1505996654;}*/ ?>
 <!doctype html>
 <html lang="en">
 
@@ -24,9 +24,6 @@
  <script src="__ADMIN__/js/respond.min.js"></script>
 <![endif]-->
 
-    <script src="__ADMIN__/ueditor/ueditor.config.js"></script>
-    <script src="__ADMIN__/ueditor/ueditor.all.min.js"></script>
-    <script src="__ADMIN__/ueditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 
 <body>
@@ -37,12 +34,12 @@
     <ul>
         <li><a class="homelink"><i class="fa fa-home"></i><span>HOME</span></a></li>
         <li>
-            <a href="<?php echo url('temp/lst'); ?>">
+            <a href="<?php echo url('temp/templst'); ?>">
                             <i class="fa fa-users"></i><span>模板列表</span>
                         </a>
         </li>
         <li>
-            <a href="<?php echo url('temp/add'); ?>">
+            <a href="<?php echo url('temp/addtemp'); ?>">
                             <i class="fa fa-users"></i><span>添加模板</span>
                         </a>
         </li>
@@ -201,28 +198,6 @@
             </div>
         </div>
     </div>
-   <!--  <div class="con" id="con">
-       <button data-name="selectAll">全选</button>
-       <button data-name="delete">删除</button>
-       <button data-name="undo">撤销</button>
-       <button data-name="print">打印</button>
-       <button data-name="bold">加粗</button>
-       <button data-name="italic">斜线</button>
-       <button data-name="underline">下划线</button>
-       <button data-name="fontsize" data-value="16px">大号字体</button>
-       <button data-name="forecolor" data-value="red">红色文本</button>
-       <button data-name="backcolor" data-value="gray">灰色背景</button>
-       <button data-name="removeFormat">清空格式</button>
-   </div> -->
-    <script>
-    var aCon = document.getElementById('con').getElementsByTagName('button');
-    for (var i = 0; i < aCon.length; i++) {
-        aCon[i].onclick = function() {
-            document.execCommand(this.dataset.name, false, this.dataset.value);
-        }
-    }
-    </script>
-
 </body>
 
 </html>
